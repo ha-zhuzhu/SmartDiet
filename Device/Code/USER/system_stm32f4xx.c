@@ -348,9 +348,9 @@
      through STLINK MCO pin of STM32F103 microcontroller. The frequency cannot be changed
      and is fixed at 8 MHz. 
      Hardware configuration needed for Nucleo Board:
-     – SB54, SB55 OFF
-     – R35 removed
-     – SB16, SB50 ON */
+     ¨C SB54, SB55 OFF
+     ¨C R35 removed
+     ¨C SB16, SB50 ON */
 /* #define USE_HSE_BYPASS */
 
 #if defined(USE_HSE_BYPASS)     
@@ -494,12 +494,16 @@ void SystemInit(void)
   RCC->CFGR = 0x00000000;
 
   /* Reset HSEON, CSSON and PLLON bits */
+  /* ½«HSEÉèÖÃÎªOFF£¬CSSONºÍPLLÒ¶ÉèÖÃÎªOFF */
   RCC->CR &= (uint32_t)0xFEF6FFFF;
 
   /* Reset PLLCFGR register */
+  /*   ¸ß4Î»±£Áô£¬½«PLLQ=4£»½«PLLºÍPLLI2SµÄÊ±ÖÓÔ´ÉèÖÃÎªHSI£»
+  ÉèÖÃPLLP=2£¬¼´ÏµÍ³Ê±ÖÓÎªÖ÷PLLÊä³öÊ±ÖÓµÄ2·ÖÆµ£»ÉèÖÃPLLN=192£»ÉèÖÃPLLM=16;*/
   RCC->PLLCFGR = 0x24003010;
 
   /* Reset HSEBYP bit */
+  /* ½«HSEBYPÎ»ÇåÁã£¬¼´HSEÊ±ÖÓ²»±»ÅÔÂ· */
   RCC->CR &= (uint32_t)0xFFFBFFFF;
 
   /* Disable all interrupts */

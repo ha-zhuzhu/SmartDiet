@@ -1,9 +1,9 @@
 #include "btn.h"
 #include "usart.h"
 /*
- * åˆå§‹åŒ– BTN_1 ä¸­æ–­
+ * ³õÊ¼»¯ BTN_1 ÖĞ¶Ï
  * PC13
- * ä¸­é—´çš„æŒ‰é’®
+ * ÖĞ¼äµÄ°´Å¥
  */
 void btn1_exti_init(void)
 {
@@ -11,43 +11,43 @@ void btn1_exti_init(void)
     EXTI_InitTypeDef EXTI_InitStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
 
-    /* é…ç½®PC13ä¸ºè¾“å…¥ */
-    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE); //ä½¿èƒ½PCç«¯å£æ—¶é’Ÿ
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;             //ç«¯å£é…ç½®
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;         //è¾“å…¥
-    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;    //ä¸Šæ‹‰
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;//å·¥ä½œé¢‘ç‡
-    GPIO_Init(GPIOC, &GPIO_InitStructure);                //æ ¹æ®è®¾å®šå‚æ•°åˆå§‹åŒ–GPIOC
+    /* ÅäÖÃPC13ÎªÊäÈë */
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE); //Ê¹ÄÜPC¶Ë¿ÚÊ±ÖÓ
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;            //¶Ë¿ÚÅäÖÃ
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;          //ÊäÈë
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;          //ÉÏÀ­
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;      //¹¤×÷ÆµÂÊ
+    GPIO_Init(GPIOC, &GPIO_InitStructure);                //¸ù¾İÉè¶¨²ÎÊı³õÊ¼»¯GPIOC
 
-    /* é…ç½®EXTI13 */
-    //RCC_APB2PeriphClockCmd(RCC_APB2Periph_EXTIT, ENABLE);  //ä½¿èƒ½EXTITæ—¶é’Ÿ
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG,ENABLE);
-    /* å¦‚æœé…ç½®çš„é’ˆè„šæ˜¯0å·ï¼Œé‚£ä¹ˆå‚æ•°å¿…é¡»æ˜¯GPIO_PinSource0 å¦‚æœé…ç½®çš„é’ˆè„šæ˜¯3å·ï¼Œé‚£ä¹ˆå‚æ•°å¿…é¡»æ˜¯GPIO_PinSource3 */
-    SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOC,EXTI_PinSource13);    
-    EXTI_InitStructure.EXTI_Line = EXTI_Line13; //å¸¸ç”¨çš„å°±æ˜¯EXTI_Line0-EXTI_Line015è´Ÿè´£gpioç®¡è„šçš„é‚£å‡ ä¸ª
+    /* ÅäÖÃEXTI13 */
+    //RCC_APB2PeriphClockCmd(RCC_APB2Periph_EXTIT, ENABLE);  //Ê¹ÄÜEXTITÊ±ÖÓ
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+    /* Èç¹ûÅäÖÃµÄÕë½ÅÊÇ0ºÅ£¬ÄÇÃ´²ÎÊı±ØĞëÊÇGPIO_PinSource0 Èç¹ûÅäÖÃµÄÕë½ÅÊÇ3ºÅ£¬ÄÇÃ´²ÎÊı±ØĞëÊÇGPIO_PinSource3 */
+    SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOC, EXTI_PinSource13);
+    EXTI_InitStructure.EXTI_Line = EXTI_Line13; //³£ÓÃµÄ¾ÍÊÇEXTI_Line0-EXTI_Line015¸ºÔğgpio¹Ü½ÅµÄÄÇ¼¸¸ö
     EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling; //ä¸‹é™æ²¿è§¦å‘
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling; //ÏÂ½µÑØ´¥·¢
     EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-    EXTI_Init(&EXTI_InitStructure); //åˆå§‹åŒ–ä¸­æ–­
+    EXTI_Init(&EXTI_InitStructure); //³õÊ¼»¯ÖĞ¶Ï
 
-    /* é…ç½®NVIC */
-    NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn;          //ä½¿èƒ½å¤–éƒ¨ä¸­æ–­é€šé“
-    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2; //æŠ¢å ä¼˜å…ˆçº§2  å› ä¸ºä¸ºåˆ†ç»„ä¸º2 è¿™é‡Œå¯ä»¥è®¾ç½®ä¸º0-3
-    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;        //å“åº”ä¼˜å…ˆçº§0
-    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;           //ä½¿èƒ½å¤–éƒ¨ä¸­æ–­é€šé“
-    NVIC_Init(&NVIC_InitStructure);                           //æ ¹æ®NVIC_InitStructä¸­æŒ‡å®šçš„å‚æ•°åˆå§‹åŒ–å¤–è®¾NVICå¯„å­˜å™¨
+    /* ÅäÖÃNVIC */
+    NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn;      //Ê¹ÄÜÍâ²¿ÖĞ¶ÏÍ¨µÀ
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2; //ÇÀÕ¼ÓÅÏÈ¼¶2  ÒòÎªÎª·Ö×éÎª2 ÕâÀï¿ÉÒÔÉèÖÃÎª0-3
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;        //ÏìÓ¦ÓÅÏÈ¼¶0
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;           //Ê¹ÄÜÍâ²¿ÖĞ¶ÏÍ¨µÀ
+    NVIC_Init(&NVIC_InitStructure);                           //¸ù¾İNVIC_InitStructÖĞÖ¸¶¨µÄ²ÎÊı³õÊ¼»¯ÍâÉèNVIC¼Ä´æÆ÷
 }
 
-/* ä¸­æ–­æœåŠ¡å‡½æ•° */
+/* ÖĞ¶Ï·şÎñº¯Êı */
 void EXTI15_10_IRQHandler(void)
 {
-    //åˆ¤æ–­å¤–éƒ¨ä¸­æ–­13æ˜¯å¦å‘ç”Ÿ
-    if(EXTI_GetITStatus(EXTI_Line13) != RESET)
-	{
-        usart2_send_str("æ£€æµ‹åˆ°æŒ‰é”®\r\n");
+    //ÅĞ¶ÏÍâ²¿ÖĞ¶Ï13ÊÇ·ñ·¢Éú
+    if (EXTI_GetITStatus(EXTI_Line13) != RESET)
+    {
+        usart2_send_str("¼ì²âµ½°´¼ü\r\n");
         Save_Data.isUsefull = 1;
-        Save_Data.counter=(Save_Data.counter+1)%200;
-        //æ¸…é™¤ä¸­æ–­æ ‡å¿—ä½
-		EXTI_ClearITPendingBit(EXTI_Line13);
-	 }
+        Save_Data.counter = (Save_Data.counter + 1) % 200;
+        //Çå³ıÖĞ¶Ï±êÖ¾Î»
+        EXTI_ClearITPendingBit(EXTI_Line13);
+    }
 }

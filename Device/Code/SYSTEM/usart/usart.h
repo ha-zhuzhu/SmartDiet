@@ -1,7 +1,7 @@
 #ifndef __USART_H
 #define __USART_H
-#include "stdio.h"	
-#include "sys.h" 
+#include "stdio.h"
+#include "sys.h"
 
 #define EN_USART1_RX 1
 #define EN_USART2_RX 1
@@ -15,17 +15,17 @@ void usart6_init(u32 bound);
 void usart1_send_byte(char data);
 void usart2_send_byte(char data);
 void usart6_send_byte(char data);
-void usart1_send_str(char*SendBuf);
-void usart2_send_str(char*SendBuf);
-void usart6_send_str(char*SendBuf);
+void usart1_send_str(char *SendBuf);
+void usart2_send_str(char *SendBuf);
+void usart6_send_str(char *SendBuf);
 
 typedef struct SaveData
 {
-	char Weight_Buffer[Weight_Buffer_Length];
-	u8 counter;
-	char isGetData;		//æ˜¯å¦è·å–åˆ°é‡é‡æ•°æ®
-	char isParseData;	//æ˜¯å¦è§£æå®Œæˆ
-	char isUsefull;		//ä¿¡æ¯æ˜¯å¦æœ‰æ•ˆ
+    char Weight_Buffer[Weight_Buffer_Length];
+    u8 counter;
+    char isGetData;   //ÊÇ·ñ»ñÈ¡µ½ÖØÁ¿Êı¾İ
+    char isParseData; //ÊÇ·ñ½âÎöÍê³É
+    char isUsefull;   //ĞÅÏ¢ÊÇ·ñÓĞĞ§
 } _SaveData;
 
 extern char RxBuffer2[200];

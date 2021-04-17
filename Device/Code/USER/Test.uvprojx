@@ -639,19 +639,9 @@
               <FilePath>..\HARDWARE\TIMER\timer.c</FilePath>
             </File>
             <File>
-              <FileName>led.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\HARDWARE\LED\led.h</FilePath>
-            </File>
-            <File>
               <FileName>BC28.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\HARDWARE\BC28\BC28.h</FilePath>
-            </File>
-            <File>
-              <FileName>dht11.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\HARDWARE\DHT11\dht11.h</FilePath>
             </File>
             <File>
               <FileName>timer.h</FileName>
@@ -667,6 +657,16 @@
               <FileName>btn.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\BTN\btn.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\led.h</FilePath>
             </File>
           </Files>
         </Group>
