@@ -1,6 +1,7 @@
 /*
-  BC28_ONENET_LWM2M+Button 测试 demo
-  按一下中间的按钮，向 ONENET 上传一个数
+  BC28_ONENET_LWM2M Read & Respond Mode
+  自动注册 Object 和 resource
+  监听 ONENET 的读 resource 请求并响应
 */
 #include "delay.h"
 #include "sys.h"
@@ -18,7 +19,7 @@
 #include "btn.h"
 #include "led.h"
 
-extern char RxBuffer[100], RxCounter;
+extern char RxBuffer[200], RxCounter;
 u8 timeout;
 
 int main(void)
@@ -36,21 +37,23 @@ int main(void)
     while (1)
     {
         LED_RED=1; LED_BLU=1; LED_GRN=0;
-        //ONENET_Readdata();//接收ONENET的数据下发指令请求
+        ONENET_Readdata();//接收ONENET的数据下发指令请求
         /* 有可用重量数据则上传 */
-        if (Save_Data.isUsefull)
-        {
-            LED_RED=0; LED_BLU=1; LED_GRN=0;
-            Save_Data.isUsefull = 0;
-            BC28_NotifyResource();
-            timeout++;
-            delay_ms(1000);
-        }
+        // if (Save_Data.isUsefull)
+        // {
+        //     LED_RED=0; LED_BLU=1; LED_GRN=0;
+        //     Save_Data.isUsefull = 0;
+        //     BC28_NotifyResource();
+        //     timeout++;
+        //     delay_ms(1000);
+        // }
         if (timeout >= 120) //2分钟刷新一次连接防掉线
         {
             printf("AT+MIPLUPDATE=0,600,0\r\n"); //10分钟在线时间
             RxCounter = 0;
             timeout = 0;
         }
+        //delay_ms(500);
     }
+    
 }

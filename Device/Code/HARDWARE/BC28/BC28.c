@@ -2,8 +2,9 @@
 #include "string.h"
 #include "usart.h"
 #include "wdg.h"
+#include "led.h"
 char *strx, *extstrx;
-extern char RxBuffer[100], RxCounter;
+extern char RxBuffer[200], RxCounter;
 BC28 BC28_Status;
 unsigned char socketnum = 0; //当前的socket号码
 
@@ -12,7 +13,7 @@ void Clear_Buffer(void)
 {
     u8 i;
     usart2_send_str(RxBuffer);
-    for (i = 0; i < 100; i++)
+    for (i = 0; i < 200; i++)
         RxBuffer[i] = 0; //缓存
     RxCounter = 0;
     IWDG_Feed(); //喂狗
@@ -139,8 +140,19 @@ void BC28_CreateInstance(void)
     }
     Clear_Buffer();
 
-    //printf("AT+MIPLADDOBJ=0,3311,2,\"11\",4,2\r\n");//创建3311的2个对象
-    printf("AT+MIPLADDOBJ=0,3336,1,\"1\",8,0\r\n"); //3336(location) 1 object
+    /* 
+     * AT+MIPLADDOBJ
+     * 作用：用于在模组端添加一个待订阅的object及其所需的instance
+     * 命令格式：AT+MIPLADDOBJ=<ref>,<objid>,<inscount>,<bitmap>,<atts>,<acts>
+     * a. ref：设备实例ID
+     * b. objid：Object ID
+     * c. inscount：实例个数
+     * d. bitmap：实例位图，字符串格式，每一个字符表示为一个实例，1表示可用，0表示不可用。
+     * e. atts：属性个数，默认设置为0即可。
+     * f. acts：操作个数，默认设置为0即可。
+     */
+    // printf("AT+MIPLADDOBJ=0,3311,2,\"11\",4,2\r\n");//创建3311的2个对象
+    printf("AT+MIPLADDOBJ=0,3322,1,\"1\",9,0\r\n"); //3322 Load 1 object
     delay_ms(300);
     strx = strstr((const char *)RxBuffer, (const char *)"OK"); //对象创建成功
     while (strx == NULL)
@@ -181,8 +193,9 @@ void BC28_CreateInstance(void)
     Clear_Buffer();
     delay_ms(1000);
 
-    //printf("AT+MIPLDISCOVERRSP=0,%s,1,19,\"5850;5851;5706;5805\"\r\n",BC28_Status.Resource_ID);//所有的属性都被注册到平台端，
-    printf("AT+MIPLDISCOVERRSP=0,%s,1,39,\"5513;5514;5515;5516;5517;5518;5705;5750\"\r\n", BC28_Status.Resource_ID);
+    /* 所有的属性都被注册到平台端 */
+    //44 字符串位长
+    printf("AT+MIPLDISCOVERRSP=0,%s,1,44,\"5601;5602;5603;5604;5605;5700;5701;5750;5821\"\r\n", BC28_Status.Resource_ID);
     delay_ms(300);
     strx = strstr((const char *)RxBuffer, (const char *)"OK");
     while (strx == NULL)
@@ -198,6 +211,7 @@ void ONENET_Readdata(void) //等待服务器的读请求
     strx = strstr((const char *)RxBuffer, (const char *)"+MIPLREAD:"); //有读请求产生,这里根据不同的请求发送不同的指令需求
     if (strx)                                                          //读取到指令请求之后，获取内容数据
     {
+        LED_RED=0; LED_BLU=1; LED_GRN=0;
         delay_ms(100);
         while (1)
         {
@@ -220,7 +234,15 @@ void ONENET_Readdata(void) //等待服务器的读请求
         }
         strx = strchr(strx + 1, ',');
         Clear_Buffer();
-        printf("AT+MIPLREADRSP=%s,4,4,2.35,0,0\r\n", BC28_Status.ReadSource); //回复请求，将数据传输上去
+        
+        /* 
+         * AT+MIPLREADRSP
+         * 作用：MCU完成相应的Read操作后，向平台回复Read操作结果
+         * AT+MIPLREADRSP=<ref>,<msgid>,<result>[,<objid>,<insid>,<resid>,<type>,<len>,<value>,<index>,<flag>]
+         * result
+         */
+        // printf("AT+MIPLREADRSP=%s,4,4,2.35,0,0\r\n", BC28_Status.ReadSource); //回复请求，将数据传输上去
+        printf("AT+MIPLREADRSP=%s,4,4,2.35,0,0\r\n", BC28_Status.ReadSource); //返回 2.35 4-float 4-数据位宽
         delay_ms(300);
         strx = strstr((const char *)RxBuffer, (const char *)"OK"); //
         while (strx == NULL)
@@ -233,16 +255,22 @@ void ONENET_Readdata(void) //等待服务器的读请求
 
 void BC28_NotifyResource(void)
 {
-    printf("AT+MIPLNOTIFY=0,%s,3336,0,5513,1,8,\"%s\",1,0\r\n", BC28_Status.Observe_ID, "39.98939"); //发送纬度 lat index=1
-
-    delay_ms(300);
-    strx = strstr((const char *)RxBuffer, (const char *)"OK");
-    while (strx == NULL)
-    {
-        strx = strstr((const char *)RxBuffer, (const char *)"OK");
-    }
-    Clear_Buffer();
-    printf("AT+MIPLNOTIFY=0,%s,3336,0,5514,1,9,\"%s\",0,0\r\n", BC28_Status.Observe_ID, "116.30565"); //发送经度 long index=0
+    /*
+     * AT+MIPLNOTIFY
+     * 作用：用于在模组端向OneNET 平台上报指定资源的数据
+     * AT+MIPLNOTIFY=<ref>,<msgid>,<objid>,<insid>,<resid>,<type>,<len>,<value>,<index>,<flag>[,<ackid>]
+     * a. ref：设备实例ID
+     * b. msgid：该resource所属的instance observe操作时下发的msgid
+     * c. objid：Object ID
+     * d. insid：Instance ID
+     * e. resid：Resource ID
+     * f. type：上报资源的数据类型（1-string，2-opaque，3-integer，4-float，5-bool，6-hex_str）
+     * g. len：value值的长度
+     * h. index：指令序号。可以发N条报文，从N-1到0降序编号，0表示本次Notify指令结束
+     * i. value：上报数据。
+     * j. flag：消息标识，指示第一条或中间或最后一条报文。
+     */
+    printf("AT+MIPLNOTIFY=0,%s,3322,0,5700,4,4,2.33,0,0\r\n", BC28_Status.Observe_ID); //发送重量数据2.33 数据位宽为4
     delay_ms(300);
     strx = strstr((const char *)RxBuffer, (const char *)"OK");
     while (strx == NULL)
