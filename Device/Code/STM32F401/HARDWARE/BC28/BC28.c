@@ -160,6 +160,13 @@ void BC28_CreateInstance(void)
         strx = strstr((const char *)RxBuffer, (const char *)"OK");
     }
     Clear_Buffer();
+    /*
+     * AT+MIPLOPEN
+     * 作用：用于在模组端向OneNET 平台发起注册登录请求。
+     * 命令格式：AT+MIPLOPEN=<ref>,<lifetime>[,<timeout>]
+     * lifetime：本次注册平台的生命周期，单位是s
+     * timeout：注册的超时时长，可选参数，默认为30，单位为s
+     */
     printf("AT+MIPLOPEN=0,600,60\r\n"); //连接平台资源
     delay_ms(300);
 

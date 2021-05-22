@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "sys.h": "c",
+        "usart.h": "c",
+        "hx711.h": "c",
+        "delay.h": "c",
+        "stdio.h": "c",
+        "math.h": "c"
+    }
+}

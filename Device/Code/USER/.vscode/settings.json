@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "sys.h": "c",
-        "usart.h": "c"
-    }
-}

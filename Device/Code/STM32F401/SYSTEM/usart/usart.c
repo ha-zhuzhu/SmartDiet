@@ -28,9 +28,9 @@ void _sys_exit(int x)
 /* 重定义fputc函数  */
 int fputc(int ch, FILE *f)
 {
-    while ((USART1->SR & 0X40) == 0)
+    while ((USART2->SR & 0X40) == 0)
         ; //循环发送,直到发送完毕
-    USART1->DR = (u8)ch;
+    USART2->DR = (u8)ch;
     return ch;
 }
 #endif
@@ -116,7 +116,7 @@ void usart1_init(u32 bound)
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 3; //抢占优先级3
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;        //子优先级3
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;           //IRQ通道使能
-    NVIC_Init(&NVIC_InitStructure);                           //根据指定的参数初始化VIC寄存器、
+    NVIC_Init(&NVIC_InitStructure);                           //根据指定的参数初始化NVIC寄存器、
 #endif
 
     USART_Cmd(USART1, ENABLE); //使能串口
@@ -170,7 +170,7 @@ void usart2_init(u32 bound)
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 3; //抢占优先级3
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;        //子优先级3
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;           //IRQ通道使能
-    NVIC_Init(&NVIC_InitStructure);                           //根据指定的参数初始化VIC寄存器、
+    NVIC_Init(&NVIC_InitStructure);                           //根据指定的参数初始化NVIC寄存器、
 #endif
 
     USART_Cmd(USART2, ENABLE); //使能串口
@@ -224,7 +224,7 @@ void usart6_init(u32 bound)
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 3; //抢占优先级3
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;        //子优先级3
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;           //IRQ通道使能
-    NVIC_Init(&NVIC_InitStructure);                           //根据指定的参数初始化VIC寄存器、
+    NVIC_Init(&NVIC_InitStructure);                           //根据指定的参数初始化NVIC寄存器、
 #endif
 
     USART_Cmd(USART6, ENABLE); //使能串口
