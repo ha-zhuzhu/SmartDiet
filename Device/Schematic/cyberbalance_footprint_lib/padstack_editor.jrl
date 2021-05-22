@@ -1,0 +1,13 @@
+\t (00:00:01) padstack_editor 17.4 S015 Windows SPB 64-bit Edition
+\t (00:00:01)     Journal start - Wed May 19 13:26:40 2021
+\t (00:00:01)         Host=DESKTOP-KF0UK81 User=Shire Pid=24252 CPUs=8
+\t (00:00:01) CmdLine= d:\cadence\cadence_spb_17.4-2019\tools\bin\padstack_editor.exe E:\Project\SmartDiet\Device\Schematic\cyberbalance_footprint_lib\via12_std-th.pad
+\t (00:00:01) 
+\d (00:00:03) QtSignal GuidedTabsParent GuidedTabs currentChanged Drill
+\d (00:00:04) QtSignal GuidedTabsParent GuidedTabs currentChanged "Secondary Drill"
+\d (00:00:05) QtSignal GuidedTabsParent GuidedTabs currentChanged "Drill Symbol"
+\d (00:00:05) QtSignal GuidedTabsParent GuidedTabs currentChanged "Drill Offset"
+\d (00:00:06) QtSignal GuidedTabsParent GuidedTabs currentChanged "Drill Symbol"
+\d (00:00:06) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
+\d (00:00:14) QtSignal GuidedTabsParent GuidedTabs currentChanged "Mask Layers"
+\t (00:02:04)     Journal end - Wed May 19 13:28:44 2021

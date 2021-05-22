@@ -1,0 +1,90 @@
+
+*********************************************************************
+                         ROUTER-LOG
+*********************************************************************
+
+NEW ROUTE on E:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd
+Started on   Mon May 17 22:44:11 2021
+**ERROR - there is no route keepin rectangle
+---------------------------------------------------------------------
+Statistics at the End of the Route:
+----------------------------
+
+
+    Connection Statistics:        W/Rats      No/Rats      Total
+    ----------------------        ------      -------      -----
+        Connections                202           0          202
+        Already Connected            3           0            3
+        Missing Connections        199           0          199
+        Connection Completion        1.49%       0.00%        1.49%
+        Etch Length (inches)         0.50        0.00         0.50
+        Number of vias		     4           0            4
+        Vias per Connection          1.33        0.00         1.33
+        Smd pins with attached clines                         4
+
+
+
+    Total cpu time - 0:15:43 hours
+    Total elapsed time - -3006:-55:-20 hours
+    Invalid Count Time: 0 0:0:0 hours
+    Route ended on  Mon May 17 22:44:12 2021
+
+*********************************************************************
+                         ROUTER-LOG
+*********************************************************************
+
+NEW ROUTE on E:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd
+Started on   Mon May 17 22:44:12 2021
+**ERROR - there is no route keepin rectangle
+---------------------------------------------------------------------
+Statistics at the End of the Route:
+----------------------------
+
+
+    Connection Statistics:        W/Rats      No/Rats      Total
+    ----------------------        ------      -------      -----
+        Connections                202           0          202
+        Already Connected            3           0            3
+        Missing Connections        199           0          199
+        Connection Completion        1.49%       0.00%        1.49%
+        Etch Length (inches)         0.50        0.00         0.50
+        Number of vias		     4           0            4
+        Vias per Connection          1.33        0.00         1.33
+        Smd pins with attached clines                         4
+
+
+
+    Total cpu time - 0:15:43 hours
+    Total elapsed time - -3006:-55:-20 hours
+    Invalid Count Time: 0 0:0:0 hours
+    Route ended on  Mon May 17 22:44:12 2021
+
+*********************************************************************
+                         ROUTER-LOG
+*********************************************************************
+
+NEW ROUTE on E:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd
+Started on   Mon May 17 22:44:13 2021
+**ERROR - there is no route keepin rectangle
+---------------------------------------------------------------------
+Statistics at the End of the Route:
+----------------------------
+
+
+    Connection Statistics:        W/Rats      No/Rats      Total
+    ----------------------        ------      -------      -----
+        Connections                202           0          202
+        Already Connected            3           0            3
+        Missing Connections        199           0          199
+        Connection Completion        1.49%       0.00%        1.49%
+        Etch Length (inches)         0.50        0.00         0.50
+        Number of vias		     4           0            4
+        Vias per Connection          1.33        0.00         1.33
+        Smd pins with attached clines                         4
+
+
+
+    Total cpu time - 0:15:44 hours
+    Total elapsed time - -3006:-55:-19 hours
+    Invalid Count Time: 0 0:0:0 hours
+    Route ended on  Mon May 17 22:44:13 2021

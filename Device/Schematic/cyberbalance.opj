@@ -1,0 +1,232 @@
+(ExpressProject "demo"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 S015 (3921426)  [2/23/2021]-[05/21/21]")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File
+         "d:\cadence\cadence_spb_17.4-2019\tools\capture\library\mylib\smartdiet.olb"
+        (Type "Schematic Library")
+        (DisplayName
+           "d:\cadence\cadence_spb_17.4-2019\tools\capture\library\mylib\smartdiet.olb")))
+    ("Allegro Netlist Directory" "allegro")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420")
+    (NoModify)
+    (File ".\cyberbalance.dsn"
+      (Type "Schematic Design")
+      (DisplayName ".\cyberbalance.DSN"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    ("Allegro Netlist Output Board File" ".\.brd")
+    (Netlist_TAB "0")
+    ("Create Allegro Netlist" "TRUE")
+    ("View Allegro Netlist Files" "FALSE")
+    ("Allegro Netlist Create DCF File" "FALSE")
+    ("Update Allegro Board" "FALSE")
+    ("Allegro Netlist Remove Etch" "FALSE")
+    ("Allegro Netlist Place Changed Component" "ALWAYS_REPLACE")
+    ("Allegro Netlist Open Board in Allegro" "ALLEGRO")
+    ("Allegro Setup Backup Versions" "3")
+    ("Allegro Setup Ignore Constraints" "FALSE")
+    ("Allegro Setup Part Type Length" "255")
+    ("Allegro Netlist Combine Property String" "PCB Footprint")
+    ("Allegro Netlist Ignore Fixed Property" "FALSE")
+    ("Allegro Netlist User Defined Property" "FALSE")
+    (RootChangedForceReNetlist "x")
+    (BOM_Scope "0")
+    (BOM_Mode "0")
+    (BOM_Report_File "E:\PROJECT\SMARTDIET\DEVICE\SCHEMATIC\CYBERBALANCE.BOM")
+    (BOM_Merge_Include "FALSE")
+    (BOM_Property_Combine_7.0
+       "{Item}\t{Quantity}\t{Reference}\t{Value}\t{PCB Footprint}")
+    (BOM_Header "Item\tQuantity\tReference\tValue\tPCB Footprint")
+    (BOM_Include_File "E:\PROJECT\SMARTDIET\DEVICE\SCHEMATIC\CYBERBALANCE.INC")
+    (BOM_Include_File_Combine_7.0 "{Item}\t{Quantity}\t{Reference}\t{Value}")
+    (BOM_One_Part_Per_Line "FALSE")
+    (Open_BOM_in_Excel "TRUE")
+    (BOM_View_Output "FALSE"))
+  (Folder "Layout"
+    (File ".\allegro\cyberbalance.brd"
+      (Type "Board File")
+      (OutputBoard ".\allegro\cyberbalance.brd")
+      (NetListPath ".\allegro")
+      (ActiveBoard "0")))
+  (Folder "Outputs"
+    (File ".\allegro\pstxnet.dat"
+      (Type "Report")
+      (DisplayName "pstxnet.dat"))
+    (File ".\allegro\pstxprt.dat"
+      (Type "Report")
+      (DisplayName "pstxprt.dat"))
+    (File ".\allegro\pstchip.dat"
+      (Type "Report")
+      (DisplayName "pstchip.dat"))
+    (File ".\cyberbalance.bom"
+      (Type "Report")))
+  (Folder "Referenced Projects")
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles")
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (Folder "Logs")
+  (PartMRUSelector
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (VCC_BAR
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (20279-001E-01
+      (FullPartName "20279-001E-01.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\MYLIB\20279-001E-01.OLB")
+      (DeviceIndex "0"))
+    (GND
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (CON6A
+      (FullPartName "CON6A.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (CON1
+      (FullPartName "CON1.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (CON2
+      (FullPartName "CON2.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (BC26_0
+      (FullPartName "BC26_0-2.Normal")
+      (LibraryName "E:\PROJECT\SMARTDIET\DEVICE\SCHEMATIC\CYBERBALANCE.DSN")
+      (DeviceIndex "1"))
+    (CON12
+      (FullPartName "CON12.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (VCC
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (OS102011MS2QN1
+      (FullPartName "OS102011MS2QN1.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\MYLIB\OS102011MS2QN1.OLB")
+      (DeviceIndex "0"))
+    (TPS7A2033PDBVR
+      (FullPartName "TPS7A2033PDBVR.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\MYLIB\SMARTDIET.OLB")
+      (DeviceIndex "0"))
+    (MicroUSB
+      (FullPartName "MicroUSB.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\MYLIB\SMARTDIET.OLB")
+      (DeviceIndex "0"))
+    (USB3076-XX-X_REVC
+      (FullPartName "USB3076-XX-X_REVC.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\MYLIB\USB3076-XX-X_REVC.OLB")
+      (DeviceIndex "0"))
+    (LED
+      (FullPartName "LED.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (MP26028
+      (FullPartName "MP26028.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\MYLIB\MP26028.OLB")
+      (DeviceIndex "0"))
+    (8205S
+      (FullPartName "8205S.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\MYLIB\SMARTDIET.OLB")
+      (DeviceIndex "0"))
+    (S-8261AAJMD-G2JT2G
+      (FullPartName "S-8261AAJMD-G2JT2G.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\MYLIB\S-8261AAJMD-G2JT2G.OLB")
+      (DeviceIndex "0"))
+    (BC26
+      (FullPartName "BC26-2.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\MYLIB\BC26\BC26.OLB")
+      (DeviceIndex "1"))
+    (MOSFET_EP_GSD
+      (FullPartName "MOSFET_EP_GSD.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\TRANSISTOR.OLB")
+      (DeviceIndex "0"))
+    (MOSFET_EP_DGS
+      (FullPartName "MOSFET_EP_DGS.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\TRANSISTOR.OLB")
+      (DeviceIndex "0"))
+    (AO3415
+      (FullPartName "AO3415.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\MYLIB\AO3415.OLB")
+      (DeviceIndex "0"))
+    (RSP-122811-01
+      (FullPartName "RSP-122811-01.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\MYLIB\RSP-122811-01.OLB")
+      (DeviceIndex "0"))
+    (CON6
+      (FullPartName "CON6.Normal")
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0")))
+  (LastUsedLibraryBrowseDirectory
+     "D:\Cadence\Cadence_SPB_17.4-2019\tools\capture\library\mylib")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "e:\project\smartdiet\device\schematic\cyberbalance.dsn")
+      (Path "Design Resources"
+         "e:\project\smartdiet\device\schematic\cyberbalance.dsn" "SCHEMATIC1")
+      (Path "Design Resources" "Library")
+      (Path "Design Resources" "Library"
+         "d:\cadence\cadence_spb_17.4-2019\tools\capture\library\mylib\smartdiet.olb")
+      (Path "Layout")
+      (Path "Outputs")
+      (Select "Design Resources"
+         "e:\project\smartdiet\device\schematic\cyberbalance.dsn"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 256 0 733"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 5 28 5 5 28 28")
+        (Scroll "0 506")
+        (Zoom "160")
+        (Occurrence "/"))
+      (Path "E:\PROJECT\SMARTDIET\DEVICE\SCHEMATIC\CYBERBALANCE.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1")))
+  (MPSSessionName "Shire")
+  (ISPCBBASICLICENSE "false"))

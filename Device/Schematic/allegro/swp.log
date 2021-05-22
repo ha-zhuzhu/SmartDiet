@@ -1,0 +1,11 @@
+Loading netlist files ...
+Loading... .\pstchip.dat
+
+Loading... .\pstxprt.dat
+
+Loading... .\pstxnet.dat
+packaging the design view...Loading... ./funcview.dat
+Loading... ./compview.dat
+Loading... ./netview.dat
+Loading... ./pinview.dat
+packaging the design view...

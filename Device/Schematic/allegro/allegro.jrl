@@ -1,0 +1,114 @@
+\t (00:00:14) allegro 17.4 S015 Windows SPB 64-bit Edition
+\t (00:00:14)     Journal start - Fri May 21 19:04:38 2021
+\t (00:00:14)         Host=DESKTOP-KF0UK81 User=Shire Pid=105724 CPUs=8
+\t (00:00:14) CmdLine= D:\Cadence\Cadence_SPB_17.4-2019\tools\bin\allegro.exe
+\t (00:00:14) 
+\d (00:00:14) Design opened: e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd
+\i (00:00:14) trapsize 1651
+\i (00:00:14) generaledit 
+\i (00:00:24) reports 'Bill of Material Report' 
+\i (00:00:25) generaledit 
+\i (00:00:27) setwindow text
+\i (00:00:27) save
+\i (00:00:42) fillin "E:/Project/SmartDiet/Device/Schematic/BOM.htm"
+\t (00:00:42) BOM.htm: is text save file
+\i (00:00:44) close
+\t (01:40:17) Grids are drawn 8.00, 8.00 apart for enhanced viewing.
+\i (01:40:18) setwindow pcb
+\i (01:40:18) trapsize 698
+\i (03:24:07) zoom out 1 
+\i (03:24:07) setwindow pcb
+\i (03:24:07) zoom out 1448.06 1703.97
+\t (03:24:07) Grids are drawn 16.00, 16.00 apart for enhanced viewing.
+\i (03:24:07) trapsize 1397
+\i (03:24:07) zoom out 1 
+\i (03:24:07) setwindow pcb
+\i (03:24:07) zoom out 1967.06 1703.97
+\t (03:24:07) Grids are drawn 32.00, 32.00 apart for enhanced viewing.
+\i (03:24:07) trapsize 2794
+\i (03:24:07) zoom out 1 
+\i (03:24:07) setwindow pcb
+\i (03:24:07) zoom out 6218.81 -983.74
+\i (03:24:07) trapsize 3255
+\i (03:24:07) zoom out 1 
+\i (03:24:07) setwindow pcb
+\i (03:24:07) zoom out 5625.00 -1360.68
+\i (03:24:07) trapsize 3255
+\i (03:24:07) zoom in 1 
+\i (03:24:07) setwindow pcb
+\i (03:24:07) zoom in 5091.15 -748.70
+\t (03:24:07) Grids are drawn 16.00, 16.00 apart for enhanced viewing.
+\i (03:24:07) trapsize 1628
+\i (03:24:07) zoom in 1 
+\i (03:24:07) setwindow pcb
+\i (03:24:07) zoom in -904.95 -846.36
+\t (03:24:07) Grids are drawn 8.00, 8.00 apart for enhanced viewing.
+\i (03:24:07) trapsize 814
+\i (03:24:08) zoom in 1 
+\i (03:24:08) setwindow pcb
+\i (03:24:08) zoom in -820.31 -634.76
+\t (03:24:08) Grids are drawn 4.00, 4.00 apart for enhanced viewing.
+\i (03:24:08) trapsize 407
+\i (03:24:08) pick grid 192.06 -556.63
+\t (03:24:08) last pick:  192.00 -557.00
+\i (03:24:09) roam y -96 
+\i (03:24:09) roam y -96
+\i (03:24:09) roam y -96 
+\i (03:24:09) roam y -96
+\i (03:24:09) roam y -96 
+\i (03:24:09) roam y -96
+\i (03:24:09) roam y -96 
+\i (03:24:09) roam y -96
+\i (03:24:09) roam y -96 
+\i (03:24:09) roam y -96
+\i (03:24:09) roam y -96 
+\i (03:24:09) roam y -96
+\i (03:24:09) roam y -96 
+\i (03:24:09) roam y -96
+\i (03:24:09) roam y -96 
+\i (03:24:09) roam y -96
+\i (03:24:09) roam y -96 
+\i (03:24:09) roam y -96
+\i (03:24:10) roam y -96 
+\i (03:24:10) roam y -96
+\i (03:24:10) roam y -96 
+\i (03:24:10) roam y -96
+\i (03:24:10) roam y -96 
+\i (03:24:10) roam y -96
+\i (03:24:10) roam x 96 
+\i (03:24:10) roam x 96
+\i (03:24:10) roam x 96 
+\i (03:24:10) roam x 96
+\i (03:24:10) roam x 96 
+\i (03:24:10) roam x 96
+\i (03:24:10) roam x 96 
+\i (03:24:10) roam x 96
+\i (03:24:10) roam x 96 
+\i (03:24:10) roam x 96
+\i (03:24:10) roam x 96 
+\i (03:24:10) roam x 96
+\i (03:24:10) roam x 96 
+\i (03:24:10) roam x 96
+\i (03:24:10) roam x 96 
+\i (03:24:10) roam x 96
+\i (03:24:10) roam x 96 
+\i (03:24:10) roam x 96
+\i (03:24:10) roam x 96 
+\i (03:24:10) roam x 96
+\i (03:24:11) roam x 96 
+\i (03:24:11) roam x 96
+\i (03:24:11) roam x 96 
+\i (03:24:11) roam x 96
+\i (03:24:11) roam y -96 
+\i (03:24:11) roam y -96
+\i (03:24:11) roam x 96 
+\i (03:24:11) roam x 96
+\i (03:24:11) roam y -96 
+\i (03:24:11) roam y -96
+\i (03:24:11) zoom in 1 
+\i (03:24:11) setwindow pcb
+\i (03:24:11) zoom in 836.58 512.69
+\t (03:24:11) Grids are drawn 2.00, 2.00 apart for enhanced viewing.
+\i (03:24:11) trapsize 203
+\i (04:52:44) exit 
+\t (04:52:46)     Journal end - Fri May 21 23:57:10 2021

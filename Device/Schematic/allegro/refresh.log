@@ -1,0 +1,83 @@
+Sun May 16 11:22:43 2021				Page     1
+
+
+ 
+Update Symbols/Modules Logfile
+	Sun May 16 11:22:43 2021
+
+------ Module Refresh Messages ------
+
+SUMMARY:    Updated 0 out of 0 modules
+
+------ End Module Messages     ------
+
+
+
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Refresh Symbol                                                   )
+(                                                                     )
+(    Drawing          : CyberBalance.brd                              )
+(    Software Version : 17.4S015                                      )
+(    Date/Time        : Sun May 16 11:22:44 2021                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Sun May 16 11:22:44 2021				Page     1
+
+
+------ Symbol Refresh Directives ------
+
+Input design  = 'E:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd'
+Output design = ''
+
+Update mechanical symbols              = 'NO'
+Update format symbols                  = 'NO'
+Update package symbols                 = 'NO'
+Update shape/flash symbols             = 'NO'
+Update symbol padstacks                = 'YES'
+Preserve padstacks replaced on pins    = 'NO'
+Reset symbol text and size locations   = 'YES'
+Reset Pin Escapes (fanouts)            = 'YES'
+Ripup Etch                             = 'YES'
+Reset custom drill data                = 'YES'
+Symbol list file                       = 'C:/Users/Shire/AppData/Local/Temp/#Taaaaiv06624.tmp'
+
+
+------ Library Paths ------
+PSMPATH =  . 
+           symbols 
+           .. 
+           ../symbols 
+           D:/Cadence/Cadence_SPB_17.4-2019/share/local/pcb/symbols 
+           D:/Cadence/Cadence_SPB_17.4-2019/share/pcb/pcb_lib/symbols 
+           D:/Cadence/Cadence_SPB_17.4-2019/share/pcb/allegrolib/symbols 
+           E:/Project/SmartDiet/Device/Schematic/cyberbalance_footprint_lib 
+
+PADPATH =  . 
+           symbols 
+           .. 
+           ../symbols 
+           D:/Cadence/Cadence_SPB_17.4-2019/share/local/pcb/padstacks 
+           D:/Cadence/Cadence_SPB_17.4-2019/share/pcb/pcb_lib/symbols 
+           D:/Cadence/Cadence_SPB_17.4-2019/share/pcb/allegrolib/symbols 
+           E:/Project/SmartDiet/Device/Schematic/cyberbalance_footprint_lib 
+
+
+------ Symbol Refresh Messages ------
+
+'BC26'  symbol refreshed successfully.
+
+
+------ Pad Stack Refresh Messages ------
+
+'SMD0100X0100'  pad stack refreshed successfully.
+'SMD0070X2500_OB'  pad stack refreshed successfully.
+
+
+----- Symbol Update Summary ----
+
+Updated symbols: 1 out 1
+    Design updated.
+

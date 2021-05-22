@@ -1,0 +1,23 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    CREATE SYMBOL                                                    )
+(                                                                     )
+(    Drawing          : IC10_MP26028_MNP-L.dra                        )
+(    Software Version : 17.4S015                                      )
+(    Date/Time        : Fri May 14 13:04:12 2021                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Create Symbol of type: PACKAGE
+    Directory = e:/Project/SmartDiet/Device/Schematic/cyberbalance_footprint_lib
+    Name      = ic10_mp26028_mnp-l.psm
+    User      = Shire
+    Machine   = DESKTOP-KF0UK81
+
+
+Create symbol started.
+ 
+
+Create symbol completed.
+

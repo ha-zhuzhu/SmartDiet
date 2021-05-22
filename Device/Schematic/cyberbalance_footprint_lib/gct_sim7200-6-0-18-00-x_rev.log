@@ -1,0 +1,23 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    CREATE SYMBOL                                                    )
+(                                                                     )
+(    Drawing          : GCT_SIM7200-6-0-18-00-X_REV.dra               )
+(    Software Version : 17.4S015                                      )
+(    Date/Time        : Fri May 14 13:00:36 2021                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Create Symbol of type: PACKAGE
+    Directory = e:/Project/SmartDiet/Device/Schematic/cyberbalance_footprint_lib
+    Name      = gct_sim7200-6-0-18-00-x_rev.psm
+    User      = Shire
+    Machine   = DESKTOP-KF0UK81
+
+
+Create symbol started.
+ 
+
+Create symbol completed.
+

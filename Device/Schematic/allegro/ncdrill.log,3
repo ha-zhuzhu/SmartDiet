@@ -1,0 +1,63 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    NC DRILL Log                                                     )
+(                                                                     )
+(    Drawing          : CyberBalance.brd                              )
+(    Software Version : 17.4S015                                      )
+(    Date/Time        : Fri May 21 18:03:18 2021                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+
+ Processing NC Parameters file 'nc_param.txt' ...
+
+ NC PARAMETERS
+ -------------
+
+ FORMAT   		3.6
+ MACHINE-OFFSET		x:0.00000	y:0.00000   (inch)
+ FEEDRATE		1
+ COORDINATES		ABSOLUTE
+ OUTPUT-UNITS		ENGLISH
+ TOOL-ORDER		INCREASING
+ REPEAT-CODES		YES
+ SUPPRESS-LEAD-ZEROES	NO
+ SUPPRESS-TRAIL-ZEROES	YES
+ SUPPRESS-EQUAL		YES
+ TOOL-SELECT		NO
+ HEADER			none
+ LEADER			12
+ CODE			ASCII
+ SEPARATE		NO
+ SEPARATE-ROUTING	NO
+ OPTIMIZE_DRILLING	NO
+ ENHANCED_EXCELLON	YES
+ SCALE			1.000000
+
+
+
+ Drill files being output to directory 'E:/Project/SmartDiet/Device/Schematic/allegro' ...
+
+
+
+     'CyberBalance-1-2.drl' created for holes connecting TOP and BOTTOM
+     ------------------------------------------------------------------
+
+           Num     Size      +/- Tolerance     Plating   Quantity
+
+            1.  12.0100    0.0000/ 12.0100      PLATED        223
+            2.  31.5000    0.0000/  0.0000      PLATED          3
+            3.  38.9800    0.0000/  0.0000      PLATED          2
+            4.  40.0000    0.0000/  0.0000      PLATED         12
+            5.  40.0000    2.9900/  2.9900      PLATED         10
+            6.  40.0000    3.0000/  3.0000      PLATED          6
+            7.  51.1800    0.0000/  0.0000      PLATED          2
+            8. 125.9800    0.0000/  0.0000      PLATED          4
+            9.  59.0600    0.0000/  0.0000  NON_PLATED          2
+           10. 118.1100    0.0000/  0.0000  NON_PLATED          1
+
+     ---- Total holes:                                        265
+
+     ---- Total head travel:              7.76 feet (2.37 meters)
+

@@ -1,0 +1,24 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    CREATE SYMBOL                                                    )
+(                                                                     )
+(    Drawing          : GCT_USB3076-XX-X_REVC.dra                     )
+(    Software Version : 17.4S015                                      )
+(    Date/Time        : Fri May 14 12:52:03 2021                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Create Symbol of type: PACKAGE
+    Directory = e:/Project/SmartDiet/Device/Schematic/cyberbalance_footprint_lib
+    Name      = gct_usb3076-xx-x_revc.psm
+    User      = Shire
+    Machine   = DESKTOP-KF0UK81
+
+
+Create symbol started.
+ 
+ WARNING(SPMHA1-301): Create symbol DRC errors exist. 
+
+Create symbol completed.
+

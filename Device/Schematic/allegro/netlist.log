@@ -1,0 +1,19 @@
+{ Using PSTWRITER 17.4.0 d001May-21-2021 at 15:39:19 }
+
+#1 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#1" as visible power pin of same name already exists in Package BC26_0-1 , U2-1: SCHEMATIC1, PAGE1 (20.32, 20.32).
+#2 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#34" as visible power pin of same name already exists in Package BC26_0-1 , U2-1: SCHEMATIC1, PAGE1 (20.32, 20.32).
+#3 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#27" as visible power pin of same name already exists in Package BC26_0-1 , U2-1: SCHEMATIC1, PAGE1 (20.32, 20.32).
+#4 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#41" as visible power pin of same name already exists in Package BC26_0-1 , U2-1: SCHEMATIC1, PAGE1 (20.32, 20.32).
+#5 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#40" as visible power pin of same name already exists in Package BC26_0-1 , U2-1: SCHEMATIC1, PAGE1 (20.32, 20.32).
+#6 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#37" as visible power pin of same name already exists in Package BC26_0-1 , U2-1: SCHEMATIC1, PAGE1 (20.32, 20.32).
+#7 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#36" as visible power pin of same name already exists in Package BC26_0-1 , U2-1: SCHEMATIC1, PAGE1 (20.32, 20.32).
+INFO(ORCAP-36080): Scanning netlist files ...
+
+Loading... E:\PROJECT\SMARTDIET\DEVICE\SCHEMATIC\allegro\pstchip.dat
+
+Loading... E:\PROJECT\SMARTDIET\DEVICE\SCHEMATIC\allegro\pstchip.dat
+
+Loading... E:\PROJECT\SMARTDIET\DEVICE\SCHEMATIC\allegro\pstxprt.dat
+
+Loading... E:\PROJECT\SMARTDIET\DEVICE\SCHEMATIC\allegro\pstxnet.dat
+packaging the design view...
