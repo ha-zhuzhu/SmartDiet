@@ -2,25 +2,60 @@
 #include "sysclock.h"
 #include "usart.h"
 #include "led.h"
+#include "bc28.h"
+
+uint8_t timeout;
+extern uint8_t RxCounter;
 
 int main()
 {
     HAL_Init();
     SystemClock_Config();
     LED_Init();
-    /* PB6   ------> USART1_TX
+    /* PC
+     * PB6   ------> USART1_TX
      * PB7   ------> USART1_RX */
     USART1_Init();
-    LL_GPIO_SetOutputPin(GPIOA, LL_GPIO_PIN_0);
+    /* BC28
+     * PB10   ------> LPUART1_TX
+     * PB11   ------> LPUART1_RX */
+    LPUART1_Init();
+    //LL_GPIO_SetOutputPin(GPIOA, LL_GPIO_PIN_0);
     LL_GPIO_SetOutputPin(GPIOA, LL_GPIO_PIN_1);
     LL_GPIO_SetOutputPin(GPIOA, LL_GPIO_PIN_2);
+    BC28_Init();
+    BC28_CreateInstance();
     while (1)
     {
+        /*
         LL_mDelay(500);
-        printf("blink/r/n");
+        //LPUART1_SendStr("blink/r/n");
+        LPUART1_SendStr(LPUART1_RX_BUF);
         LL_GPIO_SetOutputPin(GPIOA, LL_GPIO_PIN_2);
         LL_mDelay(500);
         LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_2);
+        */
+        //ONENET_Readdata();//接收ONENET的数据下发指令请求
+        /* 有可用重量数据则上传 */
+        /*
+        if (Save_Data.isUsefull)
+        {
+            Save_Data.isUsefull = 0;
+            BC28_NotifyResource();
+            timeout++;
+            delay_ms(1000);
+        }
+        */
+        BC28_NotifyResource();
+        timeout++;
+        LL_mDelay(2000);
+        if (timeout >= 120) //2分钟刷新一次连接防掉线
+        {
+            LPUART1_SendStr("AT+MIPLUPDATE=0,600,0\r\n"); //10分钟在线时间
+            RxCounter = 0;
+            timeout = 0;
+        }
+        //delay_ms(500);
     }
 }
 

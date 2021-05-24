@@ -14,16 +14,31 @@ void SystemClock_Config(void)
   {
 
   }
+  /*
   LL_PWR_EnableBkUpAccess();
   LL_RCC_LSE_SetDriveCapability(LL_RCC_LSEDRIVE_LOW);
   LL_RCC_LSE_Enable();
-
+  //这里出了问题 LSE不起振
    /* Wait till LSE is ready */
+   /*
   while(LL_RCC_LSE_IsReady() != 1)
   {
 
   }
     LL_RCC_SetRTCClockSource(LL_RCC_RTC_CLKSOURCE_LSE);
+  LL_RCC_EnableRTC();
+  LL_RCC_PLL_ConfigDomain_SYS(LL_RCC_PLLSOURCE_HSE, LL_RCC_PLL_MUL_8, LL_RCC_PLL_DIV_3);
+  LL_RCC_PLL_Enable();
+  */
+
+   LL_RCC_LSI_Enable();
+
+   /* Wait till LSI is ready */
+  while(LL_RCC_LSI_IsReady() != 1)
+  {
+
+  }
+    LL_RCC_SetRTCClockSource(LL_RCC_RTC_CLKSOURCE_LSI);
   LL_RCC_EnableRTC();
   LL_RCC_PLL_ConfigDomain_SYS(LL_RCC_PLLSOURCE_HSE, LL_RCC_PLL_MUL_8, LL_RCC_PLL_DIV_3);
   LL_RCC_PLL_Enable();

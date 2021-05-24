@@ -10,8 +10,8 @@
       <TargetName>Target</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
-      <uAC6>0</uAC6>
+      <pCCUsed>6150000::V6.15::ARMCLANG</pCCUsed>
+      <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32L053C8Tx</Device>
@@ -189,7 +189,7 @@
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>1</useUlib>
+            <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -313,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>2</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -322,7 +322,7 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>2</wLevel>
+            <wLevel>3</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
@@ -337,7 +337,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>STM32L053xx,USE_FULL_LL_DRIVER,USE_FULL_ASSERT,HSE_VALUE=12000000,USE_HAL_DRIVER</Define>
+              <Define>STM32L053xx,USE_FULL_LL_DRIVER,HSE_VALUE=12000000,USE_HAL_DRIVER</Define>
               <Undefine></Undefine>
               <IncludePath>.\Inc;..\FWLIB\Inc;..\CORE;..\SYSTEM\Inc;..\HARDWARE\Inc</IncludePath>
             </VariousControls>
@@ -533,20 +533,25 @@
               <FileType>1</FileType>
               <FilePath>..\FWLIB\Src\stm32l0xx_ll_utils.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32l0xx_ll_lpuart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FWLIB\Src\stm32l0xx_ll_lpuart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>HARDWARE</GroupName>
           <Files>
             <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\Src\usart.c</FilePath>
-            </File>
-            <File>
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\Src\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>bc28.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Src\bc28.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -557,6 +562,11 @@
               <FileName>sysclock.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SYSTEM\Src\sysclock.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SYSTEM\Src\usart.c</FilePath>
             </File>
           </Files>
         </Group>
