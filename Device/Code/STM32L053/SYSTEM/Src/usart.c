@@ -132,7 +132,7 @@ void USART1_Init(void)
     LL_USART_Enable(USART1);
 }
 
-
+// 中断方式接受一个char
 void LPUART1_IRQHandler(void)
 {
     char tmp;

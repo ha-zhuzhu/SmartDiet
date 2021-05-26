@@ -553,6 +553,11 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\Src\bc28.c</FilePath>
             </File>
+            <File>
+              <FileName>lcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Src\lcd.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
