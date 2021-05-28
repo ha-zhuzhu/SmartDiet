@@ -54,13 +54,11 @@
     <pin><id>R21.1</id></pin>
     <pin><id>U2.18</id></pin>
     </net>
-  <net><id>N32749</id>
+  <net><id>B-</id>
+    <pin><id>R46.1</id></pin>
     <pin><id>R29.1</id></pin>
+    <pin><id>R42.1</id></pin>
     <pin><id>J1.6</id></pin>
-    </net>
-  <net><id>N32527</id>
-    <pin><id>J1.4</id></pin>
-    <pin><id>R7.1</id></pin>
     </net>
   <net><id>INB-</id>
     <pin><id>U1.9</id></pin>
@@ -83,17 +81,24 @@
     <pin><id>D3.2</id></pin>
     <pin><id>C30.2</id></pin>
     </net>
-  <net><id>N32531</id>
-    <pin><id>J1.3</id></pin>
-    <pin><id>R30.1</id></pin>
-    </net>
   <net><id>USART1_RX</id>
     <pin><id>J12.3</id></pin>
     <pin><id>U5.43</id></pin>
     </net>
-  <net><id>N319904</id>
-    <pin><id>J1.5</id></pin>
+  <net><id>A+</id>
+    <pin><id>R43.1</id></pin>
+    <pin><id>J1.4</id></pin>
+    <pin><id>R7.1</id></pin>
+    </net>
+  <net><id>A-</id>
+    <pin><id>R44.1</id></pin>
+    <pin><id>J1.3</id></pin>
+    <pin><id>R30.1</id></pin>
+    </net>
+  <net><id>B++</id>
     <pin><id>R31.1</id></pin>
+    <pin><id>R41.2</id></pin>
+    <pin><id>R42.2</id></pin>
     </net>
   <net><id>3V3</id>
     <pin><id>C37.1</id></pin>
@@ -110,8 +115,8 @@
     <pin><id>U2.42</id></pin>
     <pin><id>R28.1</id></pin>
     <pin><id>J12.2</id></pin>
-    <pin><id>U9.4</id></pin>
     <pin><id>R18.2</id></pin>
+    <pin><id>U9.5</id></pin>
     <pin><id>C40.1</id></pin>
     </net>
   <net><id>BC28_RI</id>
@@ -135,6 +140,11 @@
   <net><id>LPUART1_TX</id>
     <pin><id>U5.21</id></pin>
     <pin><id>D4.CATHODE</id></pin>
+    </net>
+  <net><id>B+</id>
+    <pin><id>R45.1</id></pin>
+    <pin><id>R41.1</id></pin>
+    <pin><id>J1.5</id></pin>
     </net>
   <net><id>LPUART1_RX</id>
     <pin><id>U5.22</id></pin>
@@ -306,6 +316,10 @@
     <pin><id>U5.25</id></pin>
     </net>
   <net><id>GND</id>
+    <pin><id>R46.2</id></pin>
+    <pin><id>R45.2</id></pin>
+    <pin><id>R44.2</id></pin>
+    <pin><id>R43.2</id></pin>
     <pin><id>R38.2</id></pin>
     <pin><id>J12.1</id></pin>
     <pin><id>U2.1</id></pin>
@@ -313,7 +327,7 @@
     <pin><id>U6.4</id></pin>
     <pin><id>U6.3</id></pin>
     <pin><id>C40.2</id></pin>
-    <pin><id>U9.5</id></pin>
+    <pin><id>U9.4</id></pin>
     <pin><id>R27.2</id></pin>
     <pin><id>R35.2</id></pin>
     <pin><id>C28.1</id></pin>
@@ -359,15 +373,15 @@
     <pin><id>R5.1</id></pin>
     <pin><id>C2.1</id></pin>
     <pin><id>U1.15</id></pin>
-    <pin><id>C1.1</id></pin>
-    <pin><id>J11.1</id></pin>
     <pin><id>R26.1</id></pin>
+    <pin><id>J11.1</id></pin>
+    <pin><id>C1.1</id></pin>
     <pin><id>C39.2</id></pin>
     <pin><id>C8.1</id></pin>
-    <pin><id>C9.1</id></pin>
     <pin><id>J3.5</id></pin>
-    <pin><id>R19.2</id></pin>
+    <pin><id>C9.1</id></pin>
     <pin><id>J8.1</id></pin>
+    <pin><id>R19.2</id></pin>
     <pin><id>U9.2</id></pin>
     <pin><id>J9.1</id></pin>
     <pin><id>J10.1</id></pin>
@@ -416,8 +430,8 @@
     <pin><id>U6.10</id></pin>
     </net>
   <net><id>N79431</id>
-    <pin><id>R39.1</id></pin>
     <pin><id>R38.1</id></pin>
+    <pin><id>R39.1</id></pin>
     <pin><id>U9.3</id></pin>
     </net>
   <package><id>XTAL_ABS07-32768KHZ-T</id>
@@ -431,7 +445,7 @@
       </device>
     </package>
   <package><id>DBV0005A-IPC_B</id>
-    <device><id>TPS7A2033PDBVR_DBV0005A-IPC_B_TPS7A2033PDBVR</id>
+    <device><id>TPS7A2033PDBVR_0_DBV0005A-IPC_B_TPS7A2033PDBVR</id>
       <instance><id>U9</id></instance>
       </device>
     </package>
@@ -481,6 +495,16 @@
       </device>
     <device><id>R_R0805_ROLA_8.2K</id>
       <instance><id>R5</id></instance>
+      </device>
+    <device><id>R_R0805_ROLA_NC</id>
+      <instance><id>R46</id></instance>
+      <instance><id>R45</id></instance>
+      <instance><id>R44</id></instance>
+      <instance><id>R43</id></instance>
+      <instance><id>R42</id></instance>
+      </device>
+    <device><id>R_R0805_ROLA_0</id>
+      <instance><id>R41</id></instance>
       </device>
     <device><id>R_R0805_ROLA_20K</id>
       <instance><id>R40</id></instance>

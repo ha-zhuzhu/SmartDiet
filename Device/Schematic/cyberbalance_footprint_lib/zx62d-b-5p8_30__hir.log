@@ -1,0 +1,23 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    CREATE SYMBOL                                                    )
+(                                                                     )
+(    Drawing          : ZX62D-B-5P8_30__HIR.dra                       )
+(    Software Version : 17.4S015                                      )
+(    Date/Time        : Fri May 28 17:30:49 2021                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Create Symbol of type: PACKAGE
+    Directory = e:/Project/SmartDiet/Device/Schematic/cyberbalance_footprint_lib
+    Name      = zx62d-b-5p8_30__hir.psm
+    User      = Shire
+    Machine   = DESKTOP-KF0UK81
+
+
+Create symbol started.
+ 
+
+Create symbol completed.
+

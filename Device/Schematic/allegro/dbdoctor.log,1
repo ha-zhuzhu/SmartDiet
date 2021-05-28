@@ -4,60 +4,10 @@
 (                                                                     )
 (    Drawing          : CyberBalance.brd                              )
 (    Software Version : 17.4S015                                      )
-(    Date/Time        : Fri May 21 17:12:29 2021                      )
+(    Date/Time        : Fri May 28 17:01:06 2021                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
 
 
-ERROR: in PAD STACK padstack name = 64S044
-  ERROR(SPMHDB-254): Pad size does not match the extents of the pad shape.
-   Error was fixed.
-
-ERROR: in PAD STACK padstack name = 64S044
-  ERROR(SPMHDB-254): Pad size does not match the extents of the pad shape.
-   Error was fixed.
-  Layer TOP
-
-ERROR: in PAD STACK padstack name = 64S044
-  ERROR(SPMHDB-254): Pad size does not match the extents of the pad shape.
-   Error was fixed.
-  Layer BOTTOM
-
-ERROR: in PAD STACK padstack name = 64R044
-  ERROR(SPMHDB-254): Pad size does not match the extents of the pad shape.
-   Error was fixed.
-
-ERROR: in PAD STACK padstack name = 64R044
-  ERROR(SPMHDB-254): Pad size does not match the extents of the pad shape.
-   Error was fixed.
-  Layer TOP
-
-ERROR: in PAD STACK padstack name = 64R044
-  ERROR(SPMHDB-254): Pad size does not match the extents of the pad shape.
-   Error was fixed.
-  Layer BOTTOM
-
-ERROR: in PAD STACK padstack name = VIA12_STD-TH
-  ERROR(SPMHDB-254): Pad size does not match the extents of the pad shape.
-   Error was fixed.
-
-ERROR: in PAD STACK padstack name = VIA12_STD-TH
-  ERROR(SPMHDB-254): Pad size does not match the extents of the pad shape.
-   Error was fixed.
-  Layer TOP
-
-ERROR: in PAD STACK padstack name = VIA12_STD-TH
-  ERROR(SPMHDB-254): Pad size does not match the extents of the pad shape.
-   Error was fixed.
-  Layer BOTTOM
-
-ERROR: in ARC SEGMENT center = (551.93 611.93)
-  class = ETCH
-  subclass = BOTTOM 
-  ERROR(SPMHUT-144): Illegal arc specification.
-   Error was fixed.
-
-WARNING:   WARNING(SPMHDB-42): Run batch DRC to regenerate DRC errs.
-
-1 warnings, 10 errors detected, 10 errors  fixed.
+0 warnings, 0 errors detected, 0 errors could be fixed.

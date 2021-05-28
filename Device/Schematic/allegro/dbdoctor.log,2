@@ -4,15 +4,10 @@
 (                                                                     )
 (    Drawing          : CyberBalance.brd                              )
 (    Software Version : 17.4S015                                      )
-(    Date/Time        : Fri May 21 17:12:53 2021                      )
+(    Date/Time        : Fri May 28 17:10:04 2021                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
 
 
-Regenerating DRC
-  Original DRC errors:   357
-  Updated DRC errors:    357
-  DRC elapsed time:      00:00:01
-
-0 warnings, 0 errors detected, 0 errors  fixed.
+0 warnings, 0 errors detected, 0 errors could be fixed.

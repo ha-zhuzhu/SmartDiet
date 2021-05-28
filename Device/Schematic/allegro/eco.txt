@@ -2,85 +2,61 @@
 |                                 ECO   REPORT                                 |
 |                                                                    Page   1  |
 |------------------------------------------------------------------------------|
-|  E:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd              |
-|                                                    Fri May 21 15:40:39 2021  |
+|  e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd              |
+|                                                    Fri May 28 14:18:39 2021  |
 |------------------------------------------------------------------------------|
 | NET CHANGES                                                                  |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
 |   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-  BC28_RXD     pins ADDED TO this existing net (pins not previously on any net)
-                                 D4.ANODE                       
-                                 R40.1                          
+  B+           net RENAMED (to net name listed on right)           B++          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
-  LPUART1_TX   pins ADDED TO this existing net (pins not previously on any net)
-                                 D4.CATHODE                     
+  INB+         pins MOVED FROM this net (to net name listed on right)
+                                 R43.1                          
+                                                                             A+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
-  N35172       pins MOVED FROM this net (to net name listed on right)
-                                 U2.24            58.819 1256.53
-                                                                        VDD_EXT
+  INB-         pins MOVED FROM this net (to net name listed on right)
+                                 R44.1                          
+                                                                             A-
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
-  VDD_EXT      pins ADDED TO this new net
-                                 R40.2                          
+  N01191       pins MOVED FROM this net (to net name listed on right)
+                                 R45.1                          
+                                                                             B+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N32203       pins MOVED FROM this net (to net name listed on right)
+                                 R46.1                          
+                                                                             B-
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N32527       pins MOVED FROM this net (to net name listed on right)
+                                 J1.4             640.00 1420.00
+                                                                             A+
+                                 R7.1             532.25 1420.00
+                                                                             A+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N32531       pins MOVED FROM this net (to net name listed on right)
+                                 J1.3             640.00 1320.00
+                                                                             A-
+                                 R30.1            532.25 1340.00
+                                                                             A-
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N123214      pins MOVED FROM this net (to net name listed on right)
+                                 J1.5             640.00 1520.00
+                                                                             B+
+                                 R41.1            532.25 1500.00
+                                                                             B+
 |------------------------------------------------------------------------------|
 |                                 ECO   REPORT                                 |
 |                                                                    Page   2  |
 |------------------------------------------------------------------------------|
-|  E:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd              |
-|                                                    Fri May 21 15:40:39 2021  |
+|  e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd              |
+|                                                    Fri May 28 14:18:39 2021  |
 |------------------------------------------------------------------------------|
-| COMPONENT DEFINITION added to design                                         |
+| NET CHANGES                                                                  |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-|    device type                                                               |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- R_R0805_ROLA_20K
-|------------------------------------------------------------------------------|
-|                                 ECO   REPORT                                 |
-|                                                                    Page   3  |
 |------------------------------------------------------------------------------|
-|  E:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd              |
-|                                                    Fri May 21 15:40:39 2021  |
-|------------------------------------------------------------------------------|
-| COMPONENTS DELETED from design                                               |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-|    ref des        |    device type      |   x   |   y                        |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- C35                 C_C0805_ROLA_4.7U      40.000 1400.00
- R20                 R_R0805_ROLA_1K       400.000 1400.00
-|------------------------------------------------------------------------------|
-|                                 ECO   REPORT                                 |
-|                                                                    Page   4  |
-|------------------------------------------------------------------------------|
-|  E:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd              |
-|                                                    Fri May 21 15:40:39 2021  |
-|------------------------------------------------------------------------------|
-| COMPONENTS ADDED to design                                                   |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-|    ref des        |    device type                                           |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- D4                  D1N5819_1_DO214_D1N5819 
- R40                 R_R0805_ROLA_20K      
-|------------------------------------------------------------------------------|
-|                                 ECO   REPORT                                 |
-|                                                                    Page   5  |
-|------------------------------------------------------------------------------|
-|  E:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd              |
-|                                                    Fri May 21 15:40:39 2021  |
-|------------------------------------------------------------------------------|
-| SLOT PROPERTIES added to design                                              |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-|   slot_id    |   x   |   y   |   property   |             value              |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- D4.CATHODE                     PRIM_FILE      .\pstchip.dat
- D4.CATHODE                     SECTION        
- R40.2                          PRIM_FILE      .\pstchip.dat
- R40.2                          SECTION        
-|------------------------------------------------------------------------------|
-|       Nets changed          :       5                                        |
-|       Comp definitions added:       1                                        |
-|       Components added      :       2                                        |
-|       Components deleted    :       2                                        |
-|       Slot property added   :       4                                        |
+|       Nets changed          :      11                                        |
 |                                                                              |
-|   Total ECO changes reported:      14                                        |
+|   Total ECO changes reported:      11                                        |
 |------------------------------------------------------------------------------|

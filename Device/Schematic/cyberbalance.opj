@@ -1,6 +1,6 @@
 (ExpressProject "demo"
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S015 (3921426)  [2/23/2021]-[05/21/21]")
+  (SoftwareVersion "17.4-2019 S015 (3921426)  [2/23/2021]-[05/28/21]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library"
@@ -75,6 +75,10 @@
       (Sort User)))
   (Folder "Logs")
   (PartMRUSelector
+    (GND
+      (LibraryName
+         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
     (R
       (FullPartName "R.Normal")
       (LibraryName
@@ -88,10 +92,6 @@
       (FullPartName "20279-001E-01.Normal")
       (LibraryName
          "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\MYLIB\20279-001E-01.OLB")
-      (DeviceIndex "0"))
-    (GND
-      (LibraryName
-         "D:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
       (DeviceIndex "0"))
     (CON6A
       (FullPartName "CON6A.Normal")
@@ -216,14 +216,14 @@
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 256 0 733"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 372"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 5 28 5 5 28 28")
-        (Scroll "0 506")
-        (Zoom "160")
+        (Placement "44 0 1 -1 -1 5 28 5 767 28 394")
+        (Scroll "0 296")
+        (Zoom "82")
         (Occurrence "/"))
       (Path "E:\PROJECT\SMARTDIET\DEVICE\SCHEMATIC\CYBERBALANCE.DSN")
       (Schematic "SCHEMATIC1")

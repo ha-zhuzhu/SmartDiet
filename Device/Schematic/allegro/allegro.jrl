@@ -1,114 +1,1254 @@
 \t (00:00:14) allegro 17.4 S015 Windows SPB 64-bit Edition
-\t (00:00:14)     Journal start - Fri May 21 19:04:38 2021
-\t (00:00:14)         Host=DESKTOP-KF0UK81 User=Shire Pid=105724 CPUs=8
+\t (00:00:14)     Journal start - Fri May 28 17:47:00 2021
+\t (00:00:14)         Host=DESKTOP-KF0UK81 User=Shire Pid=30596 CPUs=8
 \t (00:00:14) CmdLine= D:\Cadence\Cadence_SPB_17.4-2019\tools\bin\allegro.exe
 \t (00:00:14) 
 \d (00:00:14) Design opened: e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd
-\i (00:00:14) trapsize 1651
 \i (00:00:14) generaledit 
-\i (00:00:24) reports 'Bill of Material Report' 
-\i (00:00:25) generaledit 
-\i (00:00:27) setwindow text
-\i (00:00:27) save
-\i (00:00:42) fillin "E:/Project/SmartDiet/Device/Schematic/BOM.htm"
-\t (00:00:42) BOM.htm: is text save file
-\i (00:00:44) close
-\t (01:40:17) Grids are drawn 8.00, 8.00 apart for enhanced viewing.
-\i (01:40:18) setwindow pcb
-\i (01:40:18) trapsize 698
-\i (03:24:07) zoom out 1 
-\i (03:24:07) setwindow pcb
-\i (03:24:07) zoom out 1448.06 1703.97
-\t (03:24:07) Grids are drawn 16.00, 16.00 apart for enhanced viewing.
-\i (03:24:07) trapsize 1397
-\i (03:24:07) zoom out 1 
-\i (03:24:07) setwindow pcb
-\i (03:24:07) zoom out 1967.06 1703.97
-\t (03:24:07) Grids are drawn 32.00, 32.00 apart for enhanced viewing.
-\i (03:24:07) trapsize 2794
-\i (03:24:07) zoom out 1 
-\i (03:24:07) setwindow pcb
-\i (03:24:07) zoom out 6218.81 -983.74
-\i (03:24:07) trapsize 3255
-\i (03:24:07) zoom out 1 
-\i (03:24:07) setwindow pcb
-\i (03:24:07) zoom out 5625.00 -1360.68
-\i (03:24:07) trapsize 3255
-\i (03:24:07) zoom in 1 
-\i (03:24:07) setwindow pcb
-\i (03:24:07) zoom in 5091.15 -748.70
-\t (03:24:07) Grids are drawn 16.00, 16.00 apart for enhanced viewing.
-\i (03:24:07) trapsize 1628
-\i (03:24:07) zoom in 1 
-\i (03:24:07) setwindow pcb
-\i (03:24:07) zoom in -904.95 -846.36
-\t (03:24:07) Grids are drawn 8.00, 8.00 apart for enhanced viewing.
-\i (03:24:07) trapsize 814
-\i (03:24:08) zoom in 1 
-\i (03:24:08) setwindow pcb
-\i (03:24:08) zoom in -820.31 -634.76
-\t (03:24:08) Grids are drawn 4.00, 4.00 apart for enhanced viewing.
-\i (03:24:08) trapsize 407
-\i (03:24:08) pick grid 192.06 -556.63
-\t (03:24:08) last pick:  192.00 -557.00
-\i (03:24:09) roam y -96 
-\i (03:24:09) roam y -96
-\i (03:24:09) roam y -96 
-\i (03:24:09) roam y -96
-\i (03:24:09) roam y -96 
-\i (03:24:09) roam y -96
-\i (03:24:09) roam y -96 
-\i (03:24:09) roam y -96
-\i (03:24:09) roam y -96 
-\i (03:24:09) roam y -96
-\i (03:24:09) roam y -96 
-\i (03:24:09) roam y -96
-\i (03:24:09) roam y -96 
-\i (03:24:09) roam y -96
-\i (03:24:09) roam y -96 
-\i (03:24:09) roam y -96
-\i (03:24:09) roam y -96 
-\i (03:24:09) roam y -96
-\i (03:24:10) roam y -96 
-\i (03:24:10) roam y -96
-\i (03:24:10) roam y -96 
-\i (03:24:10) roam y -96
-\i (03:24:10) roam y -96 
-\i (03:24:10) roam y -96
-\i (03:24:10) roam x 96 
-\i (03:24:10) roam x 96
-\i (03:24:10) roam x 96 
-\i (03:24:10) roam x 96
-\i (03:24:10) roam x 96 
-\i (03:24:10) roam x 96
-\i (03:24:10) roam x 96 
-\i (03:24:10) roam x 96
-\i (03:24:10) roam x 96 
-\i (03:24:10) roam x 96
-\i (03:24:10) roam x 96 
-\i (03:24:10) roam x 96
-\i (03:24:10) roam x 96 
-\i (03:24:10) roam x 96
-\i (03:24:10) roam x 96 
-\i (03:24:10) roam x 96
-\i (03:24:10) roam x 96 
-\i (03:24:10) roam x 96
-\i (03:24:10) roam x 96 
-\i (03:24:10) roam x 96
-\i (03:24:11) roam x 96 
-\i (03:24:11) roam x 96
-\i (03:24:11) roam x 96 
-\i (03:24:11) roam x 96
-\i (03:24:11) roam y -96 
-\i (03:24:11) roam y -96
-\i (03:24:11) roam x 96 
-\i (03:24:11) roam x 96
-\i (03:24:11) roam y -96 
-\i (03:24:11) roam y -96
-\i (03:24:11) zoom in 1 
-\i (03:24:11) setwindow pcb
-\i (03:24:11) zoom in 836.58 512.69
-\t (03:24:11) Grids are drawn 2.00, 2.00 apart for enhanced viewing.
-\i (03:24:11) trapsize 203
-\i (04:52:44) exit 
-\t (04:52:46)     Journal end - Fri May 21 23:57:10 2021
+\i (00:00:17) silkscreen param 
+\i (00:00:21) setwindow form.autosilk
+\i (00:00:21) FORM autosilk lock_autosilk_text YES 
+\i (00:00:26) FORM autosilk done  
+\i (00:00:26) setwindow pcb
+\i (00:00:26) silkscreen execute 
+\i (00:00:27) generaledit 
+\i (00:00:28) zoom in 1 
+\i (00:00:28) setwindow pcb
+\i (00:00:28) zoom in 1060.92 94.35
+\t (00:00:28) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
+\i (00:00:28) trapsize 711
+\i (00:00:30) roam y -96 
+\i (00:00:30) roam y -96
+\i (00:00:30) roam x 96 
+\i (00:00:30) roam x 96
+\i (00:00:30) roam y -96 
+\i (00:00:30) roam y -96
+\i (00:00:30) roam x 96 
+\i (00:00:30) roam x 96
+\i (00:00:30) roam y -96 
+\i (00:00:30) roam y -96
+\i (00:00:31) roam y -96 
+\i (00:00:31) roam y -96
+\i (00:00:31) roam x 96 
+\i (00:00:31) roam x 96
+\i (00:00:31) roam y -96 
+\i (00:00:31) roam y -96
+\i (00:00:31) roam y -96 
+\i (00:00:31) roam y -96
+\i (00:00:31) roam y -96 
+\i (00:00:31) roam y -96
+\i (00:00:31) roam y -96 
+\i (00:00:31) roam y -96
+\i (00:00:32) roam y -96 
+\i (00:00:32) roam y -96
+\i (00:00:32) roam y -96 
+\i (00:00:32) roam y -96
+\i (00:00:32) roam y -96 
+\i (00:00:32) roam y -96
+\i (00:00:32) roam y 96 
+\i (00:00:32) roam y 96
+\i (00:00:33) roam x 96 
+\i (00:00:33) roam x 96
+\i (00:00:33) roam y 96 
+\i (00:00:33) roam y 96
+\i (00:00:33) zoom out 1 
+\i (00:00:33) setwindow pcb
+\i (00:00:33) zoom out 1518.62 1466.02
+\t (00:00:33) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:00:33) trapsize 1421
+\i (00:00:33) roam x -96 
+\i (00:00:33) roam x -96
+\i (00:00:34) roam y 96 
+\i (00:00:34) roam y 96
+\i (00:00:34) roam x -96 
+\i (00:00:34) roam x -96
+\i (00:00:37) roam x -96 
+\i (00:00:37) roam x -96
+\i (00:00:37) roam x -96 
+\i (00:00:37) roam x -96
+\i (00:00:38) roam y -96 
+\i (00:00:38) roam y -96
+\i (00:00:38) zoom in 1 
+\i (00:00:38) setwindow pcb
+\i (00:00:38) zoom in 424.13 1464.60
+\t (00:00:38) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
+\i (00:00:38) trapsize 711
+\i (00:00:39) roam x 96 
+\i (00:00:39) roam x 96
+\i (00:00:39) roam y -96 
+\i (00:00:39) roam y -96
+\i (00:00:41) undo 
+\i (00:00:41) generaledit 
+\i (00:00:42) undo 
+\i (00:00:42) undo 
+\i (00:00:42) generaledit 
+\i (00:00:42) undo 
+\i (00:00:43) undo 
+\i (00:00:43) generaledit 
+\i (00:00:43) undo 
+\i (00:00:43) undo 
+\i (00:00:43) generaledit 
+\i (00:00:43) undo 
+\i (00:00:44) undo 
+\i (00:00:44) generaledit 
+\i (00:00:44) undo 
+\i (00:00:44) generaledit 
+\i (00:00:46) zoom out 1 
+\i (00:00:46) setwindow pcb
+\i (00:00:46) zoom out 560.59 1599.64
+\t (00:00:46) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:00:46) trapsize 1421
+\i (00:00:47) roam y 96 
+\i (00:00:47) roam y 96
+\i (00:00:47) roam y 96 
+\i (00:00:47) roam y 96
+\i (00:00:47) roam y 96 
+\i (00:00:47) roam y 96
+\i (00:00:47) roam y 96 
+\i (00:00:47) roam y 96
+\i (00:00:48) roam x 96 
+\i (00:00:48) roam x 96
+\i (00:00:48) roam y -96 
+\i (00:00:48) roam y -96
+\i (00:00:48) roam y 96 
+\i (00:00:48) roam y 96
+\i (00:00:48) roam y 96 
+\i (00:00:48) roam y 96
+\i (00:00:49) zoom in 1 
+\i (00:00:49) setwindow pcb
+\i (00:00:49) zoom in 833.50 233.65
+\t (00:00:49) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
+\i (00:00:49) trapsize 711
+\i (00:00:49) roam y -96 
+\i (00:00:49) roam y -96
+\i (00:00:49) roam x -96 
+\i (00:00:49) roam x -96
+\i (00:00:51) roam y -96 
+\i (00:00:51) roam y -96
+\i (00:00:51) roam x 96 
+\i (00:00:51) roam x 96
+\i (00:00:52) roam x 96 
+\i (00:00:52) roam x 96
+\i (00:00:52) roam x 96 
+\i (00:00:52) roam x 96
+\i (00:00:52) roam x 96 
+\i (00:00:52) roam x 96
+\i (00:00:52) roam y 96 
+\i (00:00:52) roam y 96
+\i (00:00:52) roam x 96 
+\i (00:00:52) roam x 96
+\i (00:00:54) roam x -96 
+\i (00:00:54) roam x -96
+\i (00:00:54) roam y 96 
+\i (00:00:54) roam y 96
+\i (00:00:54) roam y 96 
+\i (00:00:54) roam y 96
+\i (00:00:54) roam x -96 
+\i (00:00:54) roam x -96
+\i (00:00:55) roam x -96 
+\i (00:00:55) roam x -96
+\i (00:00:55) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged "Start Page"
+\i (00:00:56) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged CyberBalance
+\i (00:00:56) opencd e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd 
+\e (00:00:57) Do you want to save the changes you made to CyberBalance.brd?
+\i (00:00:59) fillin no 
+\t (00:00:59) Opening existing design...
+\t (00:00:59) Grids are drawn 5120.00, 5120.00 apart for enhanced viewing.
+\t (00:00:59) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:00:59) trapsize 1421
+\d (00:00:59) Design opened: e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd
+\i (00:00:59) generaledit 
+\i (00:01:00) roam y -96 
+\i (00:01:00) roam y -96
+\i (00:01:00) roam y -96 
+\i (00:01:00) roam y -96
+\i (00:01:00) roam y -96 
+\i (00:01:00) roam y -96
+\i (00:01:02) zoom out 1 
+\i (00:01:02) setwindow pcb
+\i (00:01:02) zoom out 1117.78 1023.97
+\t (00:01:02) Grids are drawn 40.00, 40.00 apart for enhanced viewing.
+\i (00:01:02) trapsize 2843
+\i (00:01:03) zoom in 1 
+\i (00:01:03) setwindow pcb
+\i (00:01:03) zoom in 1117.78 1023.96
+\t (00:01:03) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:01:03) trapsize 1421
+\i (00:01:10) roam y -96 
+\i (00:01:10) roam y -96
+\i (00:01:10) roam x -96 
+\i (00:01:10) roam x -96
+\i (00:01:10) roam y 96 
+\i (00:01:10) roam y 96
+\i (00:01:11) roam x 96 
+\i (00:01:11) roam x 96
+\i (00:01:11) zoom out 1 
+\i (00:01:11) setwindow pcb
+\i (00:01:11) zoom out 1120.62 1029.65
+\t (00:01:11) Grids are drawn 40.00, 40.00 apart for enhanced viewing.
+\i (00:01:11) trapsize 2843
+\i (00:01:11) roam y 96 
+\i (00:01:11) roam y 96
+\i (00:01:12) roam x 96 
+\i (00:01:12) roam x 96
+\i (00:01:15) zoom in 1 
+\i (00:01:15) setwindow pcb
+\i (00:01:15) zoom in 2573.31 492.36
+\t (00:01:15) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:01:15) trapsize 1421
+\i (00:01:15) zoom out 1 
+\i (00:01:15) setwindow pcb
+\i (00:01:15) zoom out 2573.32 492.36
+\t (00:01:15) Grids are drawn 40.00, 40.00 apart for enhanced viewing.
+\i (00:01:15) trapsize 2843
+\i (00:01:29) pick grid 2254.92 958.58
+\t (00:01:29) last pick:  2255.00 960.00
+\i (00:02:43) define subclass 
+\i (00:02:49) setwindow form.subclass
+\i (00:02:49) FORM subclass component_value pick  
+\i (00:02:54) FORM subclass manufacturing pick  
+\i (00:03:06) setwindow form.subclass_nonetch
+\i (00:03:06) FORM subclass_nonetch name silktop_backup 
+\i (00:03:21) FORM subclass_nonetch name silkbottom_backup 
+\i (00:03:23) FORM subclass_nonetch help  
+\i (00:03:37) setwindow form.subclass
+\i (00:03:37) FORM subclass done  
+\i (00:03:37) setwindow pcb
+\i (00:03:37) generaledit 
+\i (00:03:37) pick grid 2846.23 935.84
+\t (00:03:37) last pick:  2845.00 935.00
+\i (00:03:40) pick grid 3153.25 606.07
+\t (00:03:40) last pick:  3155.00 605.00
+\i (00:03:46) copy 
+\t (00:03:46) Select the element(s) to copy.
+\i (00:03:50) setwindow form.find
+\i (00:03:50) FORM find all_off  
+\i (00:03:51) FORM find text YES 
+\i (00:03:52) setwindow pcb
+\i (00:03:52) drag_start grid -531.06 2220.80
+\i (00:03:53) drag_stop 2982.68 -326.38
+\i (00:04:01) prepopup 2584.68 1640.86
+\i (00:04:08) prepopup 1595.38 2152.57
+\i (00:04:10) cancel 
+\i (00:04:10) generaledit 
+\i (00:04:12) change 
+\i (00:04:27) setwindow form.mini
+\i (00:04:27) FORM mini change_subclass SILKTOP_BACKUP 
+\i (00:04:36) setwindow pcb
+\i (00:04:36) drag_start grid -462.83 2232.17
+\i (00:04:36) drag_stop 3392.05 -337.75
+\t (00:04:36) No DRC errors detected.
+\t (00:04:36) Changed 70 items out of 70 items found.
+\i (00:04:39) prepopup 2698.40 1538.52
+\i (00:04:40) done 
+\i (00:04:40) generaledit 
+\i (00:04:51) silkscreen param 
+\i (00:04:54) setwindow form.autosilk
+\i (00:04:54) FORM autosilk done  
+\i (00:04:54) setwindow pcb
+\i (00:04:54) silkscreen execute 
+\i (00:04:54) generaledit 
+\i (00:04:55) zoom in 1 
+\i (00:04:55) setwindow pcb
+\i (00:04:55) zoom in 287.68 1788.69
+\t (00:04:55) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:04:55) trapsize 1421
+\i (00:04:57) delete 
+\i (00:04:57) zoom in 1 
+\i (00:04:57) setwindow pcb
+\i (00:04:57) zoom in -212.66 1885.35
+\t (00:04:57) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
+\i (00:04:57) trapsize 711
+\i (00:04:58) pick grid -2.29 1859.77
+\t (00:04:58) last pick:  0.00 1860.00
+\t (00:04:58) Line "Manufacturing/Autosilk_Top"
+\i (00:04:58) pick grid dbl 0.56 1859.77
+\t (00:04:58) last pick:  0.00 1860.00
+\i (00:04:59) zoom out 1 
+\i (00:04:59) setwindow pcb
+\i (00:04:59) zoom out 0.56 1859.77
+\t (00:04:59) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:04:59) trapsize 1421
+\i (00:04:59) zoom out 1 
+\i (00:04:59) setwindow pcb
+\i (00:04:59) zoom out 0.55 1859.76
+\t (00:04:59) Grids are drawn 40.00, 40.00 apart for enhanced viewing.
+\i (00:04:59) trapsize 2843
+\i (00:05:00) prepopup -749.95 1723.30
+\i (00:05:00) done 
+\i (00:05:00) generaledit 
+\i (00:05:03) delete 
+\i (00:05:04) setwindow form.find
+\i (00:05:04) FORM find all_off  
+\i (00:05:06) FORM find text YES 
+\i (00:05:07) setwindow pcb
+\i (00:05:07) drag_start grid -499.78 2212.27
+\i (00:05:08) drag_stop 3844.07 -664.68
+\i (00:05:09) prepopup 2490.88 1427.65
+\i (00:05:09) done 
+\i (00:05:09) generaledit 
+\i (00:05:14) color192 
+\i (00:05:15) generaledit 
+\i (00:05:17) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Manufacturing
+\i (00:05:19) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Autosilk_Top" Mfg 0
+\i (00:05:19) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 1 0
+\i (00:05:19) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:05:23) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silktop_Backup" Mfg 1
+\i (00:05:23) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 15 0
+\i (00:05:23) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:05:24) QtSignal ColorVisibilityDialog CVDOkButton clicked
+\i (00:05:28) change 
+\i (00:05:33) setwindow form.mini
+\i (00:05:33) FORM mini change_subclass AUTOSILK_TOP 
+\i (00:05:34) setwindow pcb
+\i (00:05:34) drag_start grid -636.24 2200.90
+\i (00:05:36) drag_stop 3582.53 -459.99
+\t (00:05:36) No DRC errors detected.
+\t (00:05:36) Changed 70 items out of 70 items found.
+\i (00:05:38) prepopup 2843.39 1609.59
+\i (00:05:38) done 
+\i (00:05:38) generaledit 
+\i (00:05:42) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: drill"
+\i (00:05:42) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: drill"
+\i (00:05:44) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: silkscreen_top"
+\i (00:05:44) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: silkscreen_top"
+\i (00:05:49) zoom in 1 
+\i (00:05:49) setwindow pcb
+\i (00:05:49) zoom in 762.44 131.32
+\t (00:05:49) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:05:49) trapsize 1421
+\i (00:05:49) zoom in 1 
+\i (00:05:49) setwindow pcb
+\i (00:05:49) zoom in 762.44 131.32
+\t (00:05:49) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
+\i (00:05:49) trapsize 711
+\i (00:05:53) QtSignal CVPLayerGrid CVPButtonViaTop clicked
+\i (00:05:54) QtSignal CVPLayerGrid CVPButtonPinTop clicked
+\i (00:05:54) zoom out 1 
+\i (00:05:55) setwindow pcb
+\i (00:05:55) zoom out 716.96 415.61
+\t (00:05:55) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:05:55) trapsize 1421
+\i (00:05:56) pick grid 1791.55 -79.05
+\t (00:05:56) last pick:  1790.00 -80.00
+\i (00:05:56) roam x 96 
+\i (00:05:56) roam x 96
+\i (00:05:56) roam y -96 
+\i (00:05:56) roam y -96
+\i (00:05:57) roam y -96 
+\i (00:05:57) roam y -96
+\i (00:05:57) roam y -96 
+\i (00:05:57) roam y -96
+\i (00:05:57) roam y -96 
+\i (00:05:57) roam y -96
+\i (00:05:57) roam y -96 
+\i (00:05:57) roam y -96
+\i (00:05:57) roam x -96 
+\i (00:05:57) roam x -96
+\i (00:05:58) zoom in 1 
+\i (00:05:58) setwindow pcb
+\i (00:05:58) zoom in 1814.28 1501.56
+\t (00:05:58) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
+\i (00:05:58) trapsize 711
+\i (00:06:00) roam x 96 
+\i (00:06:00) roam x 96
+\i (00:06:00) roam y 96 
+\i (00:06:00) roam y 96
+\i (00:06:01) roam y 96 
+\i (00:06:01) roam y 96
+\i (00:06:01) roam x 96 
+\i (00:06:01) roam x 96
+\i (00:06:02) delete 
+\i (00:06:02) roam y -96 
+\i (00:06:02) roam y -96
+\i (00:06:02) zoom in 1 
+\i (00:06:02) setwindow pcb
+\i (00:06:02) zoom in 2044.55 1448.96
+\i (00:06:02) trapsize 355
+\i (00:06:03) roam y -96 
+\i (00:06:03) roam y -96
+\i (00:06:04) roam y -96 
+\i (00:06:04) roam y -96
+\i (00:06:06) setwindow form.find
+\i (00:06:06) FORM find all_off  
+\i (00:06:07) FORM find lines YES 
+\i (00:06:08) setwindow pcb
+\i (00:06:08) pick grid 1935.10 1638.73
+\t (00:06:08) last pick:  1935.00 1640.00
+\t (00:06:08) Line "Manufacturing/Autosilk_Top"
+\i (00:06:08) pick grid dbl 1935.10 1638.73
+\t (00:06:08) last pick:  1935.00 1640.00
+\i (00:06:08) roam y 96 
+\i (00:06:08) roam y 96
+\i (00:06:08) roam y 96 
+\i (00:06:08) roam y 96
+\i (00:06:08) roam y 96 
+\i (00:06:08) roam y 96
+\i (00:06:08) roam y 96 
+\i (00:06:08) roam y 96
+\i (00:06:08) roam y 96 
+\i (00:06:08) roam y 96
+\i (00:06:08) roam y 96 
+\i (00:06:08) roam y 96
+\i (00:06:08) roam y 96 
+\i (00:06:08) roam y 96
+\i (00:06:08) roam y 96 
+\i (00:06:08) roam y 96
+\i (00:06:09) pick grid 1902.41 1041.73
+\t (00:06:09) last pick:  1900.00 1040.00
+\t (00:06:09) Line "Manufacturing/Autosilk_Top"
+\i (00:06:10) pick grid dbl 1902.41 1041.73
+\t (00:06:10) last pick:  1900.00 1040.00
+\i (00:06:10) prepopup 1832.76 1063.06
+\i (00:06:10) done 
+\i (00:06:10) generaledit 
+\i (00:06:10) roam x -96 
+\i (00:06:10) roam x -96
+\i (00:06:11) roam y -96 
+\i (00:06:11) roam y -96
+\i (00:06:11) zoom out 1 
+\i (00:06:11) setwindow pcb
+\i (00:06:11) zoom out 1763.11 1128.44
+\i (00:06:11) trapsize 711
+\i (00:06:11) roam x -96 
+\i (00:06:11) roam x -96
+\i (00:06:11) roam y -96 
+\i (00:06:11) roam y -96
+\i (00:06:11) roam x -96 
+\i (00:06:11) roam x -96
+\i (00:06:11) roam y -96 
+\i (00:06:11) roam y -96
+\i (00:06:11) roam y -96 
+\i (00:06:11) roam y -96
+\i (00:06:11) roam x -96 
+\i (00:06:11) roam x -96
+\i (00:06:12) roam y -96 
+\i (00:06:12) roam y -96
+\i (00:06:12) roam x -96 
+\i (00:06:12) roam x -96
+\i (00:06:12) roam x -96 
+\i (00:06:12) roam x -96
+\i (00:06:12) roam y -96 
+\i (00:06:12) roam y -96
+\i (00:06:12) roam x -96 
+\i (00:06:12) roam x -96
+\i (00:06:13) roam x -96 
+\i (00:06:13) roam x -96
+\i (00:06:13) zoom in 1 
+\i (00:06:13) setwindow pcb
+\i (00:06:13) zoom in 655.82 1730.41
+\i (00:06:13) trapsize 355
+\i (00:06:13) roam x -96 
+\i (00:06:13) roam x -96
+\i (00:06:14) roam y 96 
+\i (00:06:14) roam y 96
+\i (00:06:14) delete 
+\i (00:06:15) pick grid 711.25 1747.47
+\t (00:06:15) last pick:  710.00 1745.00
+\t (00:06:15) Line "Manufacturing/Autosilk_Top"
+\i (00:06:15) pick grid dbl 711.25 1747.47
+\t (00:06:15) last pick:  710.00 1745.00
+\i (00:06:15) prepopup 711.25 1747.47
+\i (00:06:16) done 
+\i (00:06:16) generaledit 
+\i (00:06:16) roam x 96 
+\i (00:06:16) roam x 96
+\i (00:06:16) roam y 96 
+\i (00:06:16) roam y 96
+\i (00:06:16) zoom out 1 
+\i (00:06:16) setwindow pcb
+\i (00:06:16) zoom out 742.53 1662.18
+\i (00:06:16) trapsize 711
+\i (00:06:17) roam y -96 
+\i (00:06:17) roam y -96
+\i (00:06:17) roam x 96 
+\i (00:06:17) roam x 96
+\i (00:06:17) roam x 96 
+\i (00:06:17) roam x 96
+\i (00:06:17) roam x 96 
+\i (00:06:17) roam x 96
+\i (00:06:18) roam y 96 
+\i (00:06:18) roam y 96
+\i (00:06:18) roam y 96 
+\i (00:06:18) roam y 96
+\i (00:06:19) roam x 96 
+\i (00:06:19) roam x 96
+\i (00:06:19) roam y 96 
+\i (00:06:19) roam y 96
+\i (00:06:19) roam x 96 
+\i (00:06:19) roam x 96
+\i (00:06:19) roam x 96 
+\i (00:06:19) roam x 96
+\i (00:06:19) roam y 96 
+\i (00:06:19) roam y 96
+\i (00:06:19) roam y 96 
+\i (00:06:19) roam y 96
+\i (00:06:20) roam y 96 
+\i (00:06:20) roam y 96
+\i (00:06:20) roam x -96 
+\i (00:06:20) roam x -96
+\i (00:06:20) roam x -96 
+\i (00:06:20) roam x -96
+\i (00:06:20) roam y 96 
+\i (00:06:20) roam y 96
+\i (00:06:20) roam y 96 
+\i (00:06:20) roam y 96
+\i (00:06:20) roam y 96 
+\i (00:06:20) roam y 96
+\i (00:06:20) roam x -96 
+\i (00:06:20) roam x -96
+\i (00:06:21) roam y 96 
+\i (00:06:21) roam y 96
+\i (00:06:22) roam x -96 
+\i (00:06:22) roam x -96
+\i (00:06:22) roam y 96 
+\i (00:06:22) roam y 96
+\i (00:06:22) roam x -96 
+\i (00:06:22) roam x -96
+\i (00:06:24) roam x -96 
+\i (00:06:24) roam x -96
+\i (00:06:24) roam y 96 
+\i (00:06:24) roam y 96
+\i (00:06:26) roam y -96 
+\i (00:06:26) roam y -96
+\i (00:06:26) roam x -96 
+\i (00:06:26) roam x -96
+\i (00:06:27) roam y -96 
+\i (00:06:27) roam y -96
+\i (00:06:27) roam x -96 
+\i (00:06:27) roam x -96
+\i (00:06:28) roam y -96 
+\i (00:06:28) roam y -96
+\i (00:06:28) roam x -96 
+\i (00:06:28) roam x -96
+\i (00:06:28) roam y -96 
+\i (00:06:28) roam y -96
+\i (00:06:29) roam x 96 
+\i (00:06:29) roam x 96
+\i (00:06:29) roam y -96 
+\i (00:06:29) roam y -96
+\i (00:06:29) roam y -96 
+\i (00:06:29) roam y -96
+\i (00:06:29) roam x 96 
+\i (00:06:29) roam x 96
+\i (00:06:30) roam x 96 
+\i (00:06:30) roam x 96
+\i (00:06:30) roam y -96 
+\i (00:06:30) roam y -96
+\i (00:06:30) roam y -96 
+\i (00:06:30) roam y -96
+\i (00:06:30) roam x 96 
+\i (00:06:30) roam x 96
+\i (00:06:30) roam y -96 
+\i (00:06:30) roam y -96
+\i (00:06:30) roam x -96 
+\i (00:06:30) roam x -96
+\i (00:06:30) roam y -96 
+\i (00:06:30) roam y -96
+\i (00:06:31) roam y -96 
+\i (00:06:31) roam y -96
+\i (00:06:31) roam x -96 
+\i (00:06:31) roam x -96
+\i (00:06:31) prepopup 607.49 1662.18
+\i (00:06:32) pick grid 965.68 1821.38
+\t (00:06:32) last pick:  965.00 1820.00
+\i (00:06:33) roam x 96 
+\i (00:06:33) roam x 96
+\i (00:06:33) roam x 96 
+\i (00:06:33) roam x 96
+\i (00:06:33) roam y -96 
+\i (00:06:33) roam y -96
+\i (00:06:33) roam x 96 
+\i (00:06:33) roam x 96
+\i (00:06:33) roam x 96 
+\i (00:06:33) roam x 96
+\i (00:06:33) roam y 96 
+\i (00:06:33) roam y 96
+\i (00:06:35) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: silkscreen_bottom"
+\i (00:06:35) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: silkscreen_bottom"
+\i (00:06:37) QtSignal CVPLayerGrid CVPButtonEtchBottom clicked
+\i (00:06:38) QtSignal CVPLayerGrid CVPButtonViaBottom clicked
+\i (00:06:38) QtSignal CVPLayerGrid CVPButtonPinBottom clicked
+\i (00:06:39) QtSignal CVPLayerGrid CVPButtonEtchBottom clicked
+\i (00:06:39) roam y 96 
+\i (00:06:39) roam y 96
+\i (00:06:40) roam x -96 
+\i (00:06:40) roam x -96
+\i (00:06:40) roam y -96 
+\i (00:06:40) roam y -96
+\i (00:06:40) roam y -96 
+\i (00:06:40) roam y -96
+\i (00:06:40) roam y 96 
+\i (00:06:40) roam y 96
+\i (00:06:41) roam y 96 
+\i (00:06:41) roam y 96
+\i (00:06:42) roam y 96 
+\i (00:06:42) roam y 96
+\i (00:06:42) roam y 96 
+\i (00:06:42) roam y 96
+\i (00:06:42) roam y 96 
+\i (00:06:42) roam y 96
+\i (00:06:42) roam y 96 
+\i (00:06:42) roam y 96
+\i (00:06:42) roam y 96 
+\i (00:06:42) roam y 96
+\i (00:06:42) roam y 96 
+\i (00:06:42) roam y 96
+\i (00:06:43) roam x 96 
+\i (00:06:43) roam x 96
+\i (00:06:43) roam y 96 
+\i (00:06:43) roam y 96
+\i (00:06:45) roam y 96 
+\i (00:06:45) roam y 96
+\i (00:06:45) roam x -96 
+\i (00:06:45) roam x -96
+\i (00:06:46) roam x -96 
+\i (00:06:46) roam x -96
+\i (00:06:46) roam y -96 
+\i (00:06:46) roam y -96
+\i (00:06:46) roam y -96 
+\i (00:06:46) roam y -96
+\i (00:06:46) roam x -96 
+\i (00:06:46) roam x -96
+\i (00:06:46) zoom out 1 
+\i (00:06:46) setwindow pcb
+\i (00:06:46) zoom out 1318.20 601.81
+\t (00:06:46) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:06:46) trapsize 1421
+\i (00:06:46) zoom out 1 
+\i (00:06:46) setwindow pcb
+\i (00:06:46) zoom out 1318.20 601.81
+\t (00:06:46) Grids are drawn 40.00, 40.00 apart for enhanced viewing.
+\i (00:06:46) trapsize 2843
+\i (00:06:47) roam y -96 
+\i (00:06:47) roam y -96
+\i (00:06:47) roam x 96 
+\i (00:06:47) roam x 96
+\i (00:06:47) roam x 96 
+\i (00:06:47) roam x 96
+\i (00:06:48) roam x 96 
+\i (00:06:48) roam x 96
+\i (00:06:50) change 
+\i (00:07:02) setwindow form.mini
+\i (00:07:02) FORM mini change_subclass SILKBOTTOM_BACKUP 
+\i (00:07:04) setwindow pcb
+\i (00:07:04) drag_start grid -656.15 2260.59
+\i (00:07:04) drag_stop 2937.19 -423.04
+\t (00:07:04) No DRC errors detected.
+\t (00:07:04) Changed 34 items out of 34 items found.
+\i (00:07:06) prepopup 2664.28 1419.11
+\i (00:07:09) done 
+\i (00:07:09) generaledit 
+\i (00:07:12) silkscreen param 
+\i (00:07:13) setwindow form.autosilk
+\i (00:07:13) FORM autosilk bottom_layer YES 
+\i (00:07:19) FORM autosilk done  
+\i (00:07:19) setwindow pcb
+\i (00:07:19) silkscreen execute 
+\i (00:07:19) generaledit 
+\i (00:07:22) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: silkscreen_top"
+\i (00:07:22) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: silkscreen_top"
+\i (00:07:23) zoom in 1 
+\i (00:07:23) setwindow pcb
+\i (00:07:23) zoom in 2107.08 1407.74
+\t (00:07:23) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:07:23) trapsize 1421
+\i (00:07:24) roam x -96 
+\i (00:07:24) roam x -96
+\i (00:07:25) roam x -96 
+\i (00:07:25) roam x -96
+\i (00:07:25) roam y -96 
+\i (00:07:25) roam y -96
+\i (00:07:25) roam y 96 
+\i (00:07:25) roam y 96
+\i (00:07:26) roam x 96 
+\i (00:07:26) roam x 96
+\i (00:07:26) roam y 96 
+\i (00:07:26) roam y 96
+\i (00:07:26) roam x -96 
+\i (00:07:26) roam x -96
+\i (00:07:27) roam y 96 
+\i (00:07:27) roam y 96
+\i (00:07:27) roam y 96 
+\i (00:07:27) roam y 96
+\i (00:07:27) roam x -96 
+\i (00:07:27) roam x -96
+\i (00:07:29) roam x -96 
+\i (00:07:29) roam x -96
+\i (00:07:30) roam y -96 
+\i (00:07:30) roam y -96
+\i (00:07:31) roam y -96 
+\i (00:07:31) roam y -96
+\i (00:07:31) roam y -96 
+\i (00:07:31) roam y -96
+\i (00:07:31) roam y -96 
+\i (00:07:31) roam y -96
+\i (00:07:32) roam x 96 
+\i (00:07:32) roam x 96
+\i (00:07:32) roam y 96 
+\i (00:07:32) roam y 96
+\i (00:07:32) roam y 96 
+\i (00:07:32) roam y 96
+\i (00:07:32) roam x 96 
+\i (00:07:32) roam x 96
+\i (00:07:33) roam y 96 
+\i (00:07:33) roam y 96
+\i (00:07:34) roam y -96 
+\i (00:07:34) roam y -96
+\i (00:07:34) roam x -96 
+\i (00:07:34) roam x -96
+\i (00:07:34) zoom in 1 
+\i (00:07:34) setwindow pcb
+\i (00:07:34) zoom in 1112.09 1166.11
+\t (00:07:34) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
+\i (00:07:34) trapsize 711
+\i (00:07:35) roam x 96 
+\i (00:07:35) roam x 96
+\i (00:07:35) roam y 96 
+\i (00:07:35) roam y 96
+\i (00:07:36) roam x 96 
+\i (00:07:36) roam x 96
+\i (00:07:36) roam y 96 
+\i (00:07:36) roam y 96
+\i (00:07:36) roam y 96 
+\i (00:07:36) roam y 96
+\i (00:07:36) roam x 96 
+\i (00:07:36) roam x 96
+\i (00:07:36) roam y 96 
+\i (00:07:36) roam y 96
+\i (00:07:36) roam x 96 
+\i (00:07:36) roam x 96
+\i (00:07:37) roam y 96 
+\i (00:07:37) roam y 96
+\i (00:07:37) zoom out 1 
+\i (00:07:37) setwindow pcb
+\i (00:07:37) zoom out 1726.14 463.93
+\t (00:07:37) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:07:37) trapsize 1421
+\i (00:07:38) roam y -96 
+\i (00:07:38) roam y -96
+\i (00:07:38) roam x 96 
+\i (00:07:38) roam x 96
+\i (00:07:38) roam y -96 
+\i (00:07:38) roam y -96
+\i (00:07:38) roam x 96 
+\i (00:07:38) roam x 96
+\i (00:07:38) roam y -96 
+\i (00:07:38) roam y -96
+\i (00:07:38) roam y -96 
+\i (00:07:38) roam y -96
+\i (00:07:38) roam x -96 
+\i (00:07:38) roam x -96
+\i (00:07:39) roam x -96 
+\i (00:07:39) roam x -96
+\i (00:07:39) roam y 96 
+\i (00:07:39) roam y 96
+\i (00:07:39) roam y 96 
+\i (00:07:39) roam y 96
+\i (00:07:39) roam x -96 
+\i (00:07:39) roam x -96
+\i (00:07:41) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: silkscreen_bottom"
+\i (00:07:41) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: silkscreen_bottom"
+\i (00:07:42) zoom out 1 
+\i (00:07:42) setwindow pcb
+\i (00:07:42) zoom out 1441.87 1004.07
+\t (00:07:42) Grids are drawn 40.00, 40.00 apart for enhanced viewing.
+\i (00:07:42) trapsize 2843
+\i (00:07:42) roam y -96 
+\i (00:07:42) roam y -96
+\i (00:07:44) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: silkscreen_top"
+\i (00:07:44) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: silkscreen_top"
+\i (00:07:45) QtSignal ColorVisibilityPane CVPGlobalVisOn clicked
+\i (00:07:46) QtSignal ColorVisibilityPane CVPGlobalVisOn clicked
+\i (00:07:47) QtSignal ColorVisibilityPane CVPGlobalVisOff clicked
+\i (00:07:48) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: silkscreen_bottom"
+\i (00:07:48) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: silkscreen_bottom"
+\i (00:07:49) pick grid 1248.55 1839.86
+\t (00:07:49) last pick:  1250.00 1840.00
+\i (00:07:49) roam x -96 
+\i (00:07:49) roam x -96
+\i (00:07:49) zoom in 1 
+\i (00:07:49) setwindow pcb
+\i (00:07:49) zoom in -531.07 1999.05
+\t (00:07:49) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:07:49) trapsize 1421
+\i (00:07:50) delete 
+\i (00:07:50) roam x 96 
+\i (00:07:50) roam x 96
+\i (00:07:50) zoom in 1 
+\i (00:07:50) setwindow pcb
+\i (00:07:50) zoom in 253.56 1947.88
+\t (00:07:50) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
+\i (00:07:50) trapsize 711
+\i (00:07:52) pick grid 142.69 1973.47
+\t (00:07:52) last pick:  145.00 1975.00
+\t (00:07:52) Line "Manufacturing/Autosilk_Bottom"
+\i (00:07:52) pick grid dbl 142.69 1973.47
+\t (00:07:52) last pick:  145.00 1975.00
+\i (00:07:52) prepopup 139.85 1973.47
+\i (00:07:52) done 
+\i (00:07:52) generaledit 
+\i (00:07:53) roam x 96 
+\i (00:07:53) roam x 96
+\i (00:07:53) roam y 96 
+\i (00:07:53) roam y 96
+\i (00:07:53) roam y 96 
+\i (00:07:53) roam y 96
+\i (00:07:53) zoom out 1 
+\i (00:07:53) setwindow pcb
+\i (00:07:53) zoom out 387.17 1568.37
+\t (00:07:53) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:07:53) trapsize 1421
+\i (00:07:53) roam x 96 
+\i (00:07:53) roam x 96
+\i (00:07:53) roam x 96 
+\i (00:07:53) roam x 96
+\i (00:07:53) roam y 96 
+\i (00:07:53) roam y 96
+\i (00:07:53) roam y 96 
+\i (00:07:53) roam y 96
+\i (00:07:54) roam x 96 
+\i (00:07:54) roam x 96
+\i (00:07:54) roam x 96 
+\i (00:07:54) roam x 96
+\i (00:07:54) roam y 96 
+\i (00:07:54) roam y 96
+\i (00:07:54) zoom out 1 
+\i (00:07:54) setwindow pcb
+\i (00:07:54) zoom out 1521.46 822.12
+\t (00:07:54) Grids are drawn 40.00, 40.00 apart for enhanced viewing.
+\i (00:07:54) trapsize 2843
+\i (00:07:55) roam y -96 
+\i (00:07:55) roam y -96
+\i (00:07:56) delete 
+\i (00:07:58) setwindow form.find
+\i (00:07:58) FORM find all_off  
+\i (00:07:59) FORM find text YES 
+\i (00:08:00) setwindow pcb
+\i (00:08:00) drag_start grid -423.05 2243.54
+\i (00:08:01) drag_stop 3761.61 -997.29
+\i (00:08:01) prepopup 2499.39 1663.60
+\i (00:08:02) done 
+\i (00:08:02) generaledit 
+\i (00:08:10) color192 
+\i (00:08:10) generaledit 
+\i (00:08:11) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Manufacturing
+\i (00:08:12) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Autosilk_Bottom" Mfg 0
+\i (00:08:12) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 0 0
+\i (00:08:12) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:08:14) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silkbottom_Backup" Mfg 1
+\i (00:08:14) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 14 0
+\i (00:08:14) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:08:15) QtSignal ColorVisibilityDialog CVDOkButton clicked
+\i (00:08:18) change 
+\i (00:08:26) setwindow form.mini
+\i (00:08:26) FORM mini change_subclass AUTOSILK_BOTTOM 
+\i (00:08:29) setwindow pcb
+\i (00:08:29) drag_start grid -491.27 2152.57
+\i (00:08:30) drag_stop 2863.27 -371.86
+\t (00:08:30) No DRC errors detected.
+\t (00:08:30) Changed 34 items out of 34 items found.
+\i (00:08:30) prepopup 2431.16 1254.24
+\i (00:08:31) done 
+\i (00:08:31) generaledit 
+\i (00:08:35) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: silkscreen_bottom"
+\i (00:08:35) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: silkscreen_bottom"
+\i (00:08:35) zoom in 1 
+\i (00:08:35) setwindow pcb
+\i (00:08:35) zoom in 1601.05 969.95
+\t (00:08:35) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:08:35) trapsize 1421
+\i (00:08:36) roam y 96 
+\i (00:08:36) roam y 96
+\i (00:08:36) roam x -96 
+\i (00:08:36) roam x -96
+\i (00:08:36) roam y 96 
+\i (00:08:36) roam y 96
+\i (00:08:37) roam y -96 
+\i (00:08:37) roam y -96
+\i (00:08:38) roam y -96 
+\i (00:08:38) roam y -96
+\i (00:08:38) roam y -96 
+\i (00:08:38) roam y -96
+\i (00:08:38) roam x -96 
+\i (00:08:38) roam x -96
+\i (00:08:40) zoom in 1 
+\i (00:08:40) setwindow pcb
+\i (00:08:40) zoom in 1524.31 1282.67
+\t (00:08:40) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
+\i (00:08:40) trapsize 711
+\i (00:08:41) roam y -96 
+\i (00:08:41) roam y -96
+\i (00:08:41) roam y -96 
+\i (00:08:41) roam y -96
+\i (00:08:41) roam x -96 
+\i (00:08:41) roam x -96
+\i (00:08:41) roam x 96 
+\i (00:08:41) roam x 96
+\i (00:08:41) roam y 96 
+\i (00:08:41) roam y 96
+\i (00:08:41) roam y 96 
+\i (00:08:41) roam y 96
+\i (00:08:41) roam x 96 
+\i (00:08:41) roam x 96
+\i (00:08:42) roam x -96 
+\i (00:08:42) roam x -96
+\i (00:08:42) roam y 96 
+\i (00:08:42) roam y 96
+\i (00:08:42) roam x -96 
+\i (00:08:42) roam x -96
+\i (00:08:42) roam y -96 
+\i (00:08:42) roam y -96
+\i (00:08:43) roam y -96 
+\i (00:08:43) roam y -96
+\i (00:08:43) roam x -96 
+\i (00:08:43) roam x -96
+\i (00:08:43) roam x -96 
+\i (00:08:43) roam x -96
+\i (00:08:43) roam y 96 
+\i (00:08:43) roam y 96
+\i (00:08:43) roam x -96 
+\i (00:08:43) roam x -96
+\i (00:08:43) roam y 96 
+\i (00:08:43) roam y 96
+\i (00:08:43) roam y 96 
+\i (00:08:43) roam y 96
+\i (00:08:44) roam y 96 
+\i (00:08:44) roam y 96
+\i (00:08:44) roam x 96 
+\i (00:08:44) roam x 96
+\i (00:08:44) roam y 96 
+\i (00:08:44) roam y 96
+\i (00:08:44) roam x 96 
+\i (00:08:44) roam x 96
+\i (00:08:44) roam y 96 
+\i (00:08:44) roam y 96
+\i (00:08:44) roam x 96 
+\i (00:08:44) roam x 96
+\i (00:08:44) roam y 96 
+\i (00:08:44) roam y 96
+\i (00:08:44) roam x 96 
+\i (00:08:44) roam x 96
+\i (00:08:44) roam y 96 
+\i (00:08:44) roam y 96
+\i (00:08:44) roam x -96 
+\i (00:08:44) roam x -96
+\i (00:08:45) roam x -96 
+\i (00:08:45) roam x -96
+\i (00:08:45) roam y 96 
+\i (00:08:45) roam y 96
+\i (00:08:47) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: size_detail"
+\i (00:08:47) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: size_detail"
+\i (00:08:48) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: silkscreen_top"
+\i (00:08:48) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: silkscreen_top"
+\i (00:08:48) roam y -96 
+\i (00:08:48) roam y -96
+\i (00:08:48) roam x 96 
+\i (00:08:48) roam x 96
+\i (00:08:49) zoom out 1 
+\i (00:08:49) setwindow pcb
+\i (00:08:49) zoom out 1154.73 353.05
+\t (00:08:49) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:08:49) trapsize 1421
+\i (00:08:49) roam y -96 
+\i (00:08:49) roam y -96
+\i (00:08:49) roam x -96 
+\i (00:08:49) roam x -96
+\i (00:08:50) roam x 96 
+\i (00:08:50) roam x 96
+\i (00:08:51) roam y -96 
+\i (00:08:51) roam y -96
+\i (00:08:51) roam x 96 
+\i (00:08:51) roam x 96
+\i (00:08:51) roam y -96 
+\i (00:08:51) roam y -96
+\i (00:08:52) roam x 96 
+\i (00:08:52) roam x 96
+\i (00:08:52) roam y -96 
+\i (00:08:52) roam y -96
+\i (00:08:53) roam x -96 
+\i (00:08:53) roam x -96
+\i (00:08:53) roam y -96 
+\i (00:08:53) roam y -96
+\i (00:08:56) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: silkscreen_bottom"
+\i (00:08:56) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: silkscreen_bottom"
+\i (00:08:56) roam x -96 
+\i (00:08:56) roam x -96
+\i (00:08:56) roam y 96 
+\i (00:08:56) roam y 96
+\i (00:08:58) roam x 96 
+\i (00:08:58) roam x 96
+\i (00:08:58) roam y 96 
+\i (00:08:58) roam y 96
+\i (00:08:59) roam y 96 
+\i (00:08:59) roam y 96
+\i (00:08:59) roam x 96 
+\i (00:08:59) roam x 96
+\i (00:08:59) roam y 96 
+\i (00:08:59) roam y 96
+\i (00:09:00) roam x -96 
+\i (00:09:00) roam x -96
+\i (00:09:02) pick grid 2209.42 665.77
+\t (00:09:02) last pick:  2210.00 665.00
+\i (00:09:02) save 
+\i (00:09:03) fillin yes 
+\i (00:09:03) generaledit 
+\i (00:09:05) artwork 
+\i (00:09:06) setwindow form.film_control
+\i (00:09:06) FORM film_control filmtree  silkscreen_bottom 
+\i (00:09:07) FORM film_control filmtree 'MULTISEL YES' silkscreen_bottom 
+\i (00:09:07) FORM film_control filmtree  silkscreen_top 
+\i (00:09:07) FORM film_control filmtree 'MULTISEL YES' silkscreen_top 
+\i (00:09:08) FORM film_control create  
+\t (00:09:08) Checking db records
+\t (00:09:08)     checking for orphans...
+\t (00:09:09)     Checked  46 percent
+\t (00:09:09)     Checked  92 percent
+\t (00:09:09)     Checked 100 percent
+\t (00:09:09) Done dbdoctor.
+\t (00:09:09) Starting Create artwork films...
+\w (00:09:09) WARNING(SPMHGE-269): artwork had warnings, use Viewlog to review the log file.
+\w (00:09:10) Artwork generated with warnings.
+\i (00:09:13) setwindow text
+\i (00:09:13) close
+\i (00:09:14) setwindow form.film_control
+\i (00:09:14) FORM film_control ok  
+\i (00:09:14) setwindow pcb
+\i (00:09:14) generaledit 
+\i (00:24:53) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: TOP"
+\i (00:24:53) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: TOP"
+\i (00:24:54) zoom in 1 
+\i (00:24:54) setwindow pcb
+\i (00:24:54) zoom in 765.26 500.88
+\t (00:24:54) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
+   (00:24:54) Loading signal.cxt 
+\i (00:24:54) trapsize 711
+\i (00:24:55) zoom in 1 
+\i (00:24:55) setwindow pcb
+\i (00:24:55) zoom in 733.99 643.02
+\i (00:24:55) trapsize 355
+\i (00:25:01) QtSignal CVPLayerGrid CVPButtonEtchBottom clicked
+\i (00:25:01) QtSignal CVPLayerGrid CVPButtonViaBottom clicked
+\i (00:25:01) QtSignal CVPLayerGrid CVPButtonPinBottom clicked
+\i (00:26:33) zoom out 1 
+\i (00:26:33) setwindow pcb
+\i (00:26:33) zoom out 826.38 546.37
+\i (00:26:33) trapsize 711
+\i (00:26:33) zoom out 1 
+\i (00:26:33) setwindow pcb
+\i (00:26:33) zoom out 826.39 546.36
+\t (00:26:33) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:26:33) trapsize 1421
+\i (00:26:33) zoom in 1 
+\i (00:26:33) setwindow pcb
+\i (00:26:33) zoom in 832.07 546.36
+\t (00:26:33) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
+\i (00:26:33) trapsize 711
+\i (00:26:36) zoom out 1 
+\i (00:26:36) setwindow pcb
+\i (00:26:36) zoom out 1082.24 591.85
+\t (00:26:36) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:26:36) trapsize 1421
+\i (00:26:36) zoom out 1 
+\i (00:26:36) setwindow pcb
+\i (00:26:36) zoom out 1082.23 591.84
+\t (00:26:36) Grids are drawn 40.00, 40.00 apart for enhanced viewing.
+\i (00:26:36) trapsize 2843
+\i (00:28:13) zoom in 1 
+\i (00:28:13) setwindow pcb
+\i (00:28:13) zoom in 1218.70 455.39
+\t (00:28:13) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:28:13) trapsize 1421
+\i (00:28:13) zoom in 1 
+\i (00:28:13) setwindow pcb
+\i (00:28:13) zoom in 1218.70 455.39
+\t (00:28:13) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
+\i (00:28:13) trapsize 711
+\i (00:28:13) zoom in 1 
+\i (00:28:13) setwindow pcb
+\i (00:28:13) zoom in 1218.70 455.39
+\i (00:28:13) trapsize 355
+\i (00:28:13) zoom out 1 
+\i (00:28:13) setwindow pcb
+\i (00:28:13) zoom out 1218.71 455.39
+\i (00:28:13) trapsize 711
+\i (00:28:14) zoom out 1 
+\i (00:28:14) setwindow pcb
+\i (00:28:14) zoom out 1099.30 307.56
+\t (00:28:14) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:28:14) trapsize 1421
+\i (02:04:05) trapsize 616
+\i (03:20:15) pick grid -561.75 1011.07
+\t (03:20:15) last pick:  -560.00 1010.00
+\i (03:20:16) save 
+\i (03:20:17) fillin yes 
+\i (03:20:17) generaledit 
+\i (03:20:22) zoom in 1 
+\i (03:20:22) setwindow pcb
+\i (03:20:22) zoom in 1867.33 947.02
+\i (03:20:22) trapsize 308
+\i (03:20:26) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: BOTTOM"
+\i (03:20:26) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: BOTTOM"
+\i (03:20:28) QtSignal ColorVisibilityPane CVPViewDropdown CurrentIndexChanged "Film: TOP"
+\i (03:20:28) QtSignal ColorVisibilityPane CVPViewDropdown activated "Film: TOP"
+\i (03:20:28) zoom out 1 
+\i (03:20:28) setwindow pcb
+\i (03:20:28) zoom out 1368.46 853.41
+\i (03:20:28) trapsize 616
+\i (03:20:28) zoom out 1 
+\i (03:20:28) setwindow pcb
+\i (03:20:28) zoom out 1368.46 853.40
+\t (03:20:28) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
+\i (03:20:28) trapsize 1232
+\i (03:20:29) zoom in 1 
+\i (03:20:29) setwindow pcb
+\i (03:20:29) zoom in 1299.72 853.40
+\i (03:20:29) trapsize 616
+\i (03:20:31) pick grid 2196.46 1353.50
+\t (03:20:31) last pick:  2195.00 1355.00
+\i (03:20:31) roam x -96 
+\i (03:20:31) roam x -96
+\i (03:20:31) roam y -96 
+\i (03:20:31) roam y -96
+\i (03:20:31) roam y -96 
+\i (03:20:31) roam y -96
+\i (03:20:31) roam x -96 
+\i (03:20:31) roam x -96
+\i (03:20:32) zoom in 1 
+\i (03:20:32) setwindow pcb
+\i (03:20:32) zoom in 1205.72 1606.05
+\i (03:20:32) trapsize 308
+\i (03:20:33) roam x -96 
+\i (03:20:33) roam x -96
+\i (03:20:33) roam y 96 
+\i (03:20:33) roam y 96
+\i (03:20:34) roam y 96 
+\i (03:20:34) roam y 96
+\i (03:20:34) roam x -96 
+\i (03:20:34) roam x -96
+\i (03:20:34) zoom in 1 
+\i (03:20:34) setwindow pcb
+\i (03:20:34) zoom in 1097.33 1452.69
+\i (03:20:34) trapsize 154
+\i (03:20:34) zoom in 1 
+\i (03:20:34) setwindow pcb
+\i (03:20:34) zoom in 1097.33 1452.70
+\i (03:20:34) trapsize 77
+\i (03:20:41) zoom out 1 
+\i (03:20:41) setwindow pcb
+\i (03:20:41) zoom out 1080.70 1444.39
+\i (03:20:41) trapsize 154
+\i (03:20:41) zoom out 1 
+\i (03:20:41) setwindow pcb
+\i (03:20:41) zoom out 1080.71 1444.39
+\i (03:20:41) trapsize 308
+\i (03:20:41) roam x -96 
+\i (03:20:41) roam x -96
+\i (03:20:41) roam y 96 
+\i (03:20:41) roam y 96
+\i (03:20:41) roam x -96 
+\i (03:20:41) roam x -96
+\i (03:20:42) roam y -96 
+\i (03:20:42) roam y -96
+\i (03:20:42) roam y -96 
+\i (03:20:42) roam y -96
+\i (03:20:42) roam x -96 
+\i (03:20:42) roam x -96
+\i (03:20:42) roam y -96 
+\i (03:20:42) roam y -96
+\i (03:20:42) roam x -96 
+\i (03:20:42) roam x -96
+\i (03:20:43) roam x -96 
+\i (03:20:43) roam x -96
+\i (03:20:43) roam y 96 
+\i (03:20:43) roam y 96
+\i (03:20:44) roam x -96 
+\i (03:20:44) roam x -96
+\i (03:20:44) roam y 96 
+\i (03:20:44) roam y 96
+\i (03:20:44) roam y 96 
+\i (03:20:44) roam y 96
+\i (03:20:44) roam x -96 
+\i (03:20:44) roam x -96
+\i (03:20:44) roam y 96 
+\i (03:20:44) roam y 96
+\i (03:20:45) roam y 96 
+\i (03:20:45) roam y 96
+\i (03:20:45) roam y 96 
+\i (03:20:45) roam y 96
+\i (03:20:45) roam y 96 
+\i (03:20:45) roam y 96
+\i (03:20:45) roam y 96 
+\i (03:20:45) roam y 96
+\i (03:20:45) roam y 96 
+\i (03:20:45) roam y 96
+\i (03:20:46) roam y 96 
+\i (03:20:46) roam y 96
+\i (03:20:46) roam y 96 
+\i (03:20:46) roam y 96
+\i (03:20:46) roam y 96 
+\i (03:20:46) roam y 96
+\i (03:20:46) roam y 96 
+\i (03:20:46) roam y 96
+\i (03:20:46) roam y 96 
+\i (03:20:46) roam y 96
+\i (03:20:46) roam y 96 
+\i (03:20:46) roam y 96
+\i (03:20:46) roam x 96 
+\i (03:20:46) roam x 96
+\i (03:20:46) roam y 96 
+\i (03:20:46) roam y 96
+\i (03:20:46) roam y 96 
+\i (03:20:46) roam y 96
+\i (03:20:48) roam x 96 
+\i (03:20:48) roam x 96
+\i (03:20:49) roam x 96 
+\i (03:20:49) roam x 96
+\i (03:20:49) roam x 96 
+\i (03:20:49) roam x 96
+\i (03:20:49) roam x 96 
+\i (03:20:49) roam x 96
+\i (03:20:49) roam x 96 
+\i (03:20:49) roam x 96
+\i (03:20:49) roam x 96 
+\i (03:20:49) roam x 96
+\i (03:20:49) roam x 96 
+\i (03:20:49) roam x 96
+\i (03:20:49) roam x 96 
+\i (03:20:49) roam x 96
+\i (03:20:49) roam x 96 
+\i (03:20:49) roam x 96
+\i (03:20:49) roam x 96 
+\i (03:20:49) roam x 96
+\i (03:20:49) roam x 96 
+\i (03:20:49) roam x 96
+\i (03:20:49) roam x 96 
+\i (03:20:49) roam x 96
+\i (03:20:49) roam x 96 
+\i (03:20:49) roam x 96
+\i (03:20:49) roam y -96 
+\i (03:20:49) roam y -96
+\i (03:20:50) zoom out 1 
+\i (03:20:50) setwindow pcb
+\i (03:20:50) zoom out 1363.51 739.60
+\i (03:20:50) trapsize 616
+\i (03:20:50) roam y -96 
+\i (03:20:50) roam y -96
+\i (03:20:50) roam y -96 
+\i (03:20:50) roam y -96
+\i (03:20:50) roam y -96 
+\i (03:20:50) roam y -96
+\i (03:20:51) roam y -96 
+\i (03:20:51) roam y -96
+\i (03:20:51) roam y -96 
+\i (03:20:51) roam y -96
+\i (03:20:51) roam x -96 
+\i (03:20:51) roam x -96
+\i (03:20:51) roam y -96 
+\i (03:20:51) roam y -96
+\i (03:20:51) roam y -96 
+\i (03:20:51) roam y -96
+\i (03:20:51) roam x -96 
+\i (03:20:51) roam x -96
+\i (03:20:52) exit 
+\t (03:20:54)     Journal end - Fri May 28 21:07:40 2021

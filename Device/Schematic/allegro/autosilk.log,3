@@ -1,0 +1,86 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Auto Silkscreen Log File                                         )
+(                                                                     )
+(    Drawing          : CyberBalance.brd                              )
+(    Software Version : 17.4S015                                      )
+(    Date/Time        : Fri May 28 17:51:40 2021                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Generating Auto Silkscreen for the top of the board.
+
+Copying all elements.
+
+Element to Pad clearance is 0.00
+Max Text displacement is 100.00
+Min Line Length is 0.00
+Allowing 0 degree text rotation.
+Text Allowed Under Components.
+Subclass Selections:
+ Board Geometry       : Any
+ Component Value      : None
+ Device Type          : None
+ Package Geometry     : Any
+ Reference Designator : Any
+ Tolerance            : None
+ User Part Number     : None
+
+Text string 'J11' is not at a suitable location
+(location: 1710.28, 1737.28)
+Text string 'J10' is not at a suitable location
+(location: 214.22, 1737.28)
+Text string 'J9' is not at a suitable location
+(location: 1710.28, 241.22)
+Text string 'J8' is not at a suitable location
+(location: 214.22, 241.22)
+Text string 'SW1' is not at a suitable location
+(location: 1545.00, 1756.00)
+Text string 'J12' is not at a suitable location
+(location: 485.00, 1833.00)
+Text string 'Designator9' is not at a suitable location
+(location: 797.00, 485.00)
+Text string 'U9' is not at a suitable location
+(location: 695.00, 595.00)
+Text string 'R42' is not at a suitable location
+(location: 1780.00, 1495.00)
+Text string 'R41' is not at a suitable location
+(location: 1780.00, 1415.00)
+Text string 'R13' is not at a suitable location
+(location: 315.00, 622.00)
+Text string 'R29' is not at a suitable location
+(location: 1630.00, 1495.00)
+Text string 'R7' is not at a suitable location
+(location: 1780.00, 1335.00)
+Text string 'R30' is not at a suitable location
+(location: 1780.00, 1255.00)
+Text string 'R39' is not at a suitable location
+(location: 690.00, 405.00)
+Text string 'R26' is not at a suitable location
+(location: 1445.00, 285.00)
+Text string 'C40' is not at a suitable location
+(location: 630.00, 530.00)
+Text string 'C3' is not at a suitable location
+(location: 1740.00, 1275.00)
+Text string 'C34' is not at a suitable location
+(location: 1545.00, 1525.00)
+Text string 'C4' is not at a suitable location
+(location: 1595.00, 1325.00)
+Text string 'C37' is not at a suitable location
+(location: 1205.00, 1010.00)
+Text string 'C22' is not at a suitable location
+(location: 815.00, 1010.00)
+Text string 'C19' is not at a suitable location
+(location: 975.00, 1105.00)
+Text string 'C29' is not at a suitable location
+(location: 1175.00, 385.00)
+Text string 'C30' is not at a suitable location
+(location: 1175.00, 305.00)
+Text string 'U6' is not at a suitable location
+(location: 1360.00, 495.00)
+
+Total Failures: 26
+
+Log End
+

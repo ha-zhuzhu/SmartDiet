@@ -1,38 +1,32 @@
 \t (00:00:01) padstack_editor 17.4 S015 Windows SPB 64-bit Edition
-\t (00:00:01)     Journal start - Sun May 16 11:19:20 2021
-\t (00:00:01)         Host=DESKTOP-KF0UK81 User=Shire Pid=56764 CPUs=8
-\t (00:00:01) CmdLine= d:\cadence\cadence_spb_17.4-2019\tools\bin\padstack_editor.exe E:\Project\SmartDiet\Device\Schematic\cyberbalance_footprint_lib\smd0070x2500_ob.pad
+\t (00:00:01)     Journal start - Fri May 28 17:28:15 2021
+\t (00:00:01)         Host=DESKTOP-KF0UK81 User=Shire Pid=29920 CPUs=8
+\t (00:00:01) CmdLine= d:\cadence\cadence_spb_17.4-2019\tools\bin\padstack_editor.exe E:\Project\SmartDiet\Device\Schematic\cyberbalance_footprint_lib\ox33p46y25p59d0t.pad
 \t (00:00:01) 
-\d (00:00:05) QtSignal GuidedTabsParent GuidedTabs currentChanged Drill
-\d (00:00:05) QtSignal GuidedTabsParent GuidedTabs currentChanged Start
-\d (00:00:06) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
-\d (00:00:08) QtSignal GuidedTabsParent GuidedTabs currentChanged "Mask Layers"
-\d (00:00:09) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
-\d (00:00:11) QtSignal GuidedTabsParent GuidedTabs currentChanged "Mask Layers"
-\d (00:00:11) QtSignal GuidedTabsParent GuidedTabs currentChanged Options
-\d (00:00:12) QtSignal GuidedTabsParent GuidedTabs currentChanged "Mask Layers"
-\d (00:00:12) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
-\d (00:00:20) QtSignal GuidedDesignLayersTab PadWidth editingFinished "0.7000"
-\d (00:00:22) QtSignal GuidedDesignLayersTab PadHeight editingFinished "2.5000"
-\d (00:00:22) QtSignal GuidedDesignLayersTab LayersTable itemSelectionChanged
-\d (00:00:24) QtSignal GuidedTabsParent GuidedTabs currentChanged "Mask Layers"
-\d (00:00:28) QtSignal GuidedTabsParent GuidedMaskLayersTab keyPressEvent 16777249 67108864 false +
-\d (00:00:28) QtSignal 1
-\d (00:00:30) QtSignal GuidedMaskLayersTab PadWidth editingFinished "0.8000"
-\d (00:00:31) QtSignal GuidedMaskLayersTab PadHeight editingFinished "2.6000"
-\d (00:00:31) QtSignal GuidedTabsParent GuidedMaskLayersTab keyPressEvent 16777220 0 false 1 ""
-\d (00:00:33) QtSignal GuidedMaskLayersTab LayersTable itemSelectionChanged
-\d (00:00:35) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
-\d (00:00:38) QtSignal GuidedTabsParent GuidedTabs currentChanged Drill
-\d (00:00:38) QtSignal GuidedTabsParent GuidedTabs currentChanged Start
-\d (00:00:39) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
-\d (00:00:41) QtSignal GuidedTabsParent GuidedTabs currentChanged "Mask Layers"
-\d (00:00:47) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
-\d (00:00:49) QtSignal GuidedTabsParent GuidedTabs currentChanged "Mask Layers"
+\d (00:00:05) QtSignal GuidedTabsParent PadstackTypes currentRowChanged 0
+\d (00:00:05) QtSignal GuidedTabsParent PadstackTypes itemSelectionChanged "Thru Pin"
+\d (00:00:05) QtSignal GuidedTabsParent PadstackTypes itemClicked "Thru Pin"
+\d (00:00:06) QtSignal GuidedTabsParent NewPads currentRowChanged 0
+\d (00:00:06) QtSignal GuidedTabsParent NewPads itemSelectionChanged Circle
+\d (00:00:06) QtSignal GuidedTabsParent NewPads itemClicked Circle
+\d (00:00:11) QtFillin No
+\d (00:00:13) QtSignal GuidedTabsParent GuidedTabs currentChanged Drill
+\d (00:00:16) QtSignal GuidedTabsParent GuidedTabs currentChanged "Secondary Drill"
+\d (00:00:16) QtSignal GuidedTabsParent GuidedTabs currentChanged "Drill Symbol"
+\d (00:00:41) QtSignal GuidedTabsParent GuidedTabs currentChanged Start
+\d (00:00:43) QtSignal GuidedTabsParent NewPads itemClicked Circle
+\d (00:00:44) QtFillin Yes
+\d (00:00:45) QtSignal GuidedTabsParent GuidedTabs currentChanged Drill
+\d (00:00:46) QtSignal GuidedTabsParent GuidedTabs currentChanged "Secondary Drill"
+\d (00:00:47) QtSignal GuidedTabsParent GuidedTabs currentChanged "Drill Symbol"
+\d (00:00:50) QtSignal GuidedDrillSymbol FigureType CurrentIndexChanged Circle
+\d (00:00:51) QtSignal GuidedTabsParent GuidedTabs currentChanged "Drill Offset"
 \d (00:00:52) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
-\d (00:00:54) QtSignal GuidedTabsParent GuidedDesignLayersTab keyPressEvent 16777249 67108864 false +
-\d (00:00:54) QtSignal 1
-\d (00:00:54) QtSignal GuidedTabsParent GuidedDesignLayersTab keyPressEvent 83 67108864 false 1 +
-\d (00:00:54) QtSignal ""
-\d (00:00:56) QtSignal MainWindow Save triggered
-\t (00:00:58)     Journal end - Sun May 16 11:20:17 2021
+\d (00:00:59) QtSignal GuidedTabsParent GuidedTabs currentChanged Start
+\d (00:00:59) QtSignal GuidedTabsParent GuidedTabs currentChanged Drill
+\d (00:01:01) QtSignal GuidedTabsParent GuidedTabs currentChanged "Mask Layers"
+\d (00:01:03) QtSignal GuidedTabsParent GuidedTabs currentChanged Options
+\d (00:01:04) QtSignal MainWindow Save triggered
+\d (00:01:07) QtSignal pseCheckBrowser Close clicked
+\d (00:01:08) QtFillin Yes
+\t (00:01:09)     Journal end - Fri May 28 17:29:23 2021

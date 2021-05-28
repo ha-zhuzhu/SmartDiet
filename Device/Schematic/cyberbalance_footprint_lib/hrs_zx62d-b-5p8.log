@@ -1,0 +1,23 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    CREATE SYMBOL                                                    )
+(                                                                     )
+(    Drawing          : HRS_ZX62D-B-5P8.dra                           )
+(    Software Version : 17.4S015                                      )
+(    Date/Time        : Thu May 27 19:10:38 2021                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Create Symbol of type: PACKAGE
+    Directory = e:/Project/SmartDiet/Device/Schematic/cyberbalance_footprint_lib
+    Name      = hrs_zx62d-b-5p8.psm
+    User      = Shire
+    Machine   = DESKTOP-KF0UK81
+
+
+Create symbol started.
+ 
+
+Create symbol completed.
+

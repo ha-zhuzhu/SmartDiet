@@ -4,7 +4,7 @@
 (                                                                     )
 (    Drawing          : CyberBalance.brd                              )
 (    Software Version : 17.4S015                                      )
-(    Date/Time        : Thu May 20 20:51:53 2021                      )
+(    Date/Time        : Fri May 28 16:26:29 2021                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -13,7 +13,3 @@ Begin processing of drill legend template file 'D:/Cadence/Cadence_SPB_17.4-2019
 WARNING(SPMHSK-47): Column type 'HoleSize' does not exist.
 WARNING(SPMHSK-47): Column type 'PlateStatus' does not exist.
 End of drill legend template file processing.
-
-Begin processing drill holes.
-No errors detected in processing holes.
-End processing drill holes.

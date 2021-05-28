@@ -1,90 +1,18 @@
-\t (00:00:03) allegro 17.4 S015 Windows SPB 64-bit Edition
-\t (00:00:03)     Journal start - Wed May 19 23:42:00 2021
-\t (00:00:03)         Host=DESKTOP-KF0UK81 User=Shire Pid=77296 CPUs=8
-\t (00:00:03) CmdLine= d:\cadence\cadence_spb_17.4-2019\tools\bin\allegro.exe E:\Project\SmartDiet\Device\Schematic\cyberbalance_footprint_lib\GCT_USB3076-XX-X_REVC.dra
-\t (00:00:03) 
-   (00:00:03) Loading axlcore.cxt 
-\t (00:00:03) Opening existing design...
-\i (00:00:04) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged "GCT_USB3076-XX-X_REVC"
-\d (00:00:04) Design opened: e:/Project/SmartDiet/Device/Schematic/cyberbalance_footprint_lib/GCT_USB3076-XX-X_REVC.dra
-\i (00:00:04) trapsize 581
-\i (00:00:05) trapsize 598
-\i (00:00:05) trapsize 581
-\i (00:00:05) trapsize 462
-\i (00:00:05) trapsize 491
-\i (00:00:05) trapsize 245
-\i (00:00:06) generaledit 
-\i (00:00:07) pick grid 7.7312 0.2222
-\t (00:00:07) last pick:  7.6200 0.0000
-\i (00:00:07) roam x -96 
-\i (00:00:07) roam x -96
-\i (00:00:07) roam x -96 
-\i (00:00:07) roam x -96
-\i (00:00:08) roam x -96 
-\i (00:00:08) roam x -96
-\i (00:00:08) roam x -96 
-\i (00:00:08) roam x -96
-\i (00:00:08) roam x -96 
-\i (00:00:08) roam x -96
-\i (00:00:08) roam x -96 
-\i (00:00:08) roam x -96
-\i (00:00:08) roam x -96 
-\i (00:00:08) roam x -96
-\i (00:00:08) roam x -96 
-\i (00:00:08) roam x -96
-\i (00:00:10) pick grid 5.0603 0.2615
-\t (00:00:10) last pick:  5.0800 0.0000
-\i (00:00:11) setwindow form.find
-\i (00:00:11) FORM find all_on  
-\i (00:00:14) setwindow pcb
-\i (00:00:14) zoom in 1 
-\i (00:00:14) setwindow pcb
-\i (00:00:14) zoom in 3.2737 -0.5631
-\i (00:00:14) trapsize 123
-\i (00:00:16) zoom out 1 
-\i (00:00:16) setwindow pcb
-\i (00:00:16) zoom out 3.2246 -1.4760
-\i (00:00:16) trapsize 245
-\i (00:00:22) pick grid 5.5218 0.6149
-\t (00:00:22) last pick:  5.0800 0.0000
-\i (00:00:23) zoom out 1 
-\i (00:00:23) setwindow pcb
-\i (00:00:23) zoom out -2.2825 -0.1704
-\i (00:00:23) trapsize 491
-\i (00:04:21) zoom in 1 
-\i (00:04:21) setwindow pcb
-\i (00:04:21) zoom in 1.4282 -1.1325
-\i (00:04:21) trapsize 245
-\i (00:04:21) zoom in 1 
-\i (00:04:21) setwindow pcb
-\i (00:04:21) zoom in 1.4283 -1.1324
-\i (00:04:21) trapsize 123
-\i (00:04:23) zoom out 1 
-\i (00:04:24) setwindow pcb
-\i (00:04:24) zoom out 1.7081 -1.1815
-\i (00:04:24) trapsize 245
-\i (00:19:18) zoom out 1 
-\i (00:19:18) setwindow pcb
-\i (00:19:18) zoom out 2.9352 0.6052
-\i (00:19:18) trapsize 491
-\i (00:19:18) zoom out 1 
-\i (00:19:18) setwindow pcb
-\i (00:19:18) zoom out 3.1512 0.9389
-\i (00:19:18) trapsize 982
-\i (00:19:18) zoom out 1 
-\i (00:19:18) setwindow pcb
-\i (00:19:18) zoom out 3.5438 1.6064
-\i (00:19:18) trapsize 1963
-\i (00:27:23) zoom in 1 
-\i (00:27:23) setwindow pcb
-\i (00:27:23) zoom in -0.3978 -2.9572
-\i (00:27:23) trapsize 982
-\i (00:27:23) zoom in 1 
-\i (00:27:23) setwindow pcb
-\i (00:27:23) zoom in -0.3978 -2.9179
-\i (00:27:23) trapsize 491
-\i (10:13:02) trapsize 1108
-\i (20:12:22) exit 
-\e (20:12:22) Do you want to save the changes you made to GCT_USB3076-XX-X_REVC.dra?
-\i (20:12:25) fillin no 
-\t (20:12:26)     Journal end - Thu May 20 19:54:23 2021
+\t (01:10:31) allegro 17.4 S015 Windows SPB 64-bit Edition
+\t (01:10:31)     Journal start - Fri May 28 17:46:30 2021
+\t (01:10:31)         Host=DESKTOP-KF0UK81 User=Shire Pid=28164 CPUs=8
+\t (01:10:31) CmdLine= D:\Cadence\Cadence_SPB_17.4-2019\tools\bin\allegro.exe
+\t (01:10:31) 
+\d (01:10:31) Design opened: e:/Project/SmartDiet/Device/Schematic/cyberbalance_footprint_lib/ZX62D-B-5P8_30__HIR.dra
+\i (01:10:31) generaledit 
+\i (01:10:32) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged "Start Page"
+\i (01:10:33) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged "ZX62D-B-5P8_30__HIR"
+\i (01:10:33) opencd e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd 
+\t (01:10:33) Opening existing design...
+\t (01:10:33) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (01:10:33) trapsize 1702
+\i (01:10:33) trapsize 1818
+\t (01:10:34) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (01:10:34) trapsize 1421
+\i (01:10:34) trapsize 1421
+\t (01:10:34)     Journal end - Fri May 28 17:46:33 2021

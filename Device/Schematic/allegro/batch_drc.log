@@ -4,7 +4,7 @@
 (                                                                     )
 (    Drawing          : CyberBalance.brd                              )
 (    Software Version : 17.4S015                                      )
-(    Date/Time        : Fri May 21 17:12:53 2021                      )
+(    Date/Time        : Fri May 28 17:32:41 2021                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -20,7 +20,7 @@
  ========= check standalone text              0:00:00
  ========= check standalone rectangles        0:00:00
 
- ..... Total number of DRC errors  357
+ ..... Total number of DRC errors  88
 
  ..... DRC update completed, total CPU time   0:00:00
  *************************************************************************

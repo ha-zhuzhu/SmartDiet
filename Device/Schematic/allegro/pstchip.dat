@@ -1,5 +1,5 @@
 FILE_TYPE=LIBRARY_PARTS;
-{ Using PSTWRITER 17.4.0 d001May-21-2021 at 15:39:20}
+{ Using PSTWRITER 17.4.0 d001May-28-2021 at 14:18:31}
 primitive 'C_C0805_ROLA_10U';
   pin
     '1':
@@ -583,6 +583,36 @@ primitive 'R_R0805_ROLA_20K';
     PART_NAME='R';
     JEDEC_TYPE='R0805_rola';
     VALUE='20k';
+  end_body;
+end_primitive;
+primitive 'R_R0805_ROLA_0';
+  pin
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='R';
+    JEDEC_TYPE='R0805_rola';
+    VALUE='0';
+  end_body;
+end_primitive;
+primitive 'R_R0805_ROLA_NC';
+  pin
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='R';
+    JEDEC_TYPE='R0805_rola';
+    VALUE='NC';
   end_body;
 end_primitive;
 primitive 'R_R0805_ROLA_8.2K';
@@ -1301,7 +1331,7 @@ primitive 'MP26028EQ_0_IC10_MP26028_MNP-L_MP26028EQ';
     VALUE='MP26028EQ';
   end_body;
 end_primitive;
-primitive 'TPS7A2033PDBVR_DBV0005A-IPC_B_TPS7A2033PDBVR';
+primitive 'TPS7A2033PDBVR_0_DBV0005A-IPC_B_TPS7A2033PDBVR';
   pin
     'VIN':
       PIN_NUMBER='(1)';
@@ -1313,14 +1343,14 @@ primitive 'TPS7A2033PDBVR_DBV0005A-IPC_B_TPS7A2033PDBVR';
       PIN_NUMBER='(3)';
       PINUSE='UNSPEC';
     'OUT':
-      PIN_NUMBER='(4)';
+      PIN_NUMBER='(5)';
       PINUSE='UNSPEC';
     'N/C':
-      PIN_NUMBER='(5)';
+      PIN_NUMBER='(4)';
       PINUSE='UNSPEC';
   end_pin;
   body
-    PART_NAME='TPS7A2033PDBVR';
+    PART_NAME='TPS7A2033PDBVR_0';
     JEDEC_TYPE='DBV0005A-IPC_B';
     VALUE='TPS7A2033PDBVR';
   end_body;

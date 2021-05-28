@@ -1,9 +1,9 @@
-Sun May 16 11:22:18 2021				Page     1
+Thu May 27 20:10:54 2021				Page     1
 
 
  
 Update Symbols/Modules Logfile
-	Sun May 16 11:22:18 2021
+	Thu May 27 20:10:54 2021
 
 ------ Module Refresh Messages ------
 
@@ -19,30 +19,30 @@ SUMMARY:    Updated 0 out of 0 modules
 (                                                                     )
 (    Drawing          : CyberBalance.brd                              )
 (    Software Version : 17.4S015                                      )
-(    Date/Time        : Sun May 16 11:22:19 2021                      )
+(    Date/Time        : Thu May 27 20:10:54 2021                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
 
-Sun May 16 11:22:19 2021				Page     1
+Thu May 27 20:10:54 2021				Page     1
 
 
 ------ Symbol Refresh Directives ------
 
-Input design  = 'E:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd'
+Input design  = 'e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd'
 Output design = ''
 
 Update mechanical symbols              = 'NO'
 Update format symbols                  = 'NO'
 Update package symbols                 = 'NO'
 Update shape/flash symbols             = 'NO'
-Update symbol padstacks                = 'NO'
+Update symbol padstacks                = 'YES'
 Preserve padstacks replaced on pins    = 'NO'
 Reset symbol text and size locations   = 'NO'
 Reset Pin Escapes (fanouts)            = 'NO'
 Ripup Etch                             = 'NO'
-Reset custom drill data                = 'NO'
-Symbol list file                       = 'C:/Users/Shire/AppData/Local/Temp/#Taaaaik06624.tmp'
+Reset custom drill data                = 'YES'
+Symbol list file                       = 'C:/Users/Shire/AppData/Local/Temp/#Taaaaae00576.tmp'
 
 
 ------ Library Paths ------
@@ -67,7 +67,14 @@ PADPATH =  .
 
 ------ Symbol Refresh Messages ------
 
-'BC26'  symbol refreshed successfully.
+'ZX62D-B-5P8_30__HIR'  symbol refreshed successfully.
+
+
+------ Pad Stack Refresh Messages ------
+
+'OX33P46Y25P59D0T'  pad stack refreshed successfully.
+'RX16Y53D0T'  pad stack refreshed successfully.
+'RX59Y32D0T'  pad stack refreshed successfully.
 
 
 ----- Symbol Update Summary ----

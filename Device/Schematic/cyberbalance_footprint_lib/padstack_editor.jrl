@@ -1,13 +1,33 @@
 \t (00:00:01) padstack_editor 17.4 S015 Windows SPB 64-bit Edition
-\t (00:00:01)     Journal start - Wed May 19 13:26:40 2021
-\t (00:00:01)         Host=DESKTOP-KF0UK81 User=Shire Pid=24252 CPUs=8
-\t (00:00:01) CmdLine= d:\cadence\cadence_spb_17.4-2019\tools\bin\padstack_editor.exe E:\Project\SmartDiet\Device\Schematic\cyberbalance_footprint_lib\via12_std-th.pad
+\t (00:00:01)     Journal start - Fri May 28 17:29:33 2021
+\t (00:00:01)         Host=DESKTOP-KF0UK81 User=Shire Pid=13528 CPUs=8
+\t (00:00:01) CmdLine= d:\cadence\cadence_spb_17.4-2019\tools\bin\padstack_editor.exe E:\Project\SmartDiet\Device\Schematic\cyberbalance_footprint_lib\rx59y32d0t.pad
 \t (00:00:01) 
-\d (00:00:03) QtSignal GuidedTabsParent GuidedTabs currentChanged Drill
-\d (00:00:04) QtSignal GuidedTabsParent GuidedTabs currentChanged "Secondary Drill"
-\d (00:00:05) QtSignal GuidedTabsParent GuidedTabs currentChanged "Drill Symbol"
-\d (00:00:05) QtSignal GuidedTabsParent GuidedTabs currentChanged "Drill Offset"
-\d (00:00:06) QtSignal GuidedTabsParent GuidedTabs currentChanged "Drill Symbol"
-\d (00:00:06) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
-\d (00:00:14) QtSignal GuidedTabsParent GuidedTabs currentChanged "Mask Layers"
-\t (00:02:04)     Journal end - Wed May 19 13:28:44 2021
+\d (00:00:18) QtSignal GuidedTabsParent PadstackTypes currentRowChanged 1
+\d (00:00:18) QtSignal GuidedTabsParent PadstackTypes itemSelectionChanged "SMD Pin"
+\d (00:00:18) QtSignal GuidedTabsParent PadstackTypes itemClicked "SMD Pin"
+\d (00:00:20) QtSignal GuidedTabsParent GuidedTabs currentChanged Drill
+\d (00:00:22) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
+\d (00:00:32) QtSignal GuidedTabsParent GuidedTabs currentChanged Start
+\d (00:00:33) QtSignal GuidedTabsParent PadstackTypes currentRowChanged 0
+\d (00:00:33) QtSignal GuidedTabsParent PadstackTypes itemSelectionChanged "Thru Pin"
+\d (00:00:33) QtSignal GuidedTabsParent PadstackTypes itemClicked "Thru Pin"
+\d (00:00:33) QtSignal GuidedTabsParent NewPads currentRowChanged 0
+\d (00:00:33) QtSignal GuidedTabsParent NewPads itemSelectionChanged Circle
+\d (00:00:34) QtSignal GuidedTabsParent NewPads itemClicked Circle
+\d (00:00:35) QtFillin Yes
+\d (00:00:37) QtSignal GuidedTabsParent GuidedTabs currentChanged Drill
+\d (00:00:39) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
+\d (00:00:40) QtSignal GuidedTabsParent GuidedTabs currentChanged "Drill Offset"
+\d (00:00:41) QtSignal GuidedTabsParent GuidedTabs currentChanged "Drill Symbol"
+\d (00:01:04) QtSignal GuidedDrillSymbol FigureType CurrentIndexChanged Circle
+\d (00:01:05) QtSignal GuidedTabsParent GuidedTabs currentChanged "Secondary Drill"
+\d (00:01:05) QtSignal GuidedTabsParent GuidedTabs currentChanged Drill
+\d (00:01:07) QtSignal GuidedTabsParent GuidedTabs currentChanged "Drill Offset"
+\d (00:01:07) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
+\d (00:01:08) QtSignal GuidedTabsParent GuidedTabs currentChanged "Mask Layers"
+\d (00:01:09) QtSignal GuidedTabsParent GuidedTabs currentChanged Options
+\d (00:01:10) QtSignal MainWindow Save triggered
+\d (00:01:11) QtSignal pseCheckBrowser Close clicked
+\d (00:01:12) QtFillin Yes
+\t (00:01:13)     Journal end - Fri May 28 17:30:46 2021

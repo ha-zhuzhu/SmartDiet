@@ -3,42 +3,109 @@
 |                                                                    Page   1  |
 |------------------------------------------------------------------------------|
 |  e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd              |
-|                                                    Fri May 21 15:39:28 2021  |
+|                                                    Fri May 28 13:54:17 2021  |
 |------------------------------------------------------------------------------|
-| COMPONENT DEFINITION added to design                                         |
+| NET CHANGES                                                                  |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-|    device type                                                               |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- R_R0805_ROLA_20K
+  B+           pins ADDED TO this new net
+                                 R41.2                          
+                                 R42.2                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  B-           pins ADDED TO this new net
+                                 R42.1                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  GND          pins ADDED TO this existing net (pins not previously on any net)
+                                 R43.2                          
+                                 R44.2                          
+                                 R45.2                          
+                                 R46.2                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  INB+         pins ADDED TO this existing net (pins not previously on any net)
+                                 R43.1                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  INB-         pins ADDED TO this existing net (pins not previously on any net)
+                                 R44.1                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N01191       pins ADDED TO this existing net (pins not previously on any net)
+                                 R45.1                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N32203       pins ADDED TO this existing net (pins not previously on any net)
+                                 R46.1                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N32749       pins MOVED FROM this net (to net name listed on right)
+                                 J1.6             640.00 1620.00
+                                                                             B-
+                                 R29.1            532.25 1580.00
+                                                                             B-
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N123214      pins ADDED TO this new net
+                                 R41.1                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N319904      pins MOVED FROM this net (to net name listed on right)
+                                 J1.5             640.00 1520.00
+                                                                        N123214
+                                 R31.1            532.25 1500.00
+                                                                             B+
 |------------------------------------------------------------------------------|
 |                                 ECO   REPORT                                 |
 |                                                                    Page   2  |
 |------------------------------------------------------------------------------|
 |  e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd              |
-|                                                    Fri May 21 15:39:28 2021  |
+|                                                    Fri May 28 13:54:17 2021  |
 |------------------------------------------------------------------------------|
-| COMPONENTS CHANGED from one device type to another in design                 |
+| COMPONENT DEFINITION added to design                                         |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-|    ref des        | new device type     |   x   |   y   |  old  device type  |
+|    device type                                                               |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- R40                 R_R0805_ROLA_20K                      R_AXRC05_20K
+ R_R0805_ROLA_0
+ R_R0805_ROLA_NC
 |------------------------------------------------------------------------------|
 |                                 ECO   REPORT                                 |
 |                                                                    Page   3  |
 |------------------------------------------------------------------------------|
 |  e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd              |
-|                                                    Fri May 21 15:39:28 2021  |
+|                                                    Fri May 28 13:54:17 2021  |
+|------------------------------------------------------------------------------|
+| COMPONENTS ADDED to design                                                   |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    ref des        |    device type                                           |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ R41                 R_R0805_ROLA_0        
+ R42                 R_R0805_ROLA_NC       
+ R43                 R_R0805_ROLA_NC       
+ R44                 R_R0805_ROLA_NC       
+ R45                 R_R0805_ROLA_NC       
+ R46                 R_R0805_ROLA_NC       
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   4  |
+|------------------------------------------------------------------------------|
+|  e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd              |
+|                                                    Fri May 28 13:54:17 2021  |
 |------------------------------------------------------------------------------|
 | SLOT PROPERTIES added to design                                              |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
 |   slot_id    |   x   |   y   |   property   |             value              |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- R40.2                          PRIM_FILE      .\pstchip.dat
- R40.2                          SECTION        
+ R41.2                          PRIM_FILE      .\pstchip.dat
+ R41.2                          SECTION        
+ R42.2                          PRIM_FILE      .\pstchip.dat
+ R42.2                          SECTION        
+ R43.2                          PRIM_FILE      .\pstchip.dat
+ R43.2                          SECTION        
+ R44.2                          PRIM_FILE      .\pstchip.dat
+ R44.2                          SECTION        
+ R45.2                          PRIM_FILE      .\pstchip.dat
+ R45.2                          SECTION        
+ R46.2                          PRIM_FILE      .\pstchip.dat
+ R46.2                          SECTION        
 |------------------------------------------------------------------------------|
-|       Comp definitions added:       1                                        |
-|       Components changed    :       1                                        |
-|       Slot property added   :       2                                        |
+|       Nets changed          :      16                                        |
+|       Comp definitions added:       2                                        |
+|       Components added      :       6                                        |
+|       Slot property added   :      12                                        |
 |                                                                              |
-|   Total ECO changes reported:       4                                        |
+|   Total ECO changes reported:      36                                        |
 |------------------------------------------------------------------------------|

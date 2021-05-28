@@ -4,7 +4,7 @@
 (                                                                     )
 (    Drawing          : CyberBalance.brd                              )
 (    Software Version : 17.4S015                                      )
-(    Date/Time        : Fri May 21 17:14:24 2021                      )
+(    Date/Time        : Fri May 28 17:34:05 2021                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -29,7 +29,7 @@ Results from parameter file ...
 
 ================================================================
      PROCESSING FILM < TOP >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/TOP.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/TOP.art > ...
 ================================================================
 
   FILM PARAMETERS :
@@ -43,7 +43,7 @@ Results from parameter file ...
   Suppress unconnected internal pads  NO
   Draw holes only                     NO
 
-    WARNING: Film contains objects with associated DRCs (256).
+    WARNING: Film contains objects with associated DRCs (86).
            In the design editor view this film and enable visibility for the
            associated DRC layer. Verify the DRCs are approved exceptions to your rules.
 
@@ -56,10 +56,13 @@ Results from parameter file ...
   CIRCLE     0.00800                                  DARK 
   CIRCLE     0.01000                                  DARK 
   CIRCLE     0.01200                                  DARK 
+  CIRCLE     0.01500                                  DARK 
   CIRCLE     0.02300                                  DARK 
   CIRCLE     0.02402                                  DARK 
+  CIRCLE     0.02559                                  DARK 
   CIRCLE     0.02800                                  DARK 
   CIRCLE     0.03000                                  DARK 
+  CIRCLE     0.03200                                  DARK 
   CIRCLE     0.04000                                  DARK 
   CIRCLE     0.05000                                  DARK 
   CIRCLE     0.05150                                  DARK 
@@ -84,7 +87,6 @@ Results from parameter file ...
   RECTANGLE  0.04701     x 0.01201      90.000 NO     DARK 
   RECTANGLE  0.05500     x 0.05201       0.000 NO     DARK 
   RECTANGLE  0.05500     x 0.05201      90.000 NO     DARK 
-  RECTANGLE  0.05900     x 0.03200      90.000 NO     DARK 
   RECTANGLE  0.05925     x 0.02252       0.000 NO     DARK 
   RECTANGLE  0.06902     x 0.10000      90.000 NO     DARK 
   RECTANGLE  0.07874     x 0.07480      90.000 NO     DARK 
@@ -93,7 +95,6 @@ Results from parameter file ...
   RECTANGLE  0.10433     x 0.06890      90.000 NO     DARK 
   OBLONG     0.02756     x 0.09843       0.000 NO     DARK 
   OBLONG     0.02756     x 0.09843      90.000 NO     DARK 
-  OBLONG     0.03346     x 0.02559      90.000 NO     DARK 
   OBLONG     0.09843     x 0.05512       0.000 NO     DARK 
 
      TOP created with warnings
@@ -101,7 +102,7 @@ Results from parameter file ...
 
 ================================================================
      PROCESSING FILM < BOTTOM >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/BOTTOM.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/BOTTOM.art > ...
 ================================================================
 
   FILM PARAMETERS :
@@ -115,7 +116,7 @@ Results from parameter file ...
   Suppress unconnected internal pads  NO
   Draw holes only                     NO
 
-    WARNING: Film contains objects with associated DRCs (101).
+    WARNING: Film contains objects with associated DRCs (2).
            In the design editor view this film and enable visibility for the
            associated DRC layer. Verify the DRCs are approved exceptions to your rules.
 
@@ -130,7 +131,10 @@ Results from parameter file ...
   CIRCLE     0.01200                                  DARK 
   CIRCLE     0.02000                                  DARK 
   CIRCLE     0.02402                                  DARK 
+  CIRCLE     0.02559                                  DARK 
+  CIRCLE     0.02800                                  DARK 
   CIRCLE     0.03000                                  DARK 
+  CIRCLE     0.03200                                  DARK 
   CIRCLE     0.05000                                  DARK 
   CIRCLE     0.05150                                  DARK 
   CIRCLE     0.05898                                  DARK 
@@ -153,7 +157,7 @@ Results from parameter file ...
 
 ================================================================
      PROCESSING FILM < soldermask_top >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/soldermask_top.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/soldermask_top.art > ...
 ================================================================
 
   FILM PARAMETERS :
@@ -174,6 +178,8 @@ Results from parameter file ...
   TYPE       SIZE/NAME                   ROT   MIRROR MODE 
   ---------------------------------------------------------
   CIRCLE     0.00200                                  DARK 
+  CIRCLE     0.02559                                  DARK 
+  CIRCLE     0.03200                                  DARK 
   CIRCLE     0.05150                                  DARK 
   CIRCLE     0.05898                                  DARK 
   CIRCLE     0.05906                                  DARK 
@@ -189,13 +195,13 @@ Results from parameter file ...
   SQUARE     0.06402                     0.000 NO     DARK 
   RECTANGLE  0.01600     x 0.05300       0.000 NO     DARK 
   RECTANGLE  0.02799     x 0.01000      90.000 NO     DARK 
+  RECTANGLE  0.03150     x 0.06496      90.000 NO     DARK 
   RECTANGLE  0.04134     x 0.03937      90.000 NO     DARK 
   RECTANGLE  0.04331     x 0.07480       0.000 NO     DARK 
   RECTANGLE  0.04402     x 0.05902       0.000 NO     DARK 
   RECTANGLE  0.04402     x 0.05902      90.000 NO     DARK 
   RECTANGLE  0.04701     x 0.01201       0.000 NO     DARK 
   RECTANGLE  0.04701     x 0.01201      90.000 NO     DARK 
-  RECTANGLE  0.05900     x 0.03200      90.000 NO     DARK 
   RECTANGLE  0.05902     x 0.05598       0.000 NO     DARK 
   RECTANGLE  0.05902     x 0.05598      90.000 NO     DARK 
   RECTANGLE  0.05925     x 0.02252       0.000 NO     DARK 
@@ -206,7 +212,6 @@ Results from parameter file ...
   RECTANGLE  0.10433     x 0.06890      90.000 NO     DARK 
   OBLONG     0.03150     x 0.10236       0.000 NO     DARK 
   OBLONG     0.03150     x 0.10236      90.000 NO     DARK 
-  OBLONG     0.03346     x 0.02559      90.000 NO     DARK 
   OBLONG     0.10236     x 0.05906       0.000 NO     DARK 
 
      soldermask_top created.
@@ -214,7 +219,7 @@ Results from parameter file ...
 
 ================================================================
      PROCESSING FILM < soldermask_bottom >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/soldermask_bottom.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/soldermask_bottom.art > ...
 ================================================================
 
   FILM PARAMETERS :
@@ -235,6 +240,8 @@ Results from parameter file ...
   TYPE       SIZE/NAME                   ROT   MIRROR MODE 
   ---------------------------------------------------------
   CIRCLE     0.00200                                  DARK 
+  CIRCLE     0.02559                                  DARK 
+  CIRCLE     0.03200                                  DARK 
   CIRCLE     0.05150                                  DARK 
   CIRCLE     0.05898                                  DARK 
   CIRCLE     0.05906                                  DARK 
@@ -259,7 +266,7 @@ Results from parameter file ...
 
 ================================================================
      PROCESSING FILM < drill >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/drill.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/drill.art > ...
 ================================================================
 
   FILM PARAMETERS :
@@ -273,7 +280,7 @@ Results from parameter file ...
   Suppress unconnected internal pads  NO
   Draw holes only                     NO
 
-    WARNING: 0 width line found at (-2741.00 -4130.00) in MIL
+    WARNING: 0 width line found at (-4036.00 -4147.00) in MIL
            ... using undefined line width of 2.00 MIL
 
     WARNING: Multiple 0 width lines; all will be treated the same as the first.
@@ -293,7 +300,7 @@ Results from parameter file ...
 
 ================================================================
      PROCESSING FILM < silkscreen_top >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/silkscreen_top.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/silkscreen_top.art > ...
 ================================================================
 
   FILM PARAMETERS :
@@ -320,15 +327,13 @@ Results from parameter file ...
   CIRCLE     0.00787                                  DARK 
   CIRCLE     0.00800                                  DARK 
   CIRCLE     0.00984                                  DARK 
-  CIRCLE     0.01000                                  DARK 
-  CIRCLE     0.02000                                  DARK 
 
      silkscreen_top created.
 
 
 ================================================================
      PROCESSING FILM < silkscreen_bottom >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/silkscreen_bottom.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/silkscreen_bottom.art > ...
 ================================================================
 
   FILM PARAMETERS :
@@ -360,7 +365,7 @@ Results from parameter file ...
 
 ================================================================
      PROCESSING FILM < size_detail >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/size_detail.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/size_detail.art > ...
 ================================================================
 
   FILM PARAMETERS :

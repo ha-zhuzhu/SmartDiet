@@ -4,7 +4,7 @@
 (                                                                     )
 (    Drawing          : CyberBalance.brd                              )
 (    Software Version : 17.4S015                                      )
-(    Date/Time        : Fri May 21 16:59:19 2021                      )
+(    Date/Time        : Fri May 28 17:10:05 2021                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -29,16 +29,16 @@ Results from parameter file ...
 
 ================================================================
      PROCESSING FILM < TOP >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/TOP.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/TOP.art > ...
 ================================================================
 
   FILM PARAMETERS :
   ---------------------------------------------------------
-  Undefined line width                2.000 MIL
+  Undefined line width                2.00 MIL
   Mirror code                         NONE
   Rotate angle                        NONE
-  Offset x:                           0.000
-  Offset y:                           0.000
+  Offset x:                           0.00
+  Offset y:                           0.00
   Plot negative                       NO
   Suppress unconnected internal pads  NO
   Draw holes only                     NO
@@ -46,146 +46,6 @@ Results from parameter file ...
     WARNING: Film contains objects with associated DRCs (86).
            In the design editor view this film and enable visibility for the
            associated DRC layer. Verify the DRCs are approved exceptions to your rules.
-    WARNING: Segment with same start and end points at
-	(217.988 1298.001) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(1641.012 1060.004) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(985.001 574.248) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(791.999 630.012) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(1815.999 1014.012) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(1816.000 969.988) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(1227.512 1550.500) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(1108.001 1530.988) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(1085.988 1553.000) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(1120.001 417.988) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(1120.000 462.012) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(1382.012 625.000) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(551.921 1147.909) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(235.001 1529.988) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(235.000 1574.012) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(336.988 1598.015) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(477.988 1709.998) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(650.001 1619.998) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(650.001 1719.998) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(550.000 1800.002) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(490.002 1760.001) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(450.000 1800.002) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(550.001 1864.998) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(590.002 1905.000) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(690.002 1905.000) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(750.001 1864.998) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(790.002 1905.000) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(850.001 1864.998) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(890.002 1905.000) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(1090.002 1905.000) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(887.012 1685.001) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(972.827 1458.838) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(447.248 492.000) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(765.000 1027.248) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(845.000 1027.248) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
 
 
   APERTURES USED (UNIT = IN):
@@ -196,6 +56,7 @@ Results from parameter file ...
   CIRCLE     0.00800                                  DARK 
   CIRCLE     0.01000                                  DARK 
   CIRCLE     0.01200                                  DARK 
+  CIRCLE     0.01500                                  DARK 
   CIRCLE     0.02300                                  DARK 
   CIRCLE     0.02402                                  DARK 
   CIRCLE     0.02800                                  DARK 
@@ -241,16 +102,16 @@ Results from parameter file ...
 
 ================================================================
      PROCESSING FILM < BOTTOM >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/BOTTOM.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/BOTTOM.art > ...
 ================================================================
 
   FILM PARAMETERS :
   ---------------------------------------------------------
-  Undefined line width                2.000 MIL
+  Undefined line width                2.00 MIL
   Mirror code                         NONE
   Rotate angle                        NONE
-  Offset x:                           0.000
-  Offset y:                           0.000
+  Offset x:                           0.00
+  Offset y:                           0.00
   Plot negative                       NO
   Suppress unconnected internal pads  NO
   Draw holes only                     NO
@@ -258,54 +119,6 @@ Results from parameter file ...
     WARNING: Film contains objects with associated DRCs (2).
            In the design editor view this film and enable visibility for the
            associated DRC layer. Verify the DRCs are approved exceptions to your rules.
-    WARNING: Segment with same start and end points at
-	(819.747 1719.736) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(819.748 1763.760) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(423.900 1276.409) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(403.311 1308.323) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(381.299 1286.311) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(476.460 1528.976) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(476.461 1573.000) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(499.998 1687.988) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(477.988 1710.000) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(561.822 602.020) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(1111.512 1579.498) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
-    WARNING: Segment with same start and end points at
-	(1349.999 1864.998) will be ignored. Increasing output
-	accuracy may allow segment to be generated.
-
 
 
   APERTURES USED (UNIT = IN):
@@ -318,6 +131,7 @@ Results from parameter file ...
   CIRCLE     0.01200                                  DARK 
   CIRCLE     0.02000                                  DARK 
   CIRCLE     0.02402                                  DARK 
+  CIRCLE     0.02800                                  DARK 
   CIRCLE     0.03000                                  DARK 
   CIRCLE     0.05000                                  DARK 
   CIRCLE     0.05150                                  DARK 
@@ -334,23 +148,25 @@ Results from parameter file ...
   RECTANGLE  0.04000     x 0.05500       0.000 NO     DARK 
   RECTANGLE  0.05500     x 0.05201       0.000 NO     DARK 
   RECTANGLE  0.05500     x 0.05201      90.000 NO     DARK 
+  RECTANGLE  0.05900     x 0.03200      90.000 NO     DARK 
   RECTANGLE  0.10433     x 0.06890      90.000 NO     DARK 
+  OBLONG     0.03346     x 0.02559      90.000 NO     DARK 
 
      BOTTOM created with warnings
 
 
 ================================================================
      PROCESSING FILM < soldermask_top >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/soldermask_top.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/soldermask_top.art > ...
 ================================================================
 
   FILM PARAMETERS :
   ---------------------------------------------------------
-  Undefined line width                2.000 MIL
+  Undefined line width                2.00 MIL
   Mirror code                         NONE
   Rotate angle                        NONE
-  Offset x:                           0.000
-  Offset y:                           0.000
+  Offset x:                           0.00
+  Offset y:                           0.00
   Plot negative                       NO
   Suppress unconnected internal pads  NO
   Draw holes only                     NO
@@ -377,6 +193,7 @@ Results from parameter file ...
   SQUARE     0.06402                     0.000 NO     DARK 
   RECTANGLE  0.01600     x 0.05300       0.000 NO     DARK 
   RECTANGLE  0.02799     x 0.01000      90.000 NO     DARK 
+  RECTANGLE  0.03150     x 0.06496      90.000 NO     DARK 
   RECTANGLE  0.04134     x 0.03937      90.000 NO     DARK 
   RECTANGLE  0.04331     x 0.07480       0.000 NO     DARK 
   RECTANGLE  0.04402     x 0.05902       0.000 NO     DARK 
@@ -402,16 +219,16 @@ Results from parameter file ...
 
 ================================================================
      PROCESSING FILM < soldermask_bottom >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/soldermask_bottom.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/soldermask_bottom.art > ...
 ================================================================
 
   FILM PARAMETERS :
   ---------------------------------------------------------
-  Undefined line width                2.000 MIL
+  Undefined line width                2.00 MIL
   Mirror code                         NONE
   Rotate angle                        NONE
-  Offset x:                           0.000
-  Offset y:                           0.000
+  Offset x:                           0.00
+  Offset y:                           0.00
   Plot negative                       NO
   Suppress unconnected internal pads  NO
   Draw holes only                     NO
@@ -438,34 +255,36 @@ Results from parameter file ...
   RECTANGLE  0.02953     x 0.04921      90.000 NO     DARK 
   RECTANGLE  0.03937     x 0.04724      90.000 NO     DARK 
   RECTANGLE  0.04402     x 0.05902       0.000 NO     DARK 
+  RECTANGLE  0.05900     x 0.03200      90.000 NO     DARK 
   RECTANGLE  0.05902     x 0.05598       0.000 NO     DARK 
   RECTANGLE  0.05902     x 0.05598      90.000 NO     DARK 
   RECTANGLE  0.10433     x 0.06890      90.000 NO     DARK 
+  OBLONG     0.03346     x 0.02559      90.000 NO     DARK 
 
      soldermask_bottom created.
 
 
 ================================================================
      PROCESSING FILM < drill >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/drill.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/drill.art > ...
 ================================================================
 
   FILM PARAMETERS :
   ---------------------------------------------------------
-  Undefined line width                2.000 MIL
+  Undefined line width                2.00 MIL
   Mirror code                         NONE
   Rotate angle                        NONE
-  Offset x:                           0.000
-  Offset y:                           0.000
+  Offset x:                           0.00
+  Offset y:                           0.00
   Plot negative                       NO
   Suppress unconnected internal pads  NO
   Draw holes only                     NO
 
-    WARNING: 0 width line found at (-2741.000 -4130.000) in MIL
-           ... using undefined line width of 2.000 MIL
+    WARNING: 0 width line found at (-4036.00 -4147.00) in MIL
+           ... using undefined line width of 2.00 MIL
 
     WARNING: Multiple 0 width lines; all will be treated the same as the first.
-           ... using undefined line width of 2.000 MIL
+           ... using undefined line width of 2.00 MIL
 
 
 
@@ -481,16 +300,16 @@ Results from parameter file ...
 
 ================================================================
      PROCESSING FILM < silkscreen_top >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/silkscreen_top.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/silkscreen_top.art > ...
 ================================================================
 
   FILM PARAMETERS :
   ---------------------------------------------------------
-  Undefined line width                2.000 MIL
+  Undefined line width                2.00 MIL
   Mirror code                         NONE
   Rotate angle                        NONE
-  Offset x:                           0.000
-  Offset y:                           0.000
+  Offset x:                           0.00
+  Offset y:                           0.00
   Plot negative                       NO
   Suppress unconnected internal pads  NO
   Draw holes only                     NO
@@ -506,10 +325,8 @@ Results from parameter file ...
   CIRCLE     0.00591                                  DARK 
   CIRCLE     0.00600                                  DARK 
   CIRCLE     0.00787                                  DARK 
-  CIRCLE     0.00787                                  DARK 
   CIRCLE     0.00800                                  DARK 
   CIRCLE     0.00984                                  DARK 
-  CIRCLE     0.01000                                  DARK 
   CIRCLE     0.02000                                  DARK 
 
      silkscreen_top created.
@@ -517,16 +334,16 @@ Results from parameter file ...
 
 ================================================================
      PROCESSING FILM < silkscreen_bottom >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/silkscreen_bottom.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/silkscreen_bottom.art > ...
 ================================================================
 
   FILM PARAMETERS :
   ---------------------------------------------------------
-  Undefined line width                2.000 MIL
+  Undefined line width                2.00 MIL
   Mirror code                         NONE
   Rotate angle                        NONE
-  Offset x:                           0.000
-  Offset y:                           0.000
+  Offset x:                           0.00
+  Offset y:                           0.00
   Plot negative                       NO
   Suppress unconnected internal pads  NO
   Draw holes only                     NO
@@ -549,16 +366,16 @@ Results from parameter file ...
 
 ================================================================
      PROCESSING FILM < size_detail >
-     TO FILE < E:/Project/SmartDiet/Device/Schematic/allegro/size_detail.art > ...
+     TO FILE < e:/Project/SmartDiet/Device/Schematic/allegro/size_detail.art > ...
 ================================================================
 
   FILM PARAMETERS :
   ---------------------------------------------------------
-  Undefined line width                2.000 MIL
+  Undefined line width                2.00 MIL
   Mirror code                         NONE
   Rotate angle                        NONE
-  Offset x:                           0.000
-  Offset y:                           0.000
+  Offset x:                           0.00
+  Offset y:                           0.00
   Plot negative                       NO
   Suppress unconnected internal pads  NO
   Draw holes only                     NO
@@ -576,7 +393,6 @@ Results from parameter file ...
   CIRCLE     0.00500                                  DARK 
   CIRCLE     0.00591                                  DARK 
   CIRCLE     0.00600                                  DARK 
-  CIRCLE     0.00787                                  DARK 
   CIRCLE     0.00787                                  DARK 
   CIRCLE     0.00800                                  DARK 
   CIRCLE     0.01500                                  DARK 

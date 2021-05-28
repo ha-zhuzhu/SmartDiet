@@ -4,7 +4,7 @@
 (                                                                     )
 (    Drawing          : CyberBalance.brd                              )
 (    Software Version : 17.4S015                                      )
-(    Date/Time        : Fri May 21 18:03:18 2021                      )
+(    Date/Time        : Fri May 28 17:23:20 2021                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -35,9 +35,11 @@
  ENHANCED_EXCELLON	YES
  SCALE			1.000000
 
+ WARNING(SPMHMF-365): This design contains 4 slot holes that cannot be drilled.
+ WARNING(SPMHMF-366): They can be processed by NC routing instead.
 
 
- Drill files being output to directory 'E:/Project/SmartDiet/Device/Schematic/allegro' ...
+ Drill files being output to directory 'e:/Project/SmartDiet/Device/Schematic/allegro' ...
 
 
 
@@ -46,7 +48,7 @@
 
            Num     Size      +/- Tolerance     Plating   Quantity
 
-            1.  12.0100    0.0000/ 12.0100      PLATED        223
+            1.  12.0100    0.0000/ 12.0100      PLATED        228
             2.  31.5000    0.0000/  0.0000      PLATED          3
             3.  38.9800    0.0000/  0.0000      PLATED          2
             4.  40.0000    0.0000/  0.0000      PLATED         12
@@ -57,7 +59,7 @@
             9.  59.0600    0.0000/  0.0000  NON_PLATED          2
            10. 118.1100    0.0000/  0.0000  NON_PLATED          1
 
-     ---- Total holes:                                        265
+     ---- Total holes:                                        270
 
-     ---- Total head travel:              7.76 feet (2.37 meters)
+     ---- Total head travel:              8.07 feet (2.46 meters)
 
