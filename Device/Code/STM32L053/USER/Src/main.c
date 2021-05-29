@@ -23,19 +23,19 @@ int main()
     /* USART1-PC
      * PB6   ------> USART1_TX
      * PB7   ------> USART1_RX */
-    USART1_Init();
+    //USART1_Init();
 
     /* BC28 */
     /* LPUART1-BC28
      * PB10   ------> LPUART1_TX
      * PB11   ------> LPUART1_RX */
-    LPUART1_Init();
+    //LPUART1_Init();
     //BC28_Init();
     //BC28_CreateInstance();
 
     /* LCD */
-    // LCD_Init();
-    // LCD_GLASS_Clear();
+    LCD_Init();
+    LCD_GLASS_Clear();
 
     while (1)
     {
@@ -75,8 +75,6 @@ int main()
 
         /* LCD */
         LCD_GLASS_Heartbeat(233.3);
-
-        
     }
 }
 

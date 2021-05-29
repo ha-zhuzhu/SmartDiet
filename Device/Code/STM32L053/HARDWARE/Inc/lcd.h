@@ -1,7 +1,6 @@
 #ifndef __LCD_H__
 #define __LCD_H__
 
-#include "stm32l0xx_hal.h"
 #include "main.h"
 
 extern LCD_HandleTypeDef hlcd;
@@ -51,20 +50,20 @@ typedef enum
 //#define MCU_LCD_SEG7_SHIFT    7
 
 // 对应MCU的 LCFD_SEGx
-#define MCU_LCD_SEG0_SHIFT    15
-#define MCU_LCD_SEG1_SHIFT    14
-#define MCU_LCD_SEG2_SHIFT    13
-#define MCU_LCD_SEG3_SHIFT    12
-#define MCU_LCD_SEG4_SHIFT    17
-#define MCU_LCD_SEG5_SHIFT    7
-#define MCU_LCD_SEG6_SHIFT    8
-#define MCU_LCD_SEG7_SHIFT    9
+#define MCU_LCD_SEG0_SHIFT    15    //PB15
+#define MCU_LCD_SEG1_SHIFT    14    //PB14
+#define MCU_LCD_SEG2_SHIFT    13    //PB13
+#define MCU_LCD_SEG3_SHIFT    12    //PB12
+#define MCU_LCD_SEG4_SHIFT    17    //PA15
+#define MCU_LCD_SEG5_SHIFT    7     //PB3
+#define MCU_LCD_SEG6_SHIFT    8     //PB4
+#define MCU_LCD_SEG7_SHIFT    9     //PB5
 
 //COM连线是反着的
-#define LCD_COM0          MCU_LCD_COM3
-#define LCD_COM1          MCU_LCD_COM2
-#define LCD_COM2          MCU_LCD_COM1
-#define LCD_COM3          MCU_LCD_COM0
+#define LCD_COM0          MCU_LCD_COM3  //PB9
+#define LCD_COM1          MCU_LCD_COM2  //PA10
+#define LCD_COM2          MCU_LCD_COM1  //PA9
+#define LCD_COM3          MCU_LCD_COM0  //PA8
 
 #define LCD_SEG0          MCU_LCD_SEG0
 #define LCD_SEG1          MCU_LCD_SEG1

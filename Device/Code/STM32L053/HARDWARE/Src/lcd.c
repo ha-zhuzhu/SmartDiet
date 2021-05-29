@@ -103,7 +103,8 @@ void LCD_GLASS_Heartbeat(float src)
   {
     WriteFloat(src, Mode_Err);
   }
-  HAL_Delay(150);
+  //HAL_Delay(150);
+  LL_mDelay(150);
   /* Update the LCD display */
   HAL_LCD_UpdateDisplayRequest(&hlcd);
 }
@@ -361,14 +362,14 @@ void LCD_Init(void)
   hlcd.Init.Prescaler = LCD_PRESCALER_4;
   hlcd.Init.Divider = LCD_DIVIDER_20;
   hlcd.Init.Duty = LCD_DUTY_1_4;
-  hlcd.Init.Bias = LCD_BIAS_1_4;
-  hlcd.Init.VoltageSource = LCD_VOLTAGESOURCE_INTERNAL;
-  hlcd.Init.Contrast = LCD_CONTRASTLEVEL_2;
+  hlcd.Init.Bias = LCD_BIAS_1_3;
+  hlcd.Init.VoltageSource = LCD_VOLTAGESOURCE_EXTERNAL;
+  hlcd.Init.Contrast = LCD_CONTRASTLEVEL_0;
   hlcd.Init.DeadTime = LCD_DEADTIME_0;
   hlcd.Init.PulseOnDuration = LCD_PULSEONDURATION_5;
   hlcd.Init.HighDrive = LCD_HIGHDRIVE_0;
   hlcd.Init.BlinkMode = LCD_BLINKMODE_OFF;
-  hlcd.Init.BlinkFrequency = LCD_BLINKFREQUENCY_DIV8;
+  hlcd.Init.BlinkFrequency = LCD_BLINKFREQUENCY_DIV512;
   hlcd.Init.MuxSegment = LCD_MUXSEGMENT_DISABLE;
   if (HAL_LCD_Init(&hlcd) != HAL_OK)
   {
