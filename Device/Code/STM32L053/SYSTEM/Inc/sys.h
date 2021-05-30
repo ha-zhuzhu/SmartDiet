@@ -1,5 +1,5 @@
-#ifndef __SYSCLOCK_H
-#define __SYSCLOCK_H
+#ifndef __SYS_H
+#define __SYS_H
 
 #include "main.h"
 

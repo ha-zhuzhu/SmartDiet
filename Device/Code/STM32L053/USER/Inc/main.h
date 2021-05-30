@@ -21,4 +21,6 @@
 
 void Error_Handler(void);
 
+#define fastAbs(n) n > 0 ? n : -n
+
 #endif /* __MAIN_H */

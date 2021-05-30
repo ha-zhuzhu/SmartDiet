@@ -543,6 +543,11 @@
               <FileType>1</FileType>
               <FilePath>..\FWLIB\Src\stm32l0xx_ll_lpuart.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32l0xx_ll_pwr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FWLIB\Src\stm32l0xx_ll_pwr.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -563,20 +568,30 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\Src\lcd.c</FilePath>
             </File>
+            <File>
+              <FileName>hx711.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Src\hx711.c</FilePath>
+            </File>
+            <File>
+              <FileName>btn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Src\btn.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>SYSTEM</GroupName>
           <Files>
             <File>
-              <FileName>sysclock.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\SYSTEM\Src\sysclock.c</FilePath>
-            </File>
-            <File>
               <FileName>usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SYSTEM\Src\usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>sys.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SYSTEM\Src\sys.c</FilePath>
             </File>
           </Files>
         </Group>

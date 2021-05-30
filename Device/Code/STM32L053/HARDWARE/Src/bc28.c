@@ -18,8 +18,33 @@ void Clear_Buffer(void)
     //IWDG_Feed(); //喂狗
 }
 
-void BC28_Init(void)
+uint8_t BC28_Init(void)
 {
+    if (LL_IOP_GRP1_IsEnabledClock(LL_IOP_GRP1_PERIPH_GPIOB) == 0)
+        LL_IOP_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOB);
+
+    /* PB1 BC28_RSI
+    LL_SYSCFG_SetEXTISource(LL_SYSCFG_EXTI_PORTB, LL_SYSCFG_EXTI_LINE1);
+    LL_GPIO_SetPinPull(GPIOB, LL_GPIO_PIN_1, LL_GPIO_PULL_UP);
+    LL_GPIO_SetPinMode(GPIOB, LL_GPIO_PIN_1, LL_GPIO_MODE_INPUT);
+
+    LL_EXTI_InitTypeDef EXTI_InitStruct = {0};
+    EXTI_InitStruct.Line_0_31 = LL_EXTI_LINE_1;
+    EXTI_InitStruct.LineCommand = ENABLE;
+    EXTI_InitStruct.Mode = LL_EXTI_MODE_IT;
+    EXTI_InitStruct.Trigger = LL_EXTI_TRIGGER_FALLING;
+    LL_EXTI_Init(&EXTI_InitStruct);
+    */
+
+    /* PB2 BC28_RST*/
+    LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
+    GPIO_InitStruct.Pin = LL_GPIO_PIN_2;
+    GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
+    GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+    GPIO_InitStruct.Pull = LL_GPIO_PULL_DOWN;
+    LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
     LPUART1_SendStr("AT\r\n");
     LL_mDelay(300);
     strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"OK"); //返回OK
@@ -59,54 +84,60 @@ void BC28_Init(void)
         LL_mDelay(300);
         strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"+CGATT:1"); //返回1,表明注网成功
     }
-    LPUART1_SendStr("AT+CESQ\r\n"); //查看获取CSQ值
+    LPUART1_SendStr("AT+CSQ\r\n"); //查看获取CSQ值
     LL_mDelay(300);
-    strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"+CESQ"); //返回CSQ
-    if (strx)
+    strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"+CSQ"); //返回CSQ
+    BC28_Status.CSQ = (strx[5] - 0x30) * 10 + (strx[6] - 0x30);        //获取CSQ
+    uint8_t CSQ_Rtycounter = 0;
+    while ((BC28_Status.CSQ == 99) || ((strx[5] - 0x30) == 0) && CSQ_Rtycounter < 4) //说明扫网失败
     {
-        BC28_Status.CSQ = (strx[7] - 0x30) * 10 + (strx[8] - 0x30); //获取CSQ
-        if ((BC28_Status.CSQ == 99) || ((strx[7] - 0x30) == 0))     //说明扫网失败
-        {
-            while (1)
-            {
-                BC28_Status.netstatus = 0;
-                USART1_SendStr("信号搜索失败，请查看原因!\r\n");
-                //RESET=1;//拉低
-                /* 暂时用AT指令复位 */
-                LPUART1_SendStr("AT+NRB\r\n");
-                LL_mDelay(300);
-                LL_mDelay(300);
-                //RESET=0;//复位模块
-                LL_mDelay(300); //没有信号就复位
-            }
-        }
-        else
-        {
-            BC28_Status.netstatus = 1;
-        }
+        Clear_Buffer();
+        LPUART1_SendStr("AT+CSQ\r\n");
+        LL_mDelay(300);
+        strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"+CSQ"); //返回CSQ
+        BC28_Status.CSQ = (strx[5] - 0x30) * 10 + (strx[6] - 0x30);        //获取CSQ
+        CSQ_Rtycounter++;
+    }
+    if (CSQ_Rtycounter < 4)
+        BC28_Status.netstatus = 1;
+    else
+    {
+        BC28_Status.netstatus = 0;
+        USART1_SendStr("信号搜索失败，请查看原因!\r\n");
+        /* 暂时用AT指令复位 */
+        //LPUART1_SendStr("AT+NRB\r\n");
+        LL_GPIO_SetOutputPin(BC28_RST_GPIO, BC28_RST_PIN);
+        LL_mDelay(200);
+        LL_GPIO_ResetOutputPin(BC28_RST_GPIO, BC28_RST_PIN);
+        LL_mDelay(200); //没有信号就复位
     }
     Clear_Buffer();
+    return BC28_Status.netstatus;
 }
 
 void BC28_CreateUDPSokcet(void) //创建sokcet
-{
+{  
+    /*
     uint8_t i;
     for (i = 0; i < 5; i++)
     {
-        sprintf(LPUART1_TX_BUF,"AT+NSOCL=%c\r\n", i + 0x30);
+        sprintf(LPUART1_TX_BUF, "AT+NSOCL=%c\r\n", i + 0x30);
         LPUART1_SendStr(LPUART1_TX_BUF); //关闭上一次socekt连接
         LL_mDelay(300);
     }
+    */
     Clear_Buffer();
     LPUART1_SendStr("AT+NSOCR=DGRAM,17,3005,1\r\n"); //开启SOCKET连接
-    LL_mDelay(300);
-    socketnum = LPUART1_RX_BUF[2]; //获取当前的socket号码
+    LL_mDelay(100);
+    BC28_Status.Socketnum = LPUART1_RX_BUF[2]; //获取当前的socket号码
+    Clear_Buffer();
+    USART1_SendStr(BC28_Status.Socketnum);
 }
 
 //数据发送函数
 void BC28_UDPSend(uint8_t *len, uint8_t *data)
 {
-    sprintf(LPUART1_TX_BUF,"AT+NSOST=%c,114.115.148.172,9999,%s,%s\r\n", socketnum, len, data);
+    sprintf(LPUART1_TX_BUF, "AT+NSOST=%c,114.115.148.172,9999,%s,%s\r\n", socketnum, len, data);
     LPUART1_SendStr(LPUART1_TX_BUF); //发送0socketIP和端口后面跟对应数据长度以及数据,
     LL_mDelay(300);
     strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"OK"); //返回OK
@@ -203,7 +234,7 @@ void BC28_CreateInstance(void)
 
     /* 所有的属性都被注册到平台端 */
     //44 字符串位长
-    sprintf(LPUART1_TX_BUF,"AT+MIPLDISCOVERRSP=0,%s,1,44,\"5601;5602;5603;5604;5605;5700;5701;5750;5821\"\r\n", BC28_Status.Resource_ID);
+    sprintf(LPUART1_TX_BUF, "AT+MIPLDISCOVERRSP=0,%s,1,44,\"5601;5602;5603;5604;5605;5700;5701;5750;5821\"\r\n", BC28_Status.Resource_ID);
     LPUART1_SendStr(LPUART1_TX_BUF);
     LL_mDelay(300);
     strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"OK");
@@ -218,7 +249,7 @@ void ONENET_Readdata(void) //等待服务器的读请求
 {
     uint8_t i = 0, count = 0;
     strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"+MIPLREAD:"); //有读请求产生,这里根据不同的请求发送不同的指令需求
-    if (strx)                                                          //读取到指令请求之后，获取内容数据
+    if (strx)                                                                //读取到指令请求之后，获取内容数据
     {
         LL_mDelay(100);
         while (1)
@@ -242,7 +273,7 @@ void ONENET_Readdata(void) //等待服务器的读请求
         }
         strx = strchr(strx + 1, ',');
         Clear_Buffer();
-        
+
         /* 
          * AT+MIPLREADRSP
          * 作用：MCU完成相应的Read操作后，向平台回复Read操作结果
@@ -250,7 +281,7 @@ void ONENET_Readdata(void) //等待服务器的读请求
          * result
          */
         // LPUART1_SendStr("AT+MIPLREADRSP=%s,4,4,2.35,0,0\r\n", BC28_Status.ReadSource); //回复请求，将数据传输上去
-        sprintf(LPUART1_TX_BUF,"AT+MIPLREADRSP=%s,4,4,2.35,0,0\r\n", BC28_Status.ReadSource);
+        sprintf(LPUART1_TX_BUF, "AT+MIPLREADRSP=%s,4,4,2.35,0,0\r\n", BC28_Status.ReadSource);
         LPUART1_SendStr(LPUART1_TX_BUF); //返回 2.35 4-float 4-数据位宽
         LL_mDelay(300);
         strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"OK"); //
@@ -262,7 +293,7 @@ void ONENET_Readdata(void) //等待服务器的读请求
     }
 }
 
-void BC28_NotifyResource(void)
+void BC28_NotifyResource(float ResourceValue)
 {
     /*
      * AT+MIPLNOTIFY
@@ -279,13 +310,55 @@ void BC28_NotifyResource(void)
      * i. value：上报数据。
      * j. flag：消息标识，指示第一条或中间或最后一条报文。
      */
-    sprintf(LPUART1_TX_BUF,"AT+MIPLNOTIFY=0,%s,3322,0,5700,4,4,2.33,0,0\r\n", BC28_Status.Observe_ID);
+    // 因为未知的原因，向ONENET上传float时len只能4位，且不能用引号。value的实际长度可以<=4位
+    sprintf(LPUART1_TX_BUF, "AT+MIPLNOTIFY=0,%s,3322,0,5700,4,4,%d,0,0\r\n", BC28_Status.Observe_ID, (int)ResourceValue);
     LPUART1_SendStr(LPUART1_TX_BUF); //发送重量数据2.33 数据位宽为4
-    LL_mDelay(300);
+    LL_mDelay(100);
     strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"OK");
     while (strx == NULL)
     {
         strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"OK");
+    }
+    Clear_Buffer();
+
+    //如果每次notify时都处于PSM状态，重新连接需要2s，有点降低体验
+}
+
+void BC28_EnablePSM(void)
+{
+    /* 1-开启; TAU 01000001-10小时; active-timer 00000001 2s */
+    LPUART1_SendStr("AT+CPSMS=1,,,01000111,00000001\r\n");
+    LL_mDelay(50);
+    /* 省电状态变化上报 */
+    LPUART1_SendStr("AT+NPSMR=1\r\n");
+    LL_mDelay(50);
+    /* 使能URC上报功能 */
+    //LPUART1_SendStr("AT+CSCON=1\r\n");
+    //LL_mDelay(50);
+    /* 创建UDP */
+    BC28_CreateUDPSokcet();
+    //LL_mDelay(200);
+}
+
+void BC28_DisablePSM(void)
+{
+    LPUART1_SendStr("AT+CPSMS=0\r\n");
+    LL_mDelay(100);
+    LPUART1_SendStr("AT+NPSMR=0\r\n");
+}
+
+void BC28_Sleep(void)
+{
+    /* 0x200发送立即释放 400收到后释放 socket号 */
+    sprintf(LPUART1_TX_BUF, "AT+NSOSTF=%c,47.92.146.210,8888,0x200,2,AB30\r\n",BC28_Status.Socketnum);
+    LPUART1_SendStr(LPUART1_TX_BUF); //发送0socketIP和端口后面跟对应数据长度以及数据,
+    // 如果之前处于PSM模式，那么一共需要4s（重新连接2s+activetimer 2s）
+    LL_mDelay(2000);
+    // 如果要在中断处理函数中运行Sleep，记得把LP串口接收中断优先级调高
+    strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"+NPSMR:1");
+    while (strx == NULL)
+    {
+        strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"+NPSMR:1");
     }
     Clear_Buffer();
 }

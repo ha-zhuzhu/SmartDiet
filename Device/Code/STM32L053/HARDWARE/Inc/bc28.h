@@ -2,8 +2,11 @@
 #define __BC28_H
 #include "main.h"
 
+#define BC28_RST_GPIO GPIOB
+#define BC28_RST_PIN  LL_GPIO_PIN_2
+
 void Clear_Buffer(void); //清空缓存
-void BC28_Init(void);
+uint8_t BC28_Init(void);
 void BC28_CreateUDPSokcet(void);
 void BC28_UDPSend(uint8_t *len, uint8_t *data);
 void BC28_CreateSokcet(void);
@@ -12,7 +15,10 @@ void BC28_ChecekConStatus(void);
 void BC28_RECData(void);
 void BC28_CreateInstance(void);
 void ONENET_Readdata(void);
-void BC28_NotifyResource(void);
+void BC28_NotifyResource(float ResourceValue);
+void BC28_EnablePSM(void);
+void BC28_DisablePSM(void);
+void BC28_Sleep(void);
 
 typedef struct
 {

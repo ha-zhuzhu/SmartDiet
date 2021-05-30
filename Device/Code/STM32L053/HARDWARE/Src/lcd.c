@@ -1,6 +1,5 @@
 #include "lcd.h"
 
-#define fastAbs(n) n > 0 ? n : -n
 #define ASCII_CHAR_0 0x30 /* 0 */
 
 LCD_HandleTypeDef hlcd;
@@ -104,7 +103,7 @@ void LCD_GLASS_Heartbeat(float src)
     WriteFloat(src, Mode_Err);
   }
   //HAL_Delay(150);
-  LL_mDelay(150);
+  //LL_mDelay(150);
   /* Update the LCD display */
   HAL_LCD_UpdateDisplayRequest(&hlcd);
 }

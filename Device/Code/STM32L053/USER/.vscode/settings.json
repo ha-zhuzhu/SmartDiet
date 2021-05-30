@@ -16,6 +16,11 @@
         "bc28.h": "c",
         "string.h": "c",
         "cstdio": "c",
-        "lcd.h": "c"
+        "lcd.h": "c",
+        "hx711.h": "c",
+        "btn.h": "c",
+        "stm32l0xx_ll_bus.h": "c",
+        "stm32l0xx_ll_pwr.h": "c",
+        "sys.h": "c"
     }
 }
