@@ -8,7 +8,7 @@ BC28 BC28_Status;
 uint8_t socketnum = 0; //当前的socket号码
 
 /* 清空缓存 */
-void Clear_Buffer(void)
+void Clear_LPUART1_Buffer_2_USART1(void)
 {
     uint8_t i;
     USART1_SendStr(LPUART1_RX_BUF);
@@ -69,6 +69,7 @@ uint8_t BC28_Init(void)
         LL_mDelay(300);
         strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"460"); //返回OK,说明卡是存在的
     }
+    Clear_Buffer();
     LPUART1_SendStr("AT+CGATT=1\r\n"); //激活网络，PDP
     LL_mDelay(300);
     strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"OK"); //返OK
@@ -131,7 +132,6 @@ void BC28_CreateUDPSokcet(void) //创建sokcet
     LL_mDelay(100);
     BC28_Status.Socketnum = LPUART1_RX_BUF[2]; //获取当前的socket号码
     Clear_Buffer();
-    USART1_SendStr(BC28_Status.Socketnum);
 }
 
 //数据发送函数
@@ -232,9 +232,9 @@ void BC28_CreateInstance(void)
     Clear_Buffer();
     LL_mDelay(1000);
 
-    /* 所有的属性都被注册到平台端 */
-    //44 字符串位长
-    sprintf(LPUART1_TX_BUF, "AT+MIPLDISCOVERRSP=0,%s,1,44,\"5601;5602;5603;5604;5605;5700;5701;5750;5821\"\r\n", BC28_Status.Resource_ID);
+    /* 注册5700"Sensor Value" 5701"Sensor Units"属性到平台端 */
+    //9 字符串位长
+    sprintf(LPUART1_TX_BUF, "AT+MIPLDISCOVERRSP=0,%s,1,9,\"5700;5701\"\r\n", BC28_Status.Resource_ID);
     LPUART1_SendStr(LPUART1_TX_BUF);
     LL_mDelay(300);
     strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"OK");
@@ -293,7 +293,7 @@ void ONENET_Readdata(void) //等待服务器的读请求
     }
 }
 
-void BC28_NotifyResource(float ResourceValue)
+void BC28_NotifyResource(uint16_t ResourceValue,Resource_Typedef ResTyp)
 {
     /*
      * AT+MIPLNOTIFY
@@ -311,8 +311,11 @@ void BC28_NotifyResource(float ResourceValue)
      * j. flag：消息标识，指示第一条或中间或最后一条报文。
      */
     // 因为未知的原因，向ONENET上传float时len只能4位，且不能用引号。value的实际长度可以<=4位
-    sprintf(LPUART1_TX_BUF, "AT+MIPLNOTIFY=0,%s,3322,0,5700,4,4,%d,0,0\r\n", BC28_Status.Observe_ID, (int)ResourceValue);
-    LPUART1_SendStr(LPUART1_TX_BUF); //发送重量数据2.33 数据位宽为4
+    if (ResTyp==ResTyp_Weight)
+        sprintf(LPUART1_TX_BUF, "AT+MIPLNOTIFY=0,%s,3322,0,5700,4,4,%04d,0,0\r\n", BC28_Status.Observe_ID, ResourceValue);
+    if (ResTyp==ResTyp_VDDA)
+        sprintf(LPUART1_TX_BUF, "AT+MIPLNOTIFY=0,%s,3322,0,5701,1,4,\"%04d\",0,0\r\n", BC28_Status.Observe_ID, ResourceValue);
+    LPUART1_SendStr(LPUART1_TX_BUF);
     LL_mDelay(100);
     strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"OK");
     while (strx == NULL)

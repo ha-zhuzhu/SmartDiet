@@ -3,19 +3,30 @@
 #include "main.h"
 
 #define BC28_RST_GPIO GPIOB
-#define BC28_RST_PIN  LL_GPIO_PIN_2
+#define BC28_RST_PIN LL_GPIO_PIN_2
 
-void Clear_Buffer(void); //清空缓存
+#if defined(DEBUG_MODE)
+#define Clear_Buffer() Clear_LPUART1_Buffer_2_USART1()
+#else
+#define Clear_Buffer()
+#endif
+
+typedef enum
+{
+    ResTyp_Weight = 0,
+    ResTyp_VDDA = 1
+} Resource_Typedef;
+
+void Clear_LPUART1_Buffer_2_USART1(void); //清空缓存
 uint8_t BC28_Init(void);
 void BC28_CreateUDPSokcet(void);
 void BC28_UDPSend(uint8_t *len, uint8_t *data);
 void BC28_CreateSokcet(void);
-void Clear_Buffer(void);
 void BC28_ChecekConStatus(void);
 void BC28_RECData(void);
 void BC28_CreateInstance(void);
 void ONENET_Readdata(void);
-void BC28_NotifyResource(float ResourceValue);
+void BC28_NotifyResource(uint16_t ResourceValue, Resource_Typedef ResTyp);
 void BC28_EnablePSM(void);
 void BC28_DisablePSM(void);
 void BC28_Sleep(void);

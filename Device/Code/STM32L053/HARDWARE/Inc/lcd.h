@@ -94,11 +94,13 @@ typedef enum
 
 extern void _Error_Handler(char *, int);
 void LCD_Init(void);
+void LCD_Deinit(void);
 void HAL_LCD_MspInit(LCD_HandleTypeDef* lcdHandle);
 void HAL_LCD_MspDeInit(LCD_HandleTypeDef* lcdHandle);
 void LCD_GLASS_Heartbeat(float src);
 void LCD_GLASS_Clear(void);
 void LCD_GLASS_BlinkConfig(void);
+void LCD_GLASS_BlinkDeConfig(void);
 
 static void Convert(uint8_t Char, Point_Typedef Point, Minus_Typedef Minus);
 static void WriteFloat(float src, Mode_Typedef Mode);

@@ -9,8 +9,8 @@
 #define HX711_gain 2
 #define HX711_stableTime 3  // 稳定多少次可以上传数据
 #define HX711_stableThr 30000   //连续两次ADC value在此阈值内算稳定
-#define HX711_defaultRatio 100000   // weight=value-offset/ratio
-#define HX711_idleTIme 30   //30次读数idle则睡眠
+#define HX711_defaultRatio 1   // weight=value-offset/ratio
+#define HX711_idleTime 30   //30次读数idle则睡眠
 
 #define SCK_GPIO GPIOA
 #define SCK_PIN LL_GPIO_PIN_5
@@ -26,6 +26,7 @@ typedef struct _hx711_data
     uint8_t stableCounter;
     uint8_t idleCounter;
     uint8_t stableFlag;
+    uint8_t idleFlag;
 } _HX711_DATA;
 
 extern _HX711_DATA HX711_Data;

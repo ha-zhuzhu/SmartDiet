@@ -77,85 +77,90 @@ uint32_t DigitData[8];
     */
 void LCD_GLASS_BlinkConfig(void)
 {
-  __HAL_LCD_BLINK_CONFIG(&hlcd, LCD_BLINKMODE_ALLSEG_ALLCOM, LCD_BLINKFREQUENCY_DIV1024);
+    __HAL_LCD_BLINK_CONFIG(&hlcd, LCD_BLINKMODE_ALLSEG_ALLCOM, LCD_BLINKFREQUENCY_DIV512);
+}
+
+void LCD_GLASS_BlinkDeConfig(void)
+{
+    __HAL_LCD_BLINK_CONFIG(&hlcd, LCD_BLINKMODE_OFF, LCD_BLINKFREQUENCY_DIV512);
 }
 
 void LCD_GLASS_Heartbeat(float src)
 {
-  if ((src >= 0) && (src <= 9.999))
-  {
-    WriteFloat(src, Mode_0);
-  }
-  else if (((src >= -19.99) && (src < 0)) || ((src > 9.999) && (src <= 99.99)))
-  {
-    WriteFloat(src, Mode_1);
-  }
-  else if (((src >= -199.9) && (src < -19.99)) || ((src > 99.99) && (src <= 999.9)))
-  {
-    WriteFloat(src, Mode_2);
-  }
-  else if (((src >= -1999) && (src < -199.9)) || ((src > 999.9) && (src <= 9999)))
-  {
-    WriteFloat(src, Mode_3);
-  }
-  else
-  {
-    WriteFloat(src, Mode_Err);
-  }
-  //HAL_Delay(150);
-  //LL_mDelay(150);
-  /* Update the LCD display */
-  HAL_LCD_UpdateDisplayRequest(&hlcd);
+    if ((src >= 0) && (src <= 9.999))
+    {
+        WriteFloat(src, Mode_0);
+    }
+    else if (((src >= -19.99) && (src < 0)) || ((src > 9.999) && (src <= 99.99)))
+    {
+        WriteFloat(src, Mode_1);
+    }
+    else if (((src >= -199.9) && (src < -19.99)) || ((src > 99.99) && (src <= 999.9)))
+    {
+        WriteFloat(src, Mode_2);
+    }
+    else if (((src >= -1999) && (src < -199.9)) || ((src > 999.9) && (src <= 9999)))
+    {
+        WriteFloat(src, Mode_3);
+    }
+    else
+    {
+        WriteFloat(src, Mode_Err);
+    }
+    //HAL_Delay(150);
+    //LL_mDelay(150);
+    /* Update the LCD display */
+    HAL_LCD_UpdateDisplayRequest(&hlcd);
 }
 
 void LCD_GLASS_Clear(void)
 {
-  HAL_LCD_Clear(&hlcd);
+    HAL_LCD_Clear(&hlcd);
 }
 
 static void Convert(uint8_t Char, Point_Typedef Point, Minus_Typedef Minus)
 {
-  uint16_t ch = 0;
-  uint8_t loop = 0, index = 0;
-  switch (Char)
-  {
-  case '0':
-  case '1':
-  case '2':
-  case '3':
-  case '4':
-  case '5':
-  case '6':
-  case '7':
-  case '8':
-  case '9':
-    ch = NumberMap[Char - ASCII_CHAR_0];
-    break;
-  case 'E':
-    ch = ErrorCode[0];
-    break;
-  case 'r':
-    ch = ErrorCode[1];
-    break;
-  case 'o':
-    ch = ErrorCode[2];
-    break;
-  default:
-    ch = 0x00;
-    break;
-  }
-  if (Minus == MINUS_ON)
-  {
-    ch |= minus;
-  }
-  if (Point == POINT_ON)
-  {
-    ch |= dot;
-  }
-  for (loop = 4, index = 0; index < 2; loop -= 4, index++)
-  {
-    Digit[index] = (ch >> loop) & 0x0f; /*To isolate the less significant digit */
-  }
+    uint16_t ch = 0;
+    uint8_t loop = 0, index = 0;
+    switch (Char)
+    {
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+        ch = NumberMap[Char - ASCII_CHAR_0];
+        break;
+    case 'E':
+        ch = ErrorCode[0];
+        break;
+    case 'r':
+        ch = ErrorCode[1];
+        break;
+    case 'o':
+        ch = ErrorCode[2];
+        break;
+    default:
+        ch = 0x00;
+        break;
+    }
+    if (Minus == MINUS_ON)
+    {
+        ch |= minus;
+    }
+    if (Point == POINT_ON)
+    {
+        ch |= dot;
+    }
+    for (loop = 4, index = 0; index < 2; loop -= 4, index++)
+    {
+        Digit[index] = (ch >> loop) & 0x0f; /*To isolate the less significant digit */
+    }
 }
 
 /**
@@ -168,226 +173,254 @@ COM4                           COM4     1P      1D      2P      2D      3P      
 
 static void WriteFloat(float src, Mode_Typedef Mode)
 {
-  uint32_t data = 0x00;
-  char ch[10];
-  int i, j = 0;
-  if (Mode == Mode_0) //((src >= 0) && (src <= 9.999))
-  {
-    sprintf(ch, "%5.3f", fastAbs(src));
-    for (i = 0; i < strlen(ch); i++)
+    uint32_t data = 0x00;
+    char ch[10];
+    int i, j = 0;
+    if (Mode == Mode_0) //((src >= 0) && (src <= 9.999))
     {
-      if (src < 0)
-      {
-        if (i == 0)
+        sprintf(ch, "%5.3f", fastAbs(src));
+        for (i = 0; i < strlen(ch); i++)
         {
-          Convert((uint8_t)ch[i], POINT_OFF, MINUS_ON);
+            if (src < 0)
+            {
+                if (i == 0)
+                {
+                    Convert((uint8_t)ch[i], POINT_OFF, MINUS_ON);
+                }
+                else if (ch[i] == '.')
+                {
+                    Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
+                    i += 1;
+                    // +1 是因为当前数码右下角的“点”其实是和下一个数码一起管的
+                    // 所以这里直接将这个点和下一个数码一起 Convert
+                }
+                else
+                {
+                    Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
+                }
+            }
+            else if (ch[i] == '.')
+            {
+                Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
+                i += 1;
+            }
+            else
+            {
+                Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
+            }
+            DigitData[j] = Digit[0];
+            DigitData[j + 1] = Digit[1];
+            j += 2;
         }
-        else if (ch[i] == '.')
-        {
-          Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
-          i += 1;
-          // +1 是因为当前数码右下角的“点”其实是和下一个数码一起管的
-          // 所以这里直接将这个点和下一个数码一起 Convert
-        }
-        else
-        {
-          Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
-        }
-      }
-      else if (ch[i] == '.')
-      {
-        Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
-        i += 1;
-      }
-      else
-      {
-        Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
-      }
-      DigitData[j] = Digit[0];
-      DigitData[j + 1] = Digit[1];
-      j += 2;
     }
-  }
-  else if (Mode == Mode_1) //(((src >= -19.99) && (src < 0)) || ((src > 9.999) && (src <= 99.99)))
-  {
-    sprintf(ch, "%5.2f", fastAbs(src));
-    for (i = 0; i < strlen(ch); i++)
+    else if (Mode == Mode_1) //(((src >= -19.99) && (src < 0)) || ((src > 9.999) && (src <= 99.99)))
     {
-      if (src < 0)
-      {
-        if (i == 0)
+        sprintf(ch, "%5.2f", fastAbs(src));
+        for (i = 0; i < strlen(ch); i++)
         {
-          Convert((uint8_t)ch[i], POINT_OFF, MINUS_ON);
+            if (src < 0)
+            {
+                if (i == 0)
+                {
+                    Convert((uint8_t)ch[i], POINT_OFF, MINUS_ON);
+                }
+                else if (ch[i] == '.')
+                {
+                    Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
+                    i += 1;
+                }
+                else
+                {
+                    Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
+                }
+            }
+            else if (ch[i] == '.')
+            {
+                Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
+                i += 1;
+            }
+            else
+            {
+                Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
+            }
+            DigitData[j] = Digit[0];
+            DigitData[j + 1] = Digit[1];
+            j += 2;
         }
-        else if (ch[i] == '.')
-        {
-          Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
-          i += 1;
-        }
-        else
-        {
-          Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
-        }
-      }
-      else if (ch[i] == '.')
-      {
-        Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
-        i += 1;
-      }
-      else
-      {
-        Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
-      }
-      DigitData[j] = Digit[0];
-      DigitData[j + 1] = Digit[1];
-      j += 2;
     }
-  }
-  else if (Mode == Mode_2) //(((src >= -199.9) && (src < -19.99)) || ((src > 99.99) && (src <= 999.9)))
-  {
-    sprintf(ch, "%5.1f", fastAbs(src));
-    for (i = 0; i < strlen(ch); i++)
+    else if (Mode == Mode_2) //(((src >= -199.9) && (src < -19.99)) || ((src > 99.99) && (src <= 999.9)))
     {
-      if (src < 0)
-      {
-        if (i == 0)
+        sprintf(ch, "%5.1f", fastAbs(src));
+        for (i = 0; i < strlen(ch); i++)
         {
-          Convert((uint8_t)ch[i], POINT_OFF, MINUS_ON);
+            if (src < 0)
+            {
+                if (i == 0)
+                {
+                    Convert((uint8_t)ch[i], POINT_OFF, MINUS_ON);
+                }
+                else if (ch[i] == '.')
+                {
+                    Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
+                    i += 1;
+                }
+                else
+                {
+                    Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
+                }
+            }
+            else if (ch[i] == '.')
+            {
+                Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
+                i += 1;
+            }
+            else
+            {
+                Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
+            }
+            DigitData[j] = Digit[0];
+            DigitData[j + 1] = Digit[1];
+            j += 2;
         }
-        else if (ch[i] == '.')
-        {
-          Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
-          i += 1;
-        }
-        else
-        {
-          Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
-        }
-      }
-      else if (ch[i] == '.')
-      {
-        Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
-        i += 1;
-      }
-      else
-      {
-        Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
-      }
-      DigitData[j] = Digit[0];
-      DigitData[j + 1] = Digit[1];
-      j += 2;
     }
-  }
-  else if (Mode == Mode_3) //(((src >= -1999) && (src < -199.9)) || ((src > 999.9) && (src <= 9999)))
-  {
-    sprintf(ch, "%4.0f", fastAbs(src));
-    for (i = 0; i < strlen(ch); i++)
+    else if (Mode == Mode_3) //(((src >= -1999) && (src < -199.9)) || ((src > 999.9) && (src <= 9999)))
     {
-      if (src < 0)
-      {
-        if (i == 0)
+        sprintf(ch, "%4.0f", fastAbs(src));
+        for (i = 0; i < strlen(ch); i++)
         {
-          Convert((uint8_t)ch[i], POINT_OFF, MINUS_ON);
+            if (src < 0)
+            {
+                if (i == 0)
+                {
+                    Convert((uint8_t)ch[i], POINT_OFF, MINUS_ON);
+                }
+                else if (ch[i] == '.')
+                {
+                    Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
+                    i += 1;
+                }
+                else
+                {
+                    Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
+                }
+            }
+            else if (ch[i] == '.')
+            {
+                Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
+                i += 1;
+            }
+            else
+            {
+                Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
+            }
+            DigitData[j] = Digit[0];
+            DigitData[j + 1] = Digit[1];
+            j += 2;
         }
-        else if (ch[i] == '.')
-        {
-          Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
-          i += 1;
-        }
-        else
-        {
-          Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
-        }
-      }
-      else if (ch[i] == '.')
-      {
-        Convert((uint8_t)ch[i + 1], POINT_ON, MINUS_OFF);
-        i += 1;
-      }
-      else
-      {
-        Convert((uint8_t)ch[i], POINT_OFF, MINUS_OFF);
-      }
-      DigitData[j] = Digit[0];
-      DigitData[j + 1] = Digit[1];
-      j += 2;
     }
-  }
-  else
-  {
-    char err[5] = {' ', 'E', 'r', 'r'};
-    for (i = 0; i < strlen(err); i++)
+    else
     {
-      if (err[i] == '.')
-      {
-        Convert((uint8_t)err[i + 1], POINT_ON, MINUS_OFF);
-        i += 1;
-      }
-      else
-      {
-        Convert((uint8_t)err[i], POINT_OFF, MINUS_OFF);
-      }
-      DigitData[j] = Digit[0];
-      DigitData[j + 1] = Digit[1];
-      j += 2;
+        char err[5] = {' ', 'E', 'r', 'r'};
+        for (i = 0; i < strlen(err); i++)
+        {
+            if (err[i] == '.')
+            {
+                Convert((uint8_t)err[i + 1], POINT_ON, MINUS_OFF);
+                i += 1;
+            }
+            else
+            {
+                Convert((uint8_t)err[i], POINT_OFF, MINUS_OFF);
+            }
+            DigitData[j] = Digit[0];
+            DigitData[j + 1] = Digit[1];
+            j += 2;
+        }
     }
-  }
-  data = (((DigitData[1] & 0x8) >> 3) << LCD_SEG0_SHIFT) | (((DigitData[0] & 0x8) >> 3) << LCD_SEG1_SHIFT) |
-         (((DigitData[3] & 0x8) >> 3) << LCD_SEG2_SHIFT) | (((DigitData[2] & 0x8) >> 3) << LCD_SEG3_SHIFT) |
-         (((DigitData[5] & 0x8) >> 3) << LCD_SEG4_SHIFT) | (((DigitData[4] & 0x8) >> 3) << LCD_SEG5_SHIFT) |
-         (((DigitData[7] & 0x8) >> 3) << LCD_SEG6_SHIFT) | (((DigitData[6] & 0x8) >> 3) << LCD_SEG7_SHIFT);
-  HAL_LCD_Write(&hlcd, LCD_DIGIT_COM0, LCD_DIGIT_COM0_SEG_MASK, data);
-  data = (((DigitData[1] & 0x4) >> 2) << LCD_SEG0_SHIFT) | (((DigitData[0] & 0x4) >> 2) << LCD_SEG1_SHIFT) |
-         (((DigitData[3] & 0x4) >> 2) << LCD_SEG2_SHIFT) | (((DigitData[2] & 0x4) >> 2) << LCD_SEG3_SHIFT) |
-         (((DigitData[5] & 0x4) >> 2) << LCD_SEG4_SHIFT) | (((DigitData[4] & 0x4) >> 2) << LCD_SEG5_SHIFT) |
-         (((DigitData[7] & 0x4) >> 2) << LCD_SEG6_SHIFT) | (((DigitData[6] & 0x4) >> 2) << LCD_SEG7_SHIFT);
-  HAL_LCD_Write(&hlcd, LCD_DIGIT_COM1, LCD_DIGIT_COM1_SEG_MASK, data);
-  data = (((DigitData[1] & 0x2) >> 1) << LCD_SEG0_SHIFT) | (((DigitData[0] & 0x2) >> 1) << LCD_SEG1_SHIFT) |
-         (((DigitData[3] & 0x2) >> 1) << LCD_SEG2_SHIFT) | (((DigitData[2] & 0x2) >> 1) << LCD_SEG3_SHIFT) |
-         (((DigitData[5] & 0x2) >> 1) << LCD_SEG4_SHIFT) | (((DigitData[4] & 0x2) >> 1) << LCD_SEG5_SHIFT) |
-         (((DigitData[7] & 0x2) >> 1) << LCD_SEG6_SHIFT) | (((DigitData[6] & 0x2) >> 1) << LCD_SEG7_SHIFT);
-  HAL_LCD_Write(&hlcd, LCD_DIGIT_COM2, LCD_DIGIT_COM2_SEG_MASK, data);
-  data = ((DigitData[1] & 0x1) << LCD_SEG0_SHIFT) | ((DigitData[0] & 0x1) << LCD_SEG1_SHIFT) |
-         ((DigitData[3] & 0x1) << LCD_SEG2_SHIFT) | ((DigitData[2] & 0x1) << LCD_SEG3_SHIFT) |
-         ((DigitData[5] & 0x1) << LCD_SEG4_SHIFT) | ((DigitData[4] & 0x1) << LCD_SEG5_SHIFT) |
-         ((DigitData[7] & 0x1) << LCD_SEG6_SHIFT) | ((DigitData[6] & 0x1) << LCD_SEG7_SHIFT);
-  HAL_LCD_Write(&hlcd, LCD_DIGIT_COM3, LCD_DIGIT_COM3_SEG_MASK, data);
+    data = (((DigitData[1] & 0x8) >> 3) << LCD_SEG0_SHIFT) | (((DigitData[0] & 0x8) >> 3) << LCD_SEG1_SHIFT) |
+           (((DigitData[3] & 0x8) >> 3) << LCD_SEG2_SHIFT) | (((DigitData[2] & 0x8) >> 3) << LCD_SEG3_SHIFT) |
+           (((DigitData[5] & 0x8) >> 3) << LCD_SEG4_SHIFT) | (((DigitData[4] & 0x8) >> 3) << LCD_SEG5_SHIFT) |
+           (((DigitData[7] & 0x8) >> 3) << LCD_SEG6_SHIFT) | (((DigitData[6] & 0x8) >> 3) << LCD_SEG7_SHIFT);
+    HAL_LCD_Write(&hlcd, LCD_DIGIT_COM0, LCD_DIGIT_COM0_SEG_MASK, data);
+    data = (((DigitData[1] & 0x4) >> 2) << LCD_SEG0_SHIFT) | (((DigitData[0] & 0x4) >> 2) << LCD_SEG1_SHIFT) |
+           (((DigitData[3] & 0x4) >> 2) << LCD_SEG2_SHIFT) | (((DigitData[2] & 0x4) >> 2) << LCD_SEG3_SHIFT) |
+           (((DigitData[5] & 0x4) >> 2) << LCD_SEG4_SHIFT) | (((DigitData[4] & 0x4) >> 2) << LCD_SEG5_SHIFT) |
+           (((DigitData[7] & 0x4) >> 2) << LCD_SEG6_SHIFT) | (((DigitData[6] & 0x4) >> 2) << LCD_SEG7_SHIFT);
+    HAL_LCD_Write(&hlcd, LCD_DIGIT_COM1, LCD_DIGIT_COM1_SEG_MASK, data);
+    data = (((DigitData[1] & 0x2) >> 1) << LCD_SEG0_SHIFT) | (((DigitData[0] & 0x2) >> 1) << LCD_SEG1_SHIFT) |
+           (((DigitData[3] & 0x2) >> 1) << LCD_SEG2_SHIFT) | (((DigitData[2] & 0x2) >> 1) << LCD_SEG3_SHIFT) |
+           (((DigitData[5] & 0x2) >> 1) << LCD_SEG4_SHIFT) | (((DigitData[4] & 0x2) >> 1) << LCD_SEG5_SHIFT) |
+           (((DigitData[7] & 0x2) >> 1) << LCD_SEG6_SHIFT) | (((DigitData[6] & 0x2) >> 1) << LCD_SEG7_SHIFT);
+    HAL_LCD_Write(&hlcd, LCD_DIGIT_COM2, LCD_DIGIT_COM2_SEG_MASK, data);
+    data = ((DigitData[1] & 0x1) << LCD_SEG0_SHIFT) | ((DigitData[0] & 0x1) << LCD_SEG1_SHIFT) |
+           ((DigitData[3] & 0x1) << LCD_SEG2_SHIFT) | ((DigitData[2] & 0x1) << LCD_SEG3_SHIFT) |
+           ((DigitData[5] & 0x1) << LCD_SEG4_SHIFT) | ((DigitData[4] & 0x1) << LCD_SEG5_SHIFT) |
+           ((DigitData[7] & 0x1) << LCD_SEG6_SHIFT) | ((DigitData[6] & 0x1) << LCD_SEG7_SHIFT);
+    HAL_LCD_Write(&hlcd, LCD_DIGIT_COM3, LCD_DIGIT_COM3_SEG_MASK, data);
 }
 /* USER CODE END 0 */
 
+#if !defined(USE_DEVELOPMENT_BOARD)
 void LCD_Init(void)
 {
-  hlcd.Instance = LCD;
-  hlcd.Init.Prescaler = LCD_PRESCALER_4;
-  hlcd.Init.Divider = LCD_DIVIDER_20;
-  hlcd.Init.Duty = LCD_DUTY_1_4;
-  hlcd.Init.Bias = LCD_BIAS_1_3;
-  hlcd.Init.VoltageSource = LCD_VOLTAGESOURCE_EXTERNAL;
-  hlcd.Init.Contrast = LCD_CONTRASTLEVEL_0;
-  hlcd.Init.DeadTime = LCD_DEADTIME_0;
-  hlcd.Init.PulseOnDuration = LCD_PULSEONDURATION_5;
-  hlcd.Init.HighDrive = LCD_HIGHDRIVE_0;
-  hlcd.Init.BlinkMode = LCD_BLINKMODE_OFF;
-  hlcd.Init.BlinkFrequency = LCD_BLINKFREQUENCY_DIV512;
-  hlcd.Init.MuxSegment = LCD_MUXSEGMENT_DISABLE;
-  if (HAL_LCD_Init(&hlcd) != HAL_OK)
-  {
-    Error_Handler();
-  }
+    hlcd.Instance = LCD;
+    hlcd.Init.Prescaler = LCD_PRESCALER_128;
+    hlcd.Init.Divider = LCD_DIVIDER_19;
+    hlcd.Init.Duty = LCD_DUTY_1_4;
+    hlcd.Init.Bias = LCD_BIAS_1_4;
+    hlcd.Init.VoltageSource = LCD_VOLTAGESOURCE_EXTERNAL;
+    hlcd.Init.Contrast = LCD_CONTRASTLEVEL_0;
+    hlcd.Init.DeadTime = LCD_DEADTIME_0;
+    hlcd.Init.PulseOnDuration = LCD_PULSEONDURATION_5;
+    hlcd.Init.HighDrive = LCD_HIGHDRIVE_0;
+    hlcd.Init.BlinkMode = LCD_BLINKMODE_OFF;
+    hlcd.Init.BlinkFrequency = LCD_BLINKFREQUENCY_DIV512;
+    hlcd.Init.MuxSegment = LCD_MUXSEGMENT_DISABLE;
+    if (HAL_LCD_Init(&hlcd) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+#else
+void LCD_Init(void)
+{
+    hlcd.Instance = LCD;
+    hlcd.Init.Prescaler = LCD_PRESCALER_4;
+    hlcd.Init.Divider = LCD_DIVIDER_20;
+    hlcd.Init.Duty = LCD_DUTY_1_4;
+    hlcd.Init.Bias = LCD_BIAS_1_3;
+    hlcd.Init.VoltageSource = LCD_VOLTAGESOURCE_EXTERNAL;
+    hlcd.Init.Contrast = LCD_CONTRASTLEVEL_0;
+    hlcd.Init.DeadTime = LCD_DEADTIME_0;
+    hlcd.Init.PulseOnDuration = LCD_PULSEONDURATION_5;
+    hlcd.Init.HighDrive = LCD_HIGHDRIVE_0;
+    hlcd.Init.BlinkMode = LCD_BLINKMODE_OFF;
+    hlcd.Init.BlinkFrequency = LCD_BLINKFREQUENCY_DIV512;
+    hlcd.Init.MuxSegment = LCD_MUXSEGMENT_DISABLE;
+    if (HAL_LCD_Init(&hlcd) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+#endif
+
+void LCD_Deinit(void)
+{
+    HAL_LCD_DeInit(&hlcd);
 }
 
 void HAL_LCD_MspInit(LCD_HandleTypeDef *lcdHandle)
 {
 
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-  if (lcdHandle->Instance == LCD)
-  {
-    /* LCD clock enable */
-    __HAL_RCC_LCD_CLK_ENABLE();
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    if (lcdHandle->Instance == LCD)
+    {
+        /* LCD clock enable */
+        __HAL_RCC_LCD_CLK_ENABLE();
 
-    __HAL_RCC_GPIOB_CLK_ENABLE();
-    __HAL_RCC_GPIOA_CLK_ENABLE();
-    /**LCD GPIO Configuration
+        __HAL_RCC_GPIOB_CLK_ENABLE();
+        __HAL_RCC_GPIOA_CLK_ENABLE();
+        /**LCD GPIO Configuration
     PB12     ------> LCD_SEG12
     PB13     ------> LCD_SEG13
     PB14     ------> LCD_SEG14
@@ -401,31 +434,31 @@ void HAL_LCD_MspInit(LCD_HandleTypeDef *lcdHandle)
     PB5     ------> LCD_SEG9
     PB9     ------> LCD_COM3
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_12 | GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15 | GPIO_PIN_3 | GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_9;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    GPIO_InitStruct.Alternate = GPIO_AF1_LCD;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+        GPIO_InitStruct.Pin = GPIO_PIN_12 | GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15 | GPIO_PIN_3 | GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_9;
+        GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+        GPIO_InitStruct.Pull = GPIO_NOPULL;
+        GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+        GPIO_InitStruct.Alternate = GPIO_AF1_LCD;
+        HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-    GPIO_InitStruct.Pin = GPIO_PIN_8 | GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_15;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    GPIO_InitStruct.Alternate = GPIO_AF1_LCD;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-  }
+        GPIO_InitStruct.Pin = GPIO_PIN_8 | GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_15;
+        GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+        GPIO_InitStruct.Pull = GPIO_NOPULL;
+        GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+        GPIO_InitStruct.Alternate = GPIO_AF1_LCD;
+        HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    }
 }
 
 void HAL_LCD_MspDeInit(LCD_HandleTypeDef *lcdHandle)
 {
 
-  if (lcdHandle->Instance == LCD)
-  {
-    /* Peripheral clock disable */
-    __HAL_RCC_LCD_CLK_DISABLE();
+    if (lcdHandle->Instance == LCD)
+    {
+        /* Peripheral clock disable */
+        __HAL_RCC_LCD_CLK_DISABLE();
 
-    /**LCD GPIO Configuration
+        /**LCD GPIO Configuration
     PB12     ------> LCD_SEG12
     PB13     ------> LCD_SEG13
     PB14     ------> LCD_SEG14
@@ -439,8 +472,8 @@ void HAL_LCD_MspDeInit(LCD_HandleTypeDef *lcdHandle)
     PB5     ------> LCD_SEG9
     PB9     ------> LCD_COM3
     */
-    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_12 | GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15 | GPIO_PIN_3 | GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_9);
+        HAL_GPIO_DeInit(GPIOB, GPIO_PIN_12 | GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15 | GPIO_PIN_3 | GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_9);
 
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_8 | GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_15);
-  }
+        HAL_GPIO_DeInit(GPIOA, GPIO_PIN_8 | GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_15);
+    }
 }

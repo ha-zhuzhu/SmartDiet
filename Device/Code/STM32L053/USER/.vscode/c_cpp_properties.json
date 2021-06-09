@@ -20,7 +20,7 @@
             "defines": [
                 "STM32L053xx",
                 "USE_FULL_LL_DRIVER",
-                "HSE_VALUE=12000000",
+                "HSE_VALUE=8000000",
                 "USE_HAL_DRIVER",
                 "__alignof__(x)=",
                 "__asm(x)=",

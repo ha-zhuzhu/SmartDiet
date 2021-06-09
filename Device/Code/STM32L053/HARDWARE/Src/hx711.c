@@ -1,6 +1,6 @@
 #include "hx711.h"
 
-_HX711_DATA HX711_Data={0,0,0,HX711_defaultRatio,0,0,0};
+_HX711_DATA HX711_Data = {0, 0, 0, HX711_defaultRatio, 0, 0, 0, 0};
 
 void HX711_Init()
 {
@@ -11,6 +11,15 @@ void HX711_Init()
         LL_IOP_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOA);
 
     LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_5);
+
+    /* HX_EN - GPIOA7 拉低控制PMOS导通 */
+    GPIO_InitStruct.Pin = LL_GPIO_PIN_7;
+    GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
+    GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+    GPIO_InitStruct.Pull = LL_GPIO_PULL_DOWN;
+    LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    LL_GPIO_ResetOutputPin(GPIOA,LL_GPIO_PIN_7);
 
     /* HX711_SCK - GPIOA5 */
     GPIO_InitStruct.Pin = LL_GPIO_PIN_5;
@@ -95,30 +104,38 @@ void HX711_Tare(uint8_t times)
 
 void HX711_Get_Weight(uint8_t times)
 {
-    int value=0;
-    float weight=0;
-    value=HX711_Average_Value(times);
-    HX711_Data.PreWeight=weight=(float)(value-HX711_Data.offset)/HX711_Data.ratio;
+    int value = 0;
+    float weight = 0;
+    value = HX711_Average_Value(times);
+    HX711_Data.PreWeight = weight = (float)(value - HX711_Data.offset) / HX711_Data.ratio;
     /* 稳定 */
-    if (fastAbs(value-HX711_Data.PreValue)<HX711_stableThr)
+    if (fastAbs(value - HX711_Data.PreValue) < HX711_stableThr)
     {
-        if (weight>5)
+        if (weight > 5) //有效读数
         {
-            if (HX711_Data.stableCounter==HX711_stableTime-1 && weight>5)
+            if (HX711_Data.stableCounter >= HX711_stableTime - 1) //可上传
             {
-                HX711_Data.stableCounter=0;
-                HX711_Data.stableFlag=1;
+                HX711_Data.stableCounter = 0;
+                HX711_Data.stableFlag = 1;
             }
             else
                 HX711_Data.stableCounter++;
         }
-        else
-            HX711_Data.idleCounter++;
+        else //空盘状态
+        {
+            if (HX711_Data.idleCounter >= HX711_idleTime - 1) //可休眠
+            {
+                HX711_Data.idleCounter = 0;
+                HX711_Data.idleFlag = 1;
+            }
+            else
+                HX711_Data.idleCounter++;
+        }
     }
-    else
+    else //不稳定
     {
-        HX711_Data.stableCounter=0;
-        HX711_Data.idleCounter=0;
+        HX711_Data.stableCounter = 0;
+        HX711_Data.idleCounter = 0;
     }
-    HX711_Data.PreValue=value;
+    HX711_Data.PreValue = value;
 }

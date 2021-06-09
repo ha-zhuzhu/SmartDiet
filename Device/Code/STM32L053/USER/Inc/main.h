@@ -15,12 +15,18 @@
 #include "stm32l0xx_ll_dma.h"
 #include "stm32l0xx_ll_usart.h"
 #include "stm32l0xx_ll_gpio.h"
+#include "stm32l0xx_ll_adc.h"
 
 #include "string.h"
 #include "stdio.h"
 
+void SystemPower_Config(void);
+void STOPMode_Enter(void);
+void STOPMode_Recover(void);
 void Error_Handler(void);
 
+//#define USE_DEVELOPMENT_BOARD
+#define DEBUG_MODE
 #define fastAbs(n) n > 0 ? n : -n
 
 #endif /* __MAIN_H */

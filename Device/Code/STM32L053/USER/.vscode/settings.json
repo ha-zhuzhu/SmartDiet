@@ -21,6 +21,9 @@
         "btn.h": "c",
         "stm32l0xx_ll_bus.h": "c",
         "stm32l0xx_ll_pwr.h": "c",
-        "sys.h": "c"
+        "sys.h": "c",
+        "stm32l0xx_it.h": "c",
+        "adc.h": "c",
+        "stm32l0xx_ll_adc.h": "c"
     }
 }
