@@ -12,17 +12,15 @@ uint8_t timeout;
 extern uint8_t RxCounter;
 extern _HX711_DATA HX711_Data;
 uint8_t BC28_netstatus = 0;
+uint16_t vdda;
+char strbuff[40];
 
 int main()
 {
-    uint16_t vdda;
-    char buf[30];
-    // HAL_Init中调用了HAL_MspInit打开了 Power Control clock
+    // HAL_Init 中调用了 HAL_MspInit 打开了 Power Control clock
     HAL_Init();
     SystemClock_Config();
-
-    /* 
-     * USART1-PC
+    /* USART1-PC
      * PB6   ------> USART1_TX
      * PB7   ------> USART1_RX 
      */
@@ -30,25 +28,17 @@ int main()
     USART1_Init();
     USART1_SendStr("usart1\r\n");
 #endif
-
     /* LCD */
-    /*
     LCD_Init();
     LCD_GLASS_Clear();
-    */
     /* HX711 */
-    /*
     HX711_Init();
-    int buff;
-    char strbuff[40];
-    */
+    /* BTN -- Wakeup */
     BTN_Init();
-
-    /* BC28 */
-    /* LPUART1-BC28
+    /* BC28
      * PB10   ------> LPUART1_TX
-     * PB11   ------> LPUART1_RX */
-
+     * PB11   ------> LPUART1_RX 
+     * PB2    ------> BC28_RST*/
     LPUART1_Init();
     BC28_netstatus = BC28_Init();
     if (BC28_netstatus)
@@ -56,64 +46,45 @@ int main()
         BC28_CreateInstance();
     }
     BC28_EnablePSM();
-
-    //HX711_Tare(40);
-    ADC_Configure();
-
+    //ADC_Configure();
+    HX711_Tare();
     while (1)
     {
-        vdda = VDDA_Get();
-        sprintf(buf, "vdda:%d\r\n", vdda);
-        USART1_SendStr(buf);
-        BC28_NotifyResource(vdda, ResTyp_VDDA);
-        LL_mDelay(2000);
-        /*
-        if (LL_GPIO_IsInputPinSet(GPIOA, LL_GPIO_PIN_2))
-            USART1_SendStr("GPIOA2 HIGH\r\n");
-        else
-            USART1_SendStr("GPIOA2 OFF\r\n");
-            */
-        /* HX711 */
-        /*
-        HX711_Get_Weight(40);
+        /* HX711 -- 读取重量 */
+        HX711_Get_Weight(HX711_RefreshTimes);
 #if defined(DEBUG_MODE)
-        sprintf(strbuff, "%10.3f", HX711_Data.PreWeight);
+        sprintf(strbuff, "%10.3f\r\n", HX711_Data.PreWeight);
+        USART1_SendStr(strbuff);
+        sprintf(strbuff, "%10.1f\r\n", HX711_Data.PreWeight);
+        USART1_SendStr(strbuff);
+        sprintf(strbuff, "%d\r\n", HX711_Data.PreValue);
         USART1_SendStr(strbuff);
 #endif
-*/
-        // LCD_GLASS_Heartbeat(HX711_Data.PreWeight);
+        LCD_GLASS_Heartbeat(HX711_Data.PreWeight);
 
-        /* BC28 */
-        /* 有可用重量数据则上传 */
-        /*
-        if (HX711_Data.stableFlag && BC28_netstatus)
-        //if (1)
+        /* BC28 -- 有可用重量数据，且未上传过，则上传 */
+        if (HX711_Data.stableFlag && BC28_netstatus && !HX711_Data.sentFlag)
         {
-            HX711_Data.stableFlag = 0;
+            HX711_Data.sentFlag = 1;
             LCD_GLASS_BlinkConfig();
             LCD_GLASS_Heartbeat(HX711_Data.PreWeight);
-            //BC28_NotifyResource((uint16_t)1314.520);
-            BC28_NotifyResource((uint16_t)HX711_Data.PreWeight);
+            //+0.5以四舍五入，保证上传的与LCD显示的一致
+            BC28_NotifyResource((uint16_t)(HX711_Data.PreWeight * 10 + 0.5), ResTyp_Weight);
             LCD_GLASS_BlinkDeConfig();
         }
-        */
+
         /* 静置休眠 */
-        /*
-        if(HX711_Data.idleFlag)
-        
+        if (HX711_Data.idleFlag)
+        {
+            //vdda = VDDA_Get();
+            //BC28_NotifyResource(vdda, ResTyp_VDDA);
+            HX711_Data.idleFlag = 0;
             STOPMode_Enter();
             STOPMode_Recover();
             USART1_SendStr("wakeup!\r\n");
+            //vdda = VDDA_Get();
+            //BC28_NotifyResource(vdda, ResTyp_VDDA);
         }
-        */
-        /*
-        if (timeout >= 120) //2分钟刷新一次连接防掉线
-        {
-            LPUART1_SendStr("AT+MIPLUPDATE=0,600,0\r\n"); //10分钟在线时间
-            RxCounter = 0;
-            timeout = 0;
-        }
-        */
     }
 }
 
@@ -152,12 +123,14 @@ void SystemPower_Config(void)
     GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
     GPIO_InitStruct.Pull = LL_GPIO_PULL_UP;
     LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    LL_GPIO_SetOutputPin(GPIOA, LL_GPIO_PIN_7);
 
-    /* GPIOB
+    /* GPIOB 
        PB10 -- LPUART1_TX 不能悬空 上拉？
        PB11 -- LPUART1_RX 浮空输入
+       PB2 -- BC28_RST 不变，保持拉低
     */
-    GPIO_InitStruct.Pin = LL_GPIO_PIN_ALL ^ LL_GPIO_PIN_10 ^ LL_GPIO_PIN_11;
+    GPIO_InitStruct.Pin = LL_GPIO_PIN_ALL ^ LL_GPIO_PIN_10 ^ LL_GPIO_PIN_11 ^ LL_GPIO_PIN_2;
     GPIO_InitStruct.Mode = LL_GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
     LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -192,7 +165,11 @@ void SystemPower_Config(void)
 
 void STOPMode_Enter(void)
 {
-    //BC28_Sleep();
+    BC28_Sleep();
+    LPUART1_DeInit(); //如果不deinit，唤醒后LPUART1的接收中断有问题
+#if defined(DEBUG_MODE)
+    USART1_DeInit();
+#endif
     SystemPower_Config();
     /* PWR_CR_PDDS 置 0 */
     LL_PWR_SetPowerMode(LL_PWR_MODE_STOP);
@@ -203,22 +180,20 @@ void STOPMode_Enter(void)
 
 void STOPMode_Recover(void)
 {
+    // HAL_Init中调用了HAL_MspInit打开了 Power Control clock
+    HAL_Init();
     SystemClock_Config();
 #if defined(DEBUG_MODE)
     USART1_Init();
     USART1_SendStr("usart1\r\n");
 #endif
     /* LCD */
-    /*
     LCD_Init();
     LCD_GLASS_Clear();
-
     HX711_Init();
-    */
     BTN_Init();
-    /*
     LPUART1_Init();
-    HX711_Tare(10);*/
+    HX711_Tare();
 }
 
 /**

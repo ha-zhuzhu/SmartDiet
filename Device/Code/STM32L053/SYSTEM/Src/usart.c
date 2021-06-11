@@ -34,7 +34,7 @@ void LPUART1_SendStr(char *SendBuf) //低功耗串口1发送字符串
     while (*SendBuf)
     {
         while (LL_LPUART_IsActiveFlag_TC(LPUART1) != 1)
-            ;                                                                //等待发送完成
+            ;                                                                  //等待发送完成
         LL_LPUART_TransmitData8(LPUART1, (uint8_t)(*SendBuf & (uint8_t)0xff)); //发送数据
         SendBuf++;
     }
@@ -42,49 +42,56 @@ void LPUART1_SendStr(char *SendBuf) //低功耗串口1发送字符串
 
 void LPUART1_Init(void)
 {
-  LL_LPUART_InitTypeDef LPUART_InitStruct = {0};
-  LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
+    LL_LPUART_InitTypeDef LPUART_InitStruct = {0};
+    LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
 
-  /* Peripheral clock enable */
-  LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_LPUART1);
-  LL_IOP_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOB);
-  /**LPUART1 GPIO Configuration
+    /* Peripheral clock enable */
+    LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_LPUART1);
+    LL_IOP_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOB);
+    /**LPUART1 GPIO Configuration
   PB10   ------> LPUART1_TX
   PB11   ------> LPUART1_RX
   */
-  GPIO_InitStruct.Pin = LL_GPIO_PIN_10;
-  GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
-  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_VERY_HIGH;
-  GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
-  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
-  GPIO_InitStruct.Alternate = LL_GPIO_AF_4;
-  LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+    GPIO_InitStruct.Pin = LL_GPIO_PIN_10;
+    GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
+    GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_VERY_HIGH;
+    GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+    GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+    GPIO_InitStruct.Alternate = LL_GPIO_AF_4;
+    LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  GPIO_InitStruct.Pin = LL_GPIO_PIN_11;
-  GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
-  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_VERY_HIGH;
-  GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
-  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
-  GPIO_InitStruct.Alternate = LL_GPIO_AF_4;
-  LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+    GPIO_InitStruct.Pin = LL_GPIO_PIN_11;
+    GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
+    GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_VERY_HIGH;
+    GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+    GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+    GPIO_InitStruct.Alternate = LL_GPIO_AF_4;
+    LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /* LPUART1 interrupt Init */
-  NVIC_SetPriority(RNG_LPUART1_IRQn, 0);
-  NVIC_EnableIRQ(RNG_LPUART1_IRQn);
+    /* LPUART1 interrupt Init */
+    NVIC_SetPriority(RNG_LPUART1_IRQn, 0);
+    NVIC_EnableIRQ(RNG_LPUART1_IRQn);
 
-  LPUART_InitStruct.BaudRate = 9600;
-  LPUART_InitStruct.DataWidth = LL_LPUART_DATAWIDTH_8B;
-  LPUART_InitStruct.StopBits = LL_LPUART_STOPBITS_1;
-  LPUART_InitStruct.Parity = LL_LPUART_PARITY_NONE;
-  LPUART_InitStruct.TransferDirection = LL_LPUART_DIRECTION_TX_RX;
-  LPUART_InitStruct.HardwareFlowControl = LL_LPUART_HWCONTROL_NONE;
-  LL_LPUART_Init(LPUART1, &LPUART_InitStruct);
+    LPUART_InitStruct.BaudRate = 9600;
+    LPUART_InitStruct.DataWidth = LL_LPUART_DATAWIDTH_8B;
+    LPUART_InitStruct.StopBits = LL_LPUART_STOPBITS_1;
+    LPUART_InitStruct.Parity = LL_LPUART_PARITY_NONE;
+    LPUART_InitStruct.TransferDirection = LL_LPUART_DIRECTION_TX_RX;
+    LPUART_InitStruct.HardwareFlowControl = LL_LPUART_HWCONTROL_NONE;
+    LL_LPUART_Init(LPUART1, &LPUART_InitStruct);
 
-  //LL_LPUART_EnableIT_RXNE(LPUART1);
-  LL_LPUART_Enable(LPUART1);
-  LL_LPUART_EnableIT_RXNE(LPUART1); //打开接受空中断
+    LL_LPUART_Enable(LPUART1);
+    LL_LPUART_EnableIT_RXNE(LPUART1); //打开接受空中断
 }
 
+void LPUART1_DeInit(void)
+{
+    LL_LPUART_DisableIT_RXNE(LPUART1);
+    LL_LPUART_Disable(LPUART1);
+    LL_LPUART_DeInit(LPUART1);
+    LL_APB1_GRP1_DisableClock(LL_APB1_GRP1_PERIPH_LPUART1);
+    NVIC_DisableIRQ(RNG_LPUART1_IRQn);
+}
 
 /**
  * USART1 GPIO Configuration
@@ -132,14 +139,23 @@ void USART1_Init(void)
     LL_USART_Enable(USART1);
 }
 
+void USART1_DeInit(void)
+{
+    LL_USART_Disable(USART1);
+    LL_USART_DeInit(USART1);
+    NVIC_DisableIRQ(USART1_IRQn);
+    LL_APB2_GRP1_DisableClock(LL_APB2_GRP1_PERIPH_USART1);
+}
+
 // 中断方式接受一个char
 void LPUART1_IRQHandler(void)
 {
     char tmp;
-	if(LL_LPUART_IsActiveFlag_RXNE(LPUART1)) //检测是否接收中断
-	{
-		tmp=LL_LPUART_ReceiveData8(LPUART1);   //读取出来接收到的数据 
-        LPUART1_RX_BUF[RxCounter++]=tmp;
-        if (RxCounter>199)  RxCounter=0;
-	}
+    if (LL_LPUART_IsActiveFlag_RXNE(LPUART1)) //检测是否接收中断
+    {
+        tmp = LL_LPUART_ReceiveData8(LPUART1); //读取出来接收到的数据
+        LPUART1_RX_BUF[RxCounter++] = tmp;
+        if (RxCounter > 199)
+            RxCounter = 0;
+    }
 }

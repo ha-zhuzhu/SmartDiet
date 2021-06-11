@@ -1,5 +1,7 @@
 #include "btn.h"
 #include "usart.h"
+#include "hx711.h"
+#include "lcd.h"
 
 /* PC13 */
 void BTN_Init(void)
@@ -34,10 +36,8 @@ void EXTI4_15_IRQHandler(void)
         {
             USART1_SendStr("btn\r\n");
             // 去皮
-            /*
             LCD_GLASS_Clear();
-            HX711_Tare(10);
-            */
+            HX711_Tare();
         }
     }
     if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_13) != RESET) //检验EXIT13的标志位

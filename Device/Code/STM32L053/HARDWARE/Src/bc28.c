@@ -117,7 +117,7 @@ uint8_t BC28_Init(void)
 }
 
 void BC28_CreateUDPSokcet(void) //创建sokcet
-{  
+{
     /*
     uint8_t i;
     for (i = 0; i < 5; i++)
@@ -232,9 +232,9 @@ void BC28_CreateInstance(void)
     Clear_Buffer();
     LL_mDelay(1000);
 
-    /* 注册5700"Sensor Value" 5701"Sensor Units"属性到平台端 */
+    /* 注册 5701"Sensor Units" 5821"Current Calibration"属性到平台端 */
     //9 字符串位长
-    sprintf(LPUART1_TX_BUF, "AT+MIPLDISCOVERRSP=0,%s,1,9,\"5700;5701\"\r\n", BC28_Status.Resource_ID);
+    sprintf(LPUART1_TX_BUF, "AT+MIPLDISCOVERRSP=0,%s,1,9,\"5701;5821\"\r\n", BC28_Status.Resource_ID);
     LPUART1_SendStr(LPUART1_TX_BUF);
     LL_mDelay(300);
     strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"OK");
@@ -293,7 +293,7 @@ void ONENET_Readdata(void) //等待服务器的读请求
     }
 }
 
-void BC28_NotifyResource(uint16_t ResourceValue,Resource_Typedef ResTyp)
+void BC28_NotifyResource(uint16_t ResourceValue, Resource_Typedef ResTyp)
 {
     /*
      * AT+MIPLNOTIFY
@@ -311,16 +311,20 @@ void BC28_NotifyResource(uint16_t ResourceValue,Resource_Typedef ResTyp)
      * j. flag：消息标识，指示第一条或中间或最后一条报文。
      */
     // 因为未知的原因，向ONENET上传float时len只能4位，且不能用引号。value的实际长度可以<=4位
-    if (ResTyp==ResTyp_Weight)
-        sprintf(LPUART1_TX_BUF, "AT+MIPLNOTIFY=0,%s,3322,0,5700,4,4,%04d,0,0\r\n", BC28_Status.Observe_ID, ResourceValue);
-    if (ResTyp==ResTyp_VDDA)
-        sprintf(LPUART1_TX_BUF, "AT+MIPLNOTIFY=0,%s,3322,0,5701,1,4,\"%04d\",0,0\r\n", BC28_Status.Observe_ID, ResourceValue);
+    if (ResTyp == ResTyp_Weight) //weight 5位string 0补空
+        sprintf(LPUART1_TX_BUF, "AT+MIPLNOTIFY=0,%s,3322,0,5701,1,5,\"%05d\",0,0\r\n", BC28_Status.Observe_ID, ResourceValue);
+    if (ResTyp == ResTyp_VDDA) //vdda 4位string 0补空
+        sprintf(LPUART1_TX_BUF, "AT+MIPLNOTIFY=0,%s,3322,0,5821,1,4,\"%04d\",0,0\r\n", BC28_Status.Observe_ID, ResourceValue);
     LPUART1_SendStr(LPUART1_TX_BUF);
-    LL_mDelay(100);
+    USART1_SendStr("notifysent\r\n");
+    LL_mDelay(200); //配合 LCD_BlinkFre=2Hz 闪两下
     strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"OK");
-    while (strx == NULL)
+    extstrx = strstr((const char *)LPUART1_RX_BUF, (const char *)"+NPSMR:0");
+    while (strx == NULL && extstrx == NULL)
     {
         strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"OK");
+        extstrx = strstr((const char *)LPUART1_RX_BUF, (const char *)"+NPSMR:0");
+        Clear_Buffer();
     }
     Clear_Buffer();
 
@@ -353,7 +357,7 @@ void BC28_DisablePSM(void)
 void BC28_Sleep(void)
 {
     /* 0x200发送立即释放 400收到后释放 socket号 */
-    sprintf(LPUART1_TX_BUF, "AT+NSOSTF=%c,47.92.146.210,8888,0x200,2,AB30\r\n",BC28_Status.Socketnum);
+    sprintf(LPUART1_TX_BUF, "AT+NSOSTF=%c,47.92.146.210,8888,0x200,2,AB30\r\n", BC28_Status.Socketnum);
     LPUART1_SendStr(LPUART1_TX_BUF); //发送0socketIP和端口后面跟对应数据长度以及数据,
     // 如果之前处于PSM模式，那么一共需要4s（重新连接2s+activetimer 2s）
     LL_mDelay(2000);

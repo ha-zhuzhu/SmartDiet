@@ -77,16 +77,19 @@ uint32_t DigitData[8];
     */
 void LCD_GLASS_BlinkConfig(void)
 {
-    __HAL_LCD_BLINK_CONFIG(&hlcd, LCD_BLINKMODE_ALLSEG_ALLCOM, LCD_BLINKFREQUENCY_DIV512);
+    __HAL_LCD_BLINK_CONFIG(&hlcd, LCD_BLINKMODE_ALLSEG_ALLCOM, LCD_BLINKFREQUENCY_DIV256);
 }
 
 void LCD_GLASS_BlinkDeConfig(void)
 {
-    __HAL_LCD_BLINK_CONFIG(&hlcd, LCD_BLINKMODE_OFF, LCD_BLINKFREQUENCY_DIV512);
+    __HAL_LCD_BLINK_CONFIG(&hlcd, LCD_BLINKMODE_OFF, LCD_BLINKFREQUENCY_DIV256);
 }
 
 void LCD_GLASS_Heartbeat(float src)
 {
+    if ((src >= -199.9 && src <= 999.9)) //均显示一位小数
+        WriteFloat(src, Mode_2);
+    /*
     if ((src >= 0) && (src <= 9.999))
     {
         WriteFloat(src, Mode_0);
@@ -98,7 +101,7 @@ void LCD_GLASS_Heartbeat(float src)
     else if (((src >= -199.9) && (src < -19.99)) || ((src > 99.99) && (src <= 999.9)))
     {
         WriteFloat(src, Mode_2);
-    }
+    }*/
     else if (((src >= -1999) && (src < -199.9)) || ((src > 999.9) && (src <= 9999)))
     {
         WriteFloat(src, Mode_3);

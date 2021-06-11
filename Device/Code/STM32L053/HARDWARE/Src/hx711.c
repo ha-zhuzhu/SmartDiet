@@ -1,6 +1,10 @@
 #include "hx711.h"
 
-_HX711_DATA HX711_Data = {0, 0, 0, HX711_defaultRatio, 0, 0, 0, 0};
+_HX711_DATA HX711_Data = {0, 0, 0, HX711_defaultRatio, 0, 0, 0, 0, 0};
+int HX711_BUF[HX711_BUF_SIZE] = {0};
+uint16_t HX711_BUF_Counter = 0;
+/* 存放每一段即refreshtimes个样本的总和，最后存放size个样本的总和 */
+int64_t HX711_BUF_SegSum[HX711_BUF_SegNum + 1] = {0};
 
 void HX711_Init()
 {
@@ -10,16 +14,14 @@ void HX711_Init()
     if (LL_IOP_GRP1_IsEnabledClock(LL_IOP_GRP1_PERIPH_GPIOA) == 0)
         LL_IOP_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOA);
 
-    LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_5);
-
-    /* HX_EN - GPIOA7 拉低控制PMOS导通 */
+    /* HX_EN - GPIOA7 拉低控制 PMOS 导通 */
     GPIO_InitStruct.Pin = LL_GPIO_PIN_7;
     GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
     GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
     GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
     GPIO_InitStruct.Pull = LL_GPIO_PULL_DOWN;
     LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-    LL_GPIO_ResetOutputPin(GPIOA,LL_GPIO_PIN_7);
+    LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_7);
 
     /* HX711_SCK - GPIOA5 */
     GPIO_InitStruct.Pin = LL_GPIO_PIN_5;
@@ -28,6 +30,7 @@ void HX711_Init()
     GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
     GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
     LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_5); //先拉低使HX711不工作
 
     /* HX711_DOUT - GPIOA6 */
     GPIO_InitStruct.Pin = LL_GPIO_PIN_6;
@@ -43,23 +46,25 @@ void HX711_Init()
     /* 通过一次读数设定增益 */
     HX711_Value();
     /* 初始化去皮 */
-    HX711_Tare(10);
+    //HX711_Tare();
 }
 
-/* 限幅中位均值滤波 */
-int HX711_Average_Value(uint8_t times)
+/* buf24位，如果sum也是int，则只能平均2^8个样点
+ */
+int HX711_Average_Value(uint16_t times)
 {
-    int sum, buf, minData, maxData;
-    sum = buf = maxData = 0;
-    minData = 0x800000;
-    for (uint8_t i = 0; i < times; i++)
+    int64_t sum = 0;
+    int8_t buf_segptr = HX711_BUF_Counter / HX711_RefreshTimes;
+    for (uint16_t i = 0; i < times; ++i)
     {
-        buf = HX711_Value();
-        maxData = buf > maxData ? buf : maxData;
-        minData = buf < minData ? buf : minData;
-        sum += buf;
+        HX711_BUF[HX711_BUF_Counter] = HX711_Value();
+        sum += HX711_BUF[HX711_BUF_Counter++];
+        if (HX711_BUF_Counter >= HX711_BUF_SIZE)
+            HX711_BUF_Counter = 0;
     }
-    return (sum - minData - maxData) / (times - 2);
+    HX711_BUF_SegSum[HX711_BUF_SegNum] += sum - HX711_BUF_SegSum[buf_segptr];
+    HX711_BUF_SegSum[buf_segptr] = sum;
+    return HX711_BUF_SegSum[HX711_BUF_SegNum] / HX711_BUF_SIZE;
 }
 
 int HX711_Value()
@@ -84,7 +89,7 @@ int HX711_Value()
         LL_GPIO_ResetOutputPin(SCK_GPIO, SCK_PIN);
     }
 
-    for (int i = 0; i < HX711_gain; i++)
+    for (uint8_t i = 0; i < HX711_gain; i++)
     {
         LL_GPIO_SetOutputPin(SCK_GPIO, SCK_PIN);
         LL_GPIO_ResetOutputPin(SCK_GPIO, SCK_PIN);
@@ -96,22 +101,36 @@ int HX711_Value()
 }
 
 /* 去皮 */
-void HX711_Tare(uint8_t times)
+void HX711_Tare()
 {
-    int sum = HX711_Average_Value(times);
-    HX711_Data.offset = sum;
+    int64_t sum_seg, sum;
+    sum_seg = sum = 0;
+    for (uint16_t i = 0; i < HX711_BUF_SIZE; ++i)
+    {
+        HX711_BUF[i] = HX711_Value();
+        sum_seg += HX711_BUF[i];
+        sum += HX711_BUF[i];
+        if ((i + 1) % HX711_RefreshTimes == 0)
+        {
+            HX711_BUF_SegSum[i / HX711_RefreshTimes] = sum_seg;
+            sum_seg = 0;
+        }
+    }
+    HX711_BUF_SegSum[HX711_BUF_SegNum] = sum;
+    HX711_Data.offset = sum / HX711_BUF_SIZE;
 }
 
-void HX711_Get_Weight(uint8_t times)
+void HX711_Get_Weight(uint16_t times)
 {
     int value = 0;
     float weight = 0;
     value = HX711_Average_Value(times);
-    HX711_Data.PreWeight = weight = (float)(value - HX711_Data.offset) / HX711_Data.ratio;
-    /* 稳定 */
-    if (fastAbs(value - HX711_Data.PreValue) < HX711_stableThr)
+    weight = (float)(value - HX711_Data.offset) / HX711_Data.ratio;
+    /* 稳定 prevalue preweight不更新 */
+    // fastAbs 外要套括号先计算出结果，否则永远为真
+    if ((fastAbs((value - HX711_Data.PreValue))) < HX711_stableThr)
     {
-        if (weight > 5) //有效读数
+        if (weight > 1) //有效读数 1g
         {
             if (HX711_Data.stableCounter >= HX711_stableTime - 1) //可上传
             {
@@ -132,10 +151,14 @@ void HX711_Get_Weight(uint8_t times)
                 HX711_Data.idleCounter++;
         }
     }
-    else //不稳定
+    else //不稳定,prevalue preweight更新
     {
+        HX711_Data.PreValue = value;
+        HX711_Data.PreWeight = weight;
+        HX711_Data.stableFlag = 0;
+        HX711_Data.idleFlag = 0;
         HX711_Data.stableCounter = 0;
         HX711_Data.idleCounter = 0;
+        HX711_Data.sentFlag = 0;
     }
-    HX711_Data.PreValue = value;
 }
