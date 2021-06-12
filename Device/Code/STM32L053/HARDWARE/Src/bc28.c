@@ -44,6 +44,7 @@ uint8_t BC28_Init(void)
     GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
     GPIO_InitStruct.Pull = LL_GPIO_PULL_DOWN;
     LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+    LL_GPIO_ResetOutputPin(GPIOB,LL_GPIO_PIN_2);
 
     LPUART1_SendStr("AT\r\n");
     LL_mDelay(300);

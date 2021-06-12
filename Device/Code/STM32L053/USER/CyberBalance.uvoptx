@@ -152,34 +152,18 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>132</LineNumber>
+          <LineNumber>84</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134225960</Address>
+          <Address>134234826</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\HARDWARE\Src\hx711.c</Filename>
+          <Filename>.\Src\main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\CyberBalance\../HARDWARE/Src/hx711.c\132</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>131</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134225932</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\HARDWARE\Src\hx711.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\CyberBalance\../HARDWARE/Src/hx711.c\131</Expression>
+          <Expression>\\CyberBalance\Src/main.c\84</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -202,6 +186,11 @@
           <count>3</count>
           <WinNumber>1</WinNumber>
           <ItemText>delta</ItemText>
+        </Ww>
+        <Ww>
+          <count>4</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>LPUART1_RX_BUF[i]</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>

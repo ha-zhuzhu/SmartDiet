@@ -46,7 +46,7 @@ int main()
         BC28_CreateInstance();
     }
     BC28_EnablePSM();
-    //ADC_Configure();
+    ADC_Configure();
     HX711_Tare();
     while (1)
     {
@@ -76,14 +76,14 @@ int main()
         /* 静置休眠 */
         if (HX711_Data.idleFlag)
         {
-            //vdda = VDDA_Get();
-            //BC28_NotifyResource(vdda, ResTyp_VDDA);
+            vdda = VDDA_Get();
+            BC28_NotifyResource(vdda, ResTyp_VDDA);
             HX711_Data.idleFlag = 0;
             STOPMode_Enter();
             STOPMode_Recover();
             USART1_SendStr("wakeup!\r\n");
-            //vdda = VDDA_Get();
-            //BC28_NotifyResource(vdda, ResTyp_VDDA);
+            vdda = VDDA_Get();
+            BC28_NotifyResource(vdda, ResTyp_VDDA);
         }
     }
 }
@@ -103,16 +103,14 @@ void SystemPower_Config(void)
     LL_IOP_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOD);
     LL_IOP_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOH);
 
-    /* 关闭 LCD */
-    LCD_Deinit();
-
     /* 调整 GPIO 状态 */
     LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
 
     /* GPIOA 
+       PA5 -- HX711_SCK 拉高断电
        PA7 -- HX_EN 启用为拉高输出
      */
-    GPIO_InitStruct.Pin = LL_GPIO_PIN_ALL ^ LL_GPIO_PIN_7;
+    GPIO_InitStruct.Pin = LL_GPIO_PIN_ALL ^ LL_GPIO_PIN_7^LL_GPIO_PIN_5;
     GPIO_InitStruct.Mode = LL_GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
     LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -124,6 +122,14 @@ void SystemPower_Config(void)
     GPIO_InitStruct.Pull = LL_GPIO_PULL_UP;
     LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
     LL_GPIO_SetOutputPin(GPIOA, LL_GPIO_PIN_7);
+    /* PA5 -- HX711_SCK 拉高断电
+     * 这样反而给HX711喂了电压 让它电源引脚接近3V Ao3415完全没用了
+     * 当然它也确实没有工作 传感器AV没有电压 系统总电流还是42u左右
+     * 之前也是42u 但是HX711电源引脚总有0.1V 而且AV也在跳……*/
+    GPIO_InitStruct.Pin = LL_GPIO_PIN_5;
+    GPIO_InitStruct.Pull = LL_GPIO_PULL_UP;
+    LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    LL_GPIO_SetOutputPin(GPIOA, LL_GPIO_PIN_5);
 
     /* GPIOB 
        PB10 -- LPUART1_TX 不能悬空 上拉？
@@ -137,11 +143,13 @@ void SystemPower_Config(void)
     /* PB10 -- LPUART1_TX 不能悬空 上拉？ */
     GPIO_InitStruct.Pin = LL_GPIO_PIN_10;
     GPIO_InitStruct.Mode = LL_GPIO_MODE_INPUT;
-    GPIO_InitStruct.Pull = LL_GPIO_PULL_UP;
+    //GPIO_InitStruct.Pull = LL_GPIO_PULL_UP;//82u
+    GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;//79u
     LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
     /* PB11 -- LPUART1_RX 浮空输入 */
     GPIO_InitStruct.Pin = LL_GPIO_PIN_11;
-    GPIO_InitStruct.Mode = LL_GPIO_MODE_INPUT;
+    GPIO_InitStruct.Mode = LL_GPIO_MODE_INPUT;//82u
+    //GPIO_InitStruct.Mode = LL_GPIO_MODE_ANALOG;//100u
     GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
     LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
@@ -170,6 +178,8 @@ void STOPMode_Enter(void)
 #if defined(DEBUG_MODE)
     USART1_DeInit();
 #endif
+    /* 关闭 LCD */
+    LCD_Deinit();
     SystemPower_Config();
     /* PWR_CR_PDDS 置 0 */
     LL_PWR_SetPowerMode(LL_PWR_MODE_STOP);

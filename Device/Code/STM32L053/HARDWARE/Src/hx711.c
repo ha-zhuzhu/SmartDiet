@@ -30,7 +30,7 @@ void HX711_Init()
     GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
     GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
     LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-    LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_5); //先拉低使HX711不工作
+    LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_5); //先拉低使HX711工作
 
     /* HX711_DOUT - GPIOA6 */
     GPIO_InitStruct.Pin = LL_GPIO_PIN_6;
