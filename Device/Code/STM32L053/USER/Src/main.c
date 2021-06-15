@@ -107,10 +107,10 @@ void SystemPower_Config(void)
     LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
 
     /* GPIOA 
-       PA5 -- HX711_SCK 拉高断电
+       //PA5 -- HX711_SCK 拉高断电
        PA7 -- HX_EN 启用为拉高输出
      */
-    GPIO_InitStruct.Pin = LL_GPIO_PIN_ALL ^ LL_GPIO_PIN_7^LL_GPIO_PIN_5;
+    GPIO_InitStruct.Pin = LL_GPIO_PIN_ALL ^ LL_GPIO_PIN_7;
     GPIO_InitStruct.Mode = LL_GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
     LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -126,10 +126,12 @@ void SystemPower_Config(void)
      * 这样反而给HX711喂了电压 让它电源引脚接近3V Ao3415完全没用了
      * 当然它也确实没有工作 传感器AV没有电压 系统总电流还是42u左右
      * 之前也是42u 但是HX711电源引脚总有0.1V 而且AV也在跳……*/
+    /*
     GPIO_InitStruct.Pin = LL_GPIO_PIN_5;
     GPIO_InitStruct.Pull = LL_GPIO_PULL_UP;
     LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
     LL_GPIO_SetOutputPin(GPIOA, LL_GPIO_PIN_5);
+    */
 
     /* GPIOB 
        PB10 -- LPUART1_TX 不能悬空 上拉？

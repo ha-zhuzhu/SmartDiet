@@ -35,7 +35,6 @@ void EXTI4_15_IRQHandler(void)
             LL_PWR_ClearFlag_WU();
         else
         {
-            USART1_SendStr("btn\r\n");
             // 去皮
             LCD_GLASS_Clear();
             HX711_Tare();

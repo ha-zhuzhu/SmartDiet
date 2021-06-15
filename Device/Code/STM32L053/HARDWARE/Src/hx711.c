@@ -117,6 +117,9 @@ void HX711_Tare()
         }
     }
     HX711_BUF_SegSum[HX711_BUF_SegNum] = sum;
+
+    memset(&HX711_Data, 0, sizeof(HX711_Data));
+    HX711_Data.ratio = HX711_defaultRatio;
     HX711_Data.offset = sum / HX711_BUF_SIZE;
 }
 

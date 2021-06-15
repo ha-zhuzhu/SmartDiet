@@ -44,7 +44,7 @@ uint8_t BC28_Init(void)
     GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
     GPIO_InitStruct.Pull = LL_GPIO_PULL_DOWN;
     LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-    LL_GPIO_ResetOutputPin(GPIOB,LL_GPIO_PIN_2);
+    LL_GPIO_ResetOutputPin(GPIOB, LL_GPIO_PIN_2);
 
     LPUART1_SendStr("AT\r\n");
     LL_mDelay(300);
@@ -329,7 +329,12 @@ void BC28_NotifyResource(uint16_t ResourceValue, Resource_Typedef ResTyp)
     }
     Clear_Buffer();
 
-    //如果每次notify时都处于PSM状态，重新连接需要2s，有点降低体验
+//如果每次notify时都处于PSM状态，重新连接需要2s，有点降低体验
+#if defined(FAST_PSM)
+    /* 0x200发送立即释放 400收到后释放 socket号 */
+    sprintf(LPUART1_TX_BUF, "AT+NSOSTF=%c,47.92.146.210,8888,0x200,2,AB30\r\n", BC28_Status.Socketnum);
+    LPUART1_SendStr(LPUART1_TX_BUF); //发送0socketIP和端口后面跟对应数据长度以及数据
+#endif
 }
 
 void BC28_EnablePSM(void)
@@ -343,7 +348,7 @@ void BC28_EnablePSM(void)
     /* 使能URC上报功能 */
     //LPUART1_SendStr("AT+CSCON=1\r\n");
     //LL_mDelay(50);
-    /* 创建UDP */
+    /* 创建UDP 保存Socketnum */
     BC28_CreateUDPSokcet();
     //LL_mDelay(200);
 }
@@ -359,7 +364,7 @@ void BC28_Sleep(void)
 {
     /* 0x200发送立即释放 400收到后释放 socket号 */
     sprintf(LPUART1_TX_BUF, "AT+NSOSTF=%c,47.92.146.210,8888,0x200,2,AB30\r\n", BC28_Status.Socketnum);
-    LPUART1_SendStr(LPUART1_TX_BUF); //发送0socketIP和端口后面跟对应数据长度以及数据,
+    LPUART1_SendStr(LPUART1_TX_BUF); //发送0socketIP和端口后面跟对应数据长度以及数据
     // 如果之前处于PSM模式，那么一共需要4s（重新连接2s+activetimer 2s）
     LL_mDelay(2000);
     // 如果要在中断处理函数中运行Sleep，记得把LP串口接收中断优先级调高

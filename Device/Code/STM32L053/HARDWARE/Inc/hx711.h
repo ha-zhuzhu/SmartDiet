@@ -7,8 +7,8 @@
 // 2: channel B, gain factor 32
 // 3: channel A, gain factor 64
 #define HX711_gain 1
-#define HX711_stableTime 4          // 稳定多少次可以上传数据
-#define HX711_stableThr 77          //连续两次ADC value在此阈值内算稳定
+#define HX711_stableTime 4          // 稳定多少次可以上传数据 4=1s 2=0.5s
+#define HX711_stableThr 38          //连续两次ADC value在此阈值内算稳定 0.05g
 #define HX711_defaultRatio 772.7735 // weight=value-offset/ratio
 #define HX711_idleTime 20           // 多少次读数idle则睡眠
 #define HX711_BUF_SIZE 80           // 滑动窗大小
