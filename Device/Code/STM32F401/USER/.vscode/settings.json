@@ -5,6 +5,8 @@
         "hx711.h": "c",
         "delay.h": "c",
         "stdio.h": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "btn.h": "c",
+        "stm32f4xx_it.h": "c"
     }
 }

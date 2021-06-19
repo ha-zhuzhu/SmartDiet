@@ -31,13 +31,12 @@ void EXTI4_15_IRQHandler(void)
     LL_mDelay(10);
     if (LL_GPIO_IsInputPinSet(GPIOC, LL_GPIO_PIN_13) == RESET) //按键消抖
     {
-        if (LL_PWR_IsActiveFlag_WU()) //刚被唤醒
-            LL_PWR_ClearFlag_WU();
+        if (LL_PWR_IsActiveFlag_WU())   //刚被唤醒
+            LL_PWR_ClearFlag_WU();      //清楚唤醒标志位
         else
         {
-            // 去皮
-            LCD_GLASS_Clear();
-            HX711_Tare();
+            LCD_GLASS_Clear();          //LCD清屏
+            HX711_Tare();               // 去皮
         }
     }
     if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_13) != RESET) //检验EXIT13的标志位

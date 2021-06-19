@@ -1,6 +1,6 @@
 (ExpressProject "demo"
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S015 (3921426)  [2/23/2021]-[05/28/21]")
+  (SoftwareVersion "17.4-2019 S015 (3921426)  [2/23/2021]-[06/18/21]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library"
@@ -205,28 +205,40 @@
          "e:\project\smartdiet\device\schematic\cyberbalance.dsn")
       (Path "Design Resources"
          "e:\project\smartdiet\device\schematic\cyberbalance.dsn" "SCHEMATIC1")
+      (Path "Design Resources"
+         "e:\project\smartdiet\device\schematic\cyberbalance.dsn" "UNUSED")
       (Path "Design Resources" "Library")
       (Path "Design Resources" "Library"
          "d:\cadence\cadence_spb_17.4-2019\tools\capture\library\mylib\smartdiet.olb")
       (Path "Layout")
       (Path "Outputs")
       (Select "Design Resources"
-         "e:\project\smartdiet\device\schematic\cyberbalance.dsn"))
+         "e:\project\smartdiet\device\schematic\cyberbalance.dsn" "SCHEMATIC1"
+         "PAGE1"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 372"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 401"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 5 28 5 767 28 394")
-        (Scroll "0 296")
-        (Zoom "82")
+        (Placement "44 0 1 -1 -1 5 28 5 802 28 423")
+        (Scroll "0 282")
+        (Zoom "86")
         (Occurrence "/"))
       (Path "E:\PROJECT\SMARTDIET\DEVICE\SCHEMATIC\CYBERBALANCE.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "PAGE1")))
+      (Page "PAGE1"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 802 28 423")
+        (Scroll "0 0")
+        (Zoom "100"))
+      (Path "E:\PROJECT\SMARTDIET\DEVICE\SCHEMATIC\CYBERBALANCE.DSN")
+      (Schematic "UNUSED")
+      (Page "Battery protection")))
   (MPSSessionName "Shire")
   (ISPCBBASICLICENSE "false"))

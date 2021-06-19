@@ -21,8 +21,8 @@
 #include "stdio.h"
 
 //#define USE_DEVELOPMENT_BOARD
-#define DEBUG_MODE
-#define FAST_PSM
+//#define DEBUG_MODE
+//#define FAST_PSM  //BC28每次上传结束都快速进入PSM，不好使
 
 #define fastAbs(n) n > 0 ? n : -n
 

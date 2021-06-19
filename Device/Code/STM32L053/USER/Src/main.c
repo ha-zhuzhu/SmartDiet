@@ -1,26 +1,28 @@
+/* CyberBalance - 可以联网的电子秤 */
 #include "main.h"
 #include "sys.h"
 #include "usart.h"
-#include "led.h"
 #include "bc28.h"
 #include "lcd.h"
 #include "hx711.h"
 #include "btn.h"
 #include "adc.h"
 
-uint8_t timeout;
 extern uint8_t RxCounter;
 extern _HX711_DATA HX711_Data;
 uint8_t BC28_netstatus = 0;
 uint16_t vdda;
+#if defined(DEBUG_MODE)
 char strbuff[40];
+#endif
 
 int main()
 {
     // HAL_Init 中调用了 HAL_MspInit 打开了 Power Control clock
     HAL_Init();
     SystemClock_Config();
-    /* USART1-PC
+    /*
+     * USART1-PC
      * PB6   ------> USART1_TX
      * PB7   ------> USART1_RX 
      */
@@ -45,9 +47,9 @@ int main()
     {
         BC28_CreateInstance();
     }
-    BC28_EnablePSM();
-    ADC_Configure();
-    HX711_Tare();
+    BC28_EnablePSM(); //BC28配置PSM参数
+    ADC_Configure();  //ADC配置
+    HX711_Tare();     //去皮复位
     while (1)
     {
         /* HX711 -- 读取重量 */
@@ -60,30 +62,32 @@ int main()
         sprintf(strbuff, "%d\r\n", HX711_Data.PreValue);
         USART1_SendStr(strbuff);
 #endif
-        LCD_GLASS_Heartbeat(HX711_Data.PreWeight);
+        LCD_GLASS_Heartbeat(HX711_Data.PreWeight); //LCD显示
 
         /* BC28 -- 有可用重量数据，且未上传过，则上传 */
         if (HX711_Data.stableFlag && BC28_netstatus && !HX711_Data.sentFlag)
         {
             HX711_Data.sentFlag = 1;
-            LCD_GLASS_BlinkConfig();
+            LCD_GLASS_BlinkConfig(); //LCD开启闪烁模式
             LCD_GLASS_Heartbeat(HX711_Data.PreWeight);
             //+0.5以四舍五入，保证上传的与LCD显示的一致
             BC28_NotifyResource((uint16_t)(HX711_Data.PreWeight * 10 + 0.5), ResTyp_Weight);
-            LCD_GLASS_BlinkDeConfig();
+            LCD_GLASS_BlinkDeConfig(); //LCD开启闪烁模式
         }
 
         /* 静置休眠 */
         if (HX711_Data.idleFlag)
         {
             vdda = VDDA_Get();
-            BC28_NotifyResource(vdda, ResTyp_VDDA);
+            BC28_NotifyResource(vdda, ResTyp_VDDA); //获取VDDA电压并上传
             HX711_Data.idleFlag = 0;
-            STOPMode_Enter();
-            STOPMode_Recover();
+            STOPMode_Enter();   //进入STOP Mode
+            STOPMode_Recover(); //唤醒后系统恢复
+#if defined(DEBUG_MODE)
             USART1_SendStr("wakeup!\r\n");
+#endif
             vdda = VDDA_Get();
-            BC28_NotifyResource(vdda, ResTyp_VDDA);
+            BC28_NotifyResource(vdda, ResTyp_VDDA); //获取VDDA电压并上传
         }
     }
 }
@@ -145,13 +149,13 @@ void SystemPower_Config(void)
     /* PB10 -- LPUART1_TX 不能悬空 上拉？ */
     GPIO_InitStruct.Pin = LL_GPIO_PIN_10;
     GPIO_InitStruct.Mode = LL_GPIO_MODE_INPUT;
-    //GPIO_InitStruct.Pull = LL_GPIO_PULL_UP;//82u
-    GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;//79u
+    //GPIO_InitStruct.Pull = LL_GPIO_PULL_UP;       //82u
+    GPIO_InitStruct.Pull = LL_GPIO_PULL_NO; //79u
     LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
     /* PB11 -- LPUART1_RX 浮空输入 */
     GPIO_InitStruct.Pin = LL_GPIO_PIN_11;
-    GPIO_InitStruct.Mode = LL_GPIO_MODE_INPUT;//82u
-    //GPIO_InitStruct.Mode = LL_GPIO_MODE_ANALOG;//100u
+    GPIO_InitStruct.Mode = LL_GPIO_MODE_INPUT; //82u
+    //GPIO_InitStruct.Mode = LL_GPIO_MODE_ANALOG;   //100u
     GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
     LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
@@ -173,6 +177,7 @@ void SystemPower_Config(void)
     LL_IOP_GRP1_DisableClock(LL_IOP_GRP1_PERIPH_GPIOH);
 }
 
+/* 进入STOP Mode */
 void STOPMode_Enter(void)
 {
     BC28_Sleep();
@@ -190,6 +195,7 @@ void STOPMode_Enter(void)
     __wfi();
 }
 
+/* 唤醒后系统恢复 */
 void STOPMode_Recover(void)
 {
     // HAL_Init中调用了HAL_MspInit打开了 Power Control clock

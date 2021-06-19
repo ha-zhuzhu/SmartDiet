@@ -49,7 +49,8 @@ void HX711_Init()
     //HX711_Tare();
 }
 
-/* buf24位，如果sum也是int，则只能平均2^8个样点
+/* 动态窗口滤波
+ * buf24位，如果sum也是int，则只能平均2^8个样点
  */
 int HX711_Average_Value(uint16_t times)
 {
@@ -67,6 +68,7 @@ int HX711_Average_Value(uint16_t times)
     return HX711_BUF_SegSum[HX711_BUF_SegNum] / HX711_BUF_SIZE;
 }
 
+/* 获取ADC样本 */
 int HX711_Value()
 {
     int buffer;
@@ -123,6 +125,9 @@ void HX711_Tare()
     HX711_Data.offset = sum / HX711_BUF_SIZE;
 }
 
+/* 获取当前重量
+ * 并对称重状态进行判断 
+ */
 void HX711_Get_Weight(uint16_t times)
 {
     int value = 0;

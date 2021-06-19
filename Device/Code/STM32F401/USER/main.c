@@ -49,7 +49,7 @@ int main(void)
 		printf("æª÷ÿ¡ø = %d \r\n",Weight_Shiwu); //¥Ú”° 
 		delay_ms(1000);
 	}
-    // Save_Data.counter = 0;
+     Save_Data.counter = 0;
     // while (1)
     // {
     //     LED_RED=1; LED_BLU=1; LED_GRN=0;

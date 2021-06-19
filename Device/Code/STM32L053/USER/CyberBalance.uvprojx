@@ -559,11 +559,6 @@
           <GroupName>HARDWARE</GroupName>
           <Files>
             <File>
-              <FileName>led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\Src\led.c</FilePath>
-            </File>
-            <File>
               <FileName>bc28.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\Src\bc28.c</FilePath>

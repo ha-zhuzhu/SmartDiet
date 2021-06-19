@@ -105,7 +105,9 @@ uint8_t BC28_Init(void)
     else
     {
         BC28_Status.netstatus = 0;
+#if defined(DEBUG_MODE)
         USART1_SendStr("信号搜索失败，请查看原因!\r\n");
+#endif
         /* 暂时用AT指令复位 */
         //LPUART1_SendStr("AT+NRB\r\n");
         LL_GPIO_SetOutputPin(BC28_RST_GPIO, BC28_RST_PIN);
@@ -269,7 +271,7 @@ void ONENET_Readdata(void) //等待服务器的读请求
         {
 
             BC28_Status.ReadSource[i + 2] = strx[11 + i]; //指针移动往后多移动三个位置，继续接收下面的数据
-            USART1_SendStr(LPUART1_RX_BUF);
+            //USART1_SendStr(LPUART1_RX_BUF);
             i++;
         }
         strx = strchr(strx + 1, ',');
@@ -317,8 +319,7 @@ void BC28_NotifyResource(uint16_t ResourceValue, Resource_Typedef ResTyp)
     if (ResTyp == ResTyp_VDDA) //vdda 4位string 0补空
         sprintf(LPUART1_TX_BUF, "AT+MIPLNOTIFY=0,%s,3322,0,5821,1,4,\"%04d\",0,0\r\n", BC28_Status.Observe_ID, ResourceValue);
     LPUART1_SendStr(LPUART1_TX_BUF);
-    USART1_SendStr("notifysent\r\n");
-    LL_mDelay(200); //配合 LCD_BlinkFre=2Hz 闪两下
+    LL_mDelay(100); //配合 LCD_BlinkFre=2Hz 闪两下
     strx = strstr((const char *)LPUART1_RX_BUF, (const char *)"OK");
     extstrx = strstr((const char *)LPUART1_RX_BUF, (const char *)"+NPSMR:0");
     while (strx == NULL && extstrx == NULL)

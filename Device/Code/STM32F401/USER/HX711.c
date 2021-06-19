@@ -56,7 +56,7 @@ u32 HX711_Read(void)	//增益128
   	HX711_SCK=0; 
   	count=0; 
   	while(HX711_DOUT); 
-  	for(i=0;i<24;i++)
+  	for(i=0;i<24;i++)//24
 	{ 
 	  	HX711_SCK=1; 
 	  	count=count<<1; 
