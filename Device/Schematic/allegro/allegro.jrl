@@ -1,140 +1,26 @@
-\t (00:00:10) allegro 17.4 S015 Windows SPB 64-bit Edition
-\t (00:00:10)     Journal start - Thu Jun 17 18:03:40 2021
-\t (00:00:10)         Host=DESKTOP-KF0UK81 User=Shire Pid=27248 CPUs=8
-\t (00:00:10) CmdLine= D:\Cadence\Cadence_SPB_17.4-2019\tools\bin\allegro.exe
-\t (00:00:10) 
-   (00:00:11) Loading axlcore.cxt 
-\t (00:00:11) Opening existing design...
-\i (00:00:12) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged CyberBalance
-\d (00:00:12) Design opened: e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd
-\t (00:00:12) Grids are drawn 80.00, 80.00 apart for enhanced viewing.
-\i (00:00:12) trapsize 5077
-\i (00:00:12) trapsize 5609
-\t (00:00:12) Grids are drawn 40.00, 40.00 apart for enhanced viewing.
-\i (00:00:12) trapsize 2731
-\i (00:00:12) trapsize 2843
-\t (00:00:12) Grids are drawn 40.00, 40.00 apart for enhanced viewing.
-\i (00:00:12) trapsize 3970
-\t (00:00:13) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
-\i (00:00:13) trapsize 1985
-\i (00:00:13) generaledit 
-\i (00:00:14) zoom in 1 
-\i (00:00:14) setwindow pcb
-\i (00:00:14) zoom in 1323.90 1311.74
-\t (00:00:14) Grids are drawn 10.00, 10.00 apart for enhanced viewing.
-\i (00:00:14) trapsize 993
-\i (00:00:14) zoom in 1 
-\i (00:00:14) setwindow pcb
-\i (00:00:14) zoom in 1323.90 1311.74
-\i (00:00:14) trapsize 496
-\i (00:00:14) zoom in 1 
-\i (00:00:14) setwindow pcb
-\i (00:00:14) zoom in 1323.90 1311.74
-\i (00:00:14) trapsize 248
-\i (00:00:14) zoom in 1 
-\i (00:00:14) setwindow pcb
-\i (00:00:14) zoom in 1323.90 1311.74
-\i (00:00:14) trapsize 124
-\i (00:00:15) zoom out 1 
-\i (00:00:15) setwindow pcb
-\i (00:00:15) zoom out 1323.90 1311.75
-\i (00:00:15) trapsize 248
-\i (00:00:15) zoom out 1 
-\i (00:00:15) setwindow pcb
-\i (00:00:15) zoom out 1323.90 1311.75
-\i (00:00:15) trapsize 496
-\i (00:00:16) roam y 96 
-\i (00:00:16) roam y 96
-\i (00:00:17) roam y 96 
-\i (00:00:17) roam y 96
-\i (00:00:17) roam y 96 
-\i (00:00:17) roam y 96
-\i (00:00:17) roam y 96 
-\i (00:00:17) roam y 96
-\i (00:00:17) roam y 96 
-\i (00:00:17) roam y 96
-\i (00:00:17) roam y 96 
-\i (00:00:17) roam y 96
-\i (00:00:17) roam y 96 
-\i (00:00:17) roam y 96
-\i (00:00:17) roam y 96 
-\i (00:00:17) roam y 96
-\i (00:00:17) roam y 96 
-\i (00:00:17) roam y 96
-\i (00:00:17) roam x 96 
-\i (00:00:17) roam x 96
-\i (00:00:17) roam y -96 
-\i (00:00:17) roam y -96
-\i (00:00:18) roam y -96 
-\i (00:00:18) roam y -96
-\i (00:00:18) roam x 96 
-\i (00:00:18) roam x 96
-\i (00:00:18) roam y -96 
-\i (00:00:18) roam y -96
-\i (00:00:18) roam y 96 
-\i (00:00:18) roam y 96
-\i (00:00:19) roam y 96 
-\i (00:00:19) roam y 96
-\i (00:00:19) roam x -96 
-\i (00:00:19) roam x -96
-\i (00:00:19) roam y -96 
-\i (00:00:19) roam y -96
-\i (00:00:20) zoom in 1 
-\i (00:00:20) setwindow pcb
-\i (00:00:20) zoom in 1419.16 643.94
-\i (00:00:20) trapsize 248
-\i (00:00:20) zoom in 1 
-\i (00:00:20) setwindow pcb
-\i (00:00:20) zoom in 1419.16 643.94
-\i (00:00:20) trapsize 124
-\i (00:00:21) roam y 96 
-\i (00:00:21) roam y 96
-\i (00:00:21) roam x 96 
-\i (00:00:21) roam x 96
-\i (00:00:22) roam y 96 
-\i (00:00:22) roam y 96
-\i (00:00:22) roam y 96 
-\i (00:00:22) roam y 96
-\i (00:00:22) roam y 96 
-\i (00:00:22) roam y 96
-\i (00:00:22) roam y 96 
-\i (00:00:22) roam y 96
-\i (00:00:22) roam y 96 
-\i (00:00:22) roam y 96
-\i (00:00:22) roam y 96 
-\i (00:00:22) roam y 96
-\i (00:00:23) roam y 96 
-\i (00:00:23) roam y 96
-\i (00:00:25) roam x -96 
-\i (00:00:25) roam x -96
-\i (00:00:26) roam y -96 
-\i (00:00:26) roam y -96
-\i (00:00:26) roam y -96 
-\i (00:00:26) roam y -96
-\i (00:00:26) roam y -96 
-\i (00:00:26) roam y -96
-\i (00:00:38) zoom out 1 
-\i (00:00:38) setwindow pcb
-\i (00:00:38) zoom out 1419.07 524.75
-\i (00:00:38) trapsize 248
-\i (00:00:38) zoom out 1 
-\i (00:00:38) setwindow pcb
-\i (00:00:38) zoom out 1419.07 524.75
-\i (00:00:38) trapsize 496
-\i (00:00:39) zoom in 1 
-\i (00:00:39) setwindow pcb
-\i (00:00:39) zoom in 1419.07 524.75
-\i (00:00:39) trapsize 248
-\i (00:00:39) zoom in 1 
-\i (00:00:39) setwindow pcb
-\i (00:00:39) zoom in 1419.07 524.75
-\i (00:00:39) trapsize 124
-\i (00:00:41) roam y 96 
-\i (00:00:41) roam y 96
-\i (00:00:41) roam y 96 
-\i (00:00:41) roam y 96
-\i (00:00:41) roam y 96 
-\i (00:00:41) roam y 96
-\i (04:41:03) trapsize 54
-\i (04:44:17) exit 
-\t (04:44:19)     Journal end - Thu Jun 17 22:47:48 2021
+\t (00:00:12) allegro 17.4 S015 Windows SPB 64-bit Edition
+\t (00:00:12)     Journal start - Mon Jun 21 13:12:07 2021
+\t (00:00:12)         Host=DESKTOP-KF0UK81 User=Shire Pid=12920 CPUs=8
+\t (00:00:12) CmdLine= D:\Cadence\Cadence_SPB_17.4-2019\tools\bin\allegro.exe
+\t (00:00:12) 
+   (00:00:12) Loading axlcore.cxt 
+\t (00:00:13) Opening existing design...
+\i (00:00:13) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged CyberBalance
+\d (00:00:13) Design opened: e:/Project/SmartDiet/Device/Schematic/allegro/CyberBalance.brd
+\t (00:00:14) Grids are drawn 160.00, 160.00 apart for enhanced viewing.
+\i (00:00:14) trapsize 12203
+\i (00:00:14) trapsize 15808
+\t (00:00:14) Grids are drawn 40.00, 40.00 apart for enhanced viewing.
+\i (00:00:14) trapsize 3982
+\i (00:00:14) trapsize 4224
+\t (00:00:14) Grids are drawn 40.00, 40.00 apart for enhanced viewing.
+\i (00:00:14) trapsize 4224
+\t (00:00:14) Grids are drawn 20.00, 20.00 apart for enhanced viewing.
+\i (00:00:14) trapsize 2112
+\i (00:00:15) generaledit 
+\i (00:00:15) trapsize 1421
+\i (00:01:21) dxf out 
+\i (00:01:29) create plot 
+\i (00:01:32) fillin "menu_cancel"
+\i (00:10:35) exit 
+\t (00:10:37)     Journal end - Mon Jun 21 13:22:32 2021

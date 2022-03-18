@@ -1,0 +1,25 @@
+
+Copyright (c) 2006-2019, Elgris Technologies, Inc.
+
+OrCAD Capture to EDIF 2 0 0 Schematic Conversion Program SPB 17.40_1.114 built Dec 27 2019
+
+Started on Mon Jun 21 13:05:00 2021
+
+Reading config file d:\cadence\cadence_spb_17.4-2019\tools\capture\cap2edi.cfg
+
+orcadread :Converting file E:\PROJECT\SMARTDIET\DEVICE\SCHEMATIC\CYBERBALANCE.DSN 
+Converting SchematicView   SCHEMATIC1 
+	Converting elements on  page PAGE1
+		Converting Parts
+		converting Globals of Page PAGE1 of SchematicView SCHEMATIC1
+		Converting Buses and Nets of Schematic View SCHEMATIC1 
+
+Writing EDIF: E:\PROJECT\SMARTDIET\DEVICE\SCHEMATIC\CYBERBALANCE.EDF
+.............................................................
+..............................................................
+
+
+Finished on Mon Jun 21 13:05:00 2021
+
+
+0 errors detected, 0 warnings detected
