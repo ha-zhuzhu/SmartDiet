@@ -14,7 +14,7 @@ https://github.com/WenWeiZ/SmartDiet_miniprogram
 
 <img src="Docs/Images/front.jpg" alt="front" style="zoom: 50%;" />
 
-<img src="Docs/Images/miniprogram1.jpg" alt="miniprogram1" style="zoom: 25%;" /><img src="Docs/Images/miniprogram2.jpg" alt="miniprogram2" style="zoom:25%;" />
+<center class="half"><img src="Docs/Images/miniprogram1.jpg" alt="miniprogram1" width="270" height="560" /><img src="Docs/Images/miniprogram2.jpg" alt="miniprogram2" width="270" height="560" /></center>
 
 ## 系统功能
 
